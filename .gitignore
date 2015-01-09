@@ -16,7 +16,6 @@
 # Build results
 [Dd]ebug/
 [Rr]elease/
-x64/
 *_i.c
 *_p.c
 *.ilk
@@ -35,7 +34,7 @@ x64/
 *.log
 *.vspscc
 *.vssscc
-.builds
+*.builds
 
 
 # =============== #
@@ -45,7 +44,6 @@ x64/
 [Oo]bj/
 [Bb]uild
 [Ll]ibrary/
-Library/
 sysinfo.txt
 
 
