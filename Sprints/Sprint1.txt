@@ -1,0 +1,22 @@
+Sprint 1:
+
+Ship follwing waypoints around a map
+
+  Ship (Steven)
+    Navigation System
+	Waypoint List
+
+
+  Waypoint (Nolan)
+    Position
+    Orders
+      speed
+      stance
+      action
+	
+
+  GUI (Brian)
+    Right click ship
+      Navigation System
+        Add waypoint
+	

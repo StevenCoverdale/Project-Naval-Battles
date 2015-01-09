@@ -1,0 +1,28 @@
+Naval combat
+
+Ship Classes
+  Shallow draft
+    Subs
+	Destroyers
+  Large draft
+    Battleships
+    Aircraft Carriers
+
+Water Terrain
+  Shallows (no submergin, no large draft vessels)
+  Storms (limited detection range)
+  
+  
+Game
+  2-4 teams
+  
+  Commander mode
+    Commander ship on each team
+    Objective to destroy the enemy commander while protecting your own
+  King of the hill
+    Control control points
+	  points can be deep or shallow water
+  
+  Real Time Controls
+    Set waypoints to direct ships movement and fire
+  
