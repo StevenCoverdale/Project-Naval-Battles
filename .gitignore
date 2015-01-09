@@ -41,11 +41,11 @@ x64/
 # =============== #
 # Unity generated #
 # =============== #
-Naval_Battles/[Tt]emp/
-Naval_Battles/[Oo]bj/
-Naval_Battles/[Bb]uild
-Naval_Battles/[Ll]ibrary/
-Naval_Battles/sysinfo.txt
+[Tt]emp/
+[Oo]bj/
+[Bb]uild
+[Ll]ibrary/
+sysinfo.txt
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
