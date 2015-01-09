@@ -45,19 +45,9 @@ x64/
 [Oo]bj/
 [Bb]uild
 [Ll]ibrary/
+Library/
 sysinfo.txt
 
-# ===================================== #
-# Visual Studio / MonoDevelop generated #
-# ===================================== #
-/*.userprefs
-/*.csproj
-/*.pidb
-/*.suo
-/*.sln*
-/*.user
-/*.unityproj
-/*.booproj
 
 # ============ #
 # OS generated #
