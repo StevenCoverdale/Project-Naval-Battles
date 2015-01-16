@@ -1,0 +1,42 @@
+Ship control
+  right click for context menu
+    Navigation
+	  speed
+		all stop
+		dead slow
+		1/3
+		2/3
+		full
+      move
+        way-points
+	    to cursor
+      
+	Weapons
+	  Cannons
+		Lock on target
+		  Left click on target or target area
+		Manual fire
+		Auto fire
+	  Anti-Aircraft
+	  Torpedoes
+	    click to fire in a specific direction, no auto-locking
+	  Aircraft
+	    click to launch plane towards an area (after that they become controllable like ships if we have time, simple AI otherwise)
+		
+	Sensors
+	  Visual
+		<show current range>
+		launch flare?
+	  Radar
+		<show contacts size and bearing>
+		On/Off
+	  Sonar
+		<show contacts and bearing>
+		Active On/Off
+	  
+	  
+Water (the good locking stuff)
+
+
+
+
