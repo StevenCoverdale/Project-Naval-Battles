@@ -5,6 +5,7 @@
 *.cache
 *.ccgame
 *.tmp
+*.odt#
 
 
 # User-specific files
