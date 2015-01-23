@@ -27,3 +27,8 @@ Michael:
   Controls
     Right click, ship go to point
     Shift+right click, add waypoint to ship
+
+Dave:
+  camera
+    paning
+    zoom out
