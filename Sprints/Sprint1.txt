@@ -1,22 +1,29 @@
 Sprint 1:
 
-Ship follwing waypoints around a map
+Ship movingaround a map
 
-  Ship (Steven)
-    Navigation System
-	Waypoint List
+Steven:
+  Vehicle
+  Ship
+  SysNavigation
+    Able to control vehicle to get it to travel to point
 
-
-  Waypoint (Nolan)
-    Position
-    Orders
-      speed
-      stance
-      action
+Nolan:
+  Waypoint
+    show on map
+  SysNav_StateMachine
+  SySWep_StateMachine
 	
 
-  GUI (Brian)
-    Right click ship
-      Navigation System
-        Add waypoint
-	
+Brian:
+  HUD
+    Navigation state info
+    Return to follow waypoints button
+
+
+Michael:
+  SysWeapons
+
+  Controls
+    Right click, ship go to point
+    Shift+right click, add waypoint to ship
