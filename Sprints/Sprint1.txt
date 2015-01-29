@@ -32,3 +32,4 @@ Dave:
   camera
     paning
     zoom out
+    rotating
