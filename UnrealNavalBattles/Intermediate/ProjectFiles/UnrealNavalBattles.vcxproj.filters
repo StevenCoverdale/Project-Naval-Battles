@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\UnrealNavalBattles.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{A9011448-E16D-4F72-B901-E1DF8EEAE3E3}</UniqueIdentifier>
+			<UniqueIdentifier>{C516185F-03BB-45CF-86AA-CD5A10621A6F}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\UnrealNavalBattles.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{21D26A92-765C-4D6D-8D3B-E0316F06EF91}</UniqueIdentifier>
+			<UniqueIdentifier>{F920E8E2-7E54-43DD-BB68-1C9DD4BDB3CC}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -28,14 +28,20 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\UnrealNavalBattles">
-			<UniqueIdentifier>{AAB1EDEF-2D05-4008-9EAD-AB5D2EF3F217}</UniqueIdentifier>
+			<UniqueIdentifier>{A3E83A5E-B577-473D-8C1E-57F3CE0C5378}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.Build.cs">
 			<Filter>Source\UnrealNavalBattles</Filter>
 		</None >
 		<Filter Include="Source\UnrealNavalBattles\Private">
-			<UniqueIdentifier>{F9067207-5219-493C-AC95-8A49DE40768E}</UniqueIdentifier>
+			<UniqueIdentifier>{96BA75F2-C024-4405-90CC-785292A0A04F}</UniqueIdentifier>
 		</Filter>
+		<ClCompile Include="..\..\Source\UnrealNavalBattles\Private\ShipBullet.cpp">
+			<Filter>Source\UnrealNavalBattles\Private</Filter>
+		</ClCompile >
+		<ClCompile Include="..\..\Source\UnrealNavalBattles\Private\ShipWeapon.cpp">
+			<Filter>Source\UnrealNavalBattles\Private</Filter>
+		</ClCompile >
 		<ClCompile Include="..\..\Source\UnrealNavalBattles\Private\UnrealNavalBattles.cpp">
 			<Filter>Source\UnrealNavalBattles\Private</Filter>
 		</ClCompile >
@@ -49,8 +55,14 @@
 			<Filter>Source\UnrealNavalBattles\Private</Filter>
 		</ClCompile >
 		<Filter Include="Source\UnrealNavalBattles\Public">
-			<UniqueIdentifier>{0D29ED71-DA89-4CA9-BF06-7D0BD462AEBE}</UniqueIdentifier>
+			<UniqueIdentifier>{0D580E2F-B4F0-4D18-9014-C34703097705}</UniqueIdentifier>
 		</Filter>
+		<ClInclude Include="..\..\Source\UnrealNavalBattles\Public\ShipBullet.h">
+			<Filter>Source\UnrealNavalBattles\Public</Filter>
+		</ClInclude >
+		<ClInclude Include="..\..\Source\UnrealNavalBattles\Public\ShipWeapon.h">
+			<Filter>Source\UnrealNavalBattles\Public</Filter>
+		</ClInclude >
 		<ClInclude Include="..\..\Source\UnrealNavalBattles\Public\UnrealNavalBattles.h">
 			<Filter>Source\UnrealNavalBattles\Public</Filter>
 		</ClInclude >
@@ -64,10 +76,10 @@
 			<Filter>Source\UnrealNavalBattles\Public</Filter>
 		</ClInclude >
 		<Filter Include="Source\UnrealNavalBattles\Resources">
-			<UniqueIdentifier>{A47054D7-5AB5-460E-A032-AF81DC034207}</UniqueIdentifier>
+			<UniqueIdentifier>{23EBC521-24C1-4B79-8EE8-8F70138B9B84}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="Source\UnrealNavalBattles\Resources\Windows">
-			<UniqueIdentifier>{E1F9D791-F57E-462C-BA88-95E44851F6CA}</UniqueIdentifier>
+			<UniqueIdentifier>{FB9EE719-DC37-442B-BCFD-8D874FA48C91}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\UnrealNavalBattles\Resources\Windows\UnrealNavalBattles.ico">
 			<Filter>Source\UnrealNavalBattles\Resources\Windows</Filter>

@@ -51,10 +51,14 @@
     <None Include="..\..\Config\DefaultGame.ini" />
     <None Include="..\..\Config\DefaultInput.ini" />
     <None Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.Build.cs" />
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\Private\ShipBullet.cpp" />
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\Private\ShipWeapon.cpp" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\Private\UnrealNavalBattles.cpp" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\Private\UnrealNavalBattlesCharacter.cpp" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\Private\UnrealNavalBattlesGameMode.cpp" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\Private\UnrealNavalBattlesPlayerController.cpp" />
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\Public\ShipBullet.h" />
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\Public\ShipWeapon.h" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\Public\UnrealNavalBattles.h" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\Public\UnrealNavalBattlesCharacter.h" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\Public\UnrealNavalBattlesGameMode.h" />
@@ -144,8 +148,12 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development_Editor|x64'">
+    <IncludePath />
     <ReferencePath />
+    <LibraryPath />
     <LibraryWPath />
+    <SourcePath />
+    <ExcludePath />
     <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
     <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
     <NMakeBuildCommandLine>"C:\Program Files\Unreal Engine\4.4\Engine\Build\BatchFiles\Build.bat" UnrealNavalBattlesEditor Win64 Development "$(SolutionDir)$(SolutionName).uproject" -rocket</NMakeBuildCommandLine>
