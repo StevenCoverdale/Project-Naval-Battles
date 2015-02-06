@@ -3,7 +3,7 @@
 #include "UnrealNavalBattles.h"
 #include "ShipWeapon.h"
 #include "ShipBullet.h"
-
+#include "Vector.h"
 
 AShipWeapon::AShipWeapon(const class FPostConstructInitializeProperties& PCIP)
 	: Super(PCIP)
@@ -13,8 +13,9 @@ AShipWeapon::AShipWeapon(const class FPostConstructInitializeProperties& PCIP)
 
 bool AShipWeapon::inRange()
 {
-	//if (target distance is within minRange and maxRange of weapon)
+	if (currRange > minRange*minRange && currRange < maxRange*maxRange)
 	{
+		fireWeapon();
 		return true;
 	}
 
@@ -32,10 +33,17 @@ bool AShipWeapon::inFireArc()
 
 void AShipWeapon::fireWeapon()
 {
-	if(ProjectileClass)
+	if(weaponAmmo > 0)
 	{
-		GetWorld()->SpawnActor<AShipBullet>(ProjectileClass), GetActorLocation(), GetActorRotation();
-		weaponAmmo--;
+		if(ProjectileClass)
+		{
+			GetWorld()->SpawnActor<AShipBullet>(ProjectileClass), GetActorLocation(), GetActorRotation();
+			weaponAmmo--;
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Projectile not loaded"));
+		}
 	}
 }
 
@@ -45,4 +53,16 @@ void AShipWeapon::reloadWeapon()
 	{
 		weaponAmmo = weaponAmmoMax;
 	}
+}
+
+void AShipWeapon::checkRange()
+{
+	tempVector = (AShipWeapon::GetTargetLocation() - AShipWeapon::GetActorLocation());
+	currRange = tempVector.SizeSquared();
+}
+
+void AShipWeapon::checkDirection()
+{
+	AShipWeapon::GetTargetLocation().SizeSquared;
+	AShipWeapon::GetActorLocation().SizeSquared;
 }

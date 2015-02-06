@@ -4,6 +4,7 @@
 
 #include "GameFramework/Pawn.h"
 #include "ShipBullet.h"
+#include "Vector.h"
 #include "ShipWeapon.generated.h"
 
 /**
@@ -29,16 +30,19 @@ class UNREALNAVALBATTLES_API AShipWeapon : public APawn
 	float maxElevation;
 	float minRange;
 	float maxRange;
+	float currRange;
 	float weaponDamage;
 	float weaponAmmo;
 	float weaponAmmoMax;
 	float weaponFireSpeed;
 	float weaponReloadSpeed;
 	float accuracy;
+	FVector tempVector;
 	bool inRange();
 	bool inFireArc();
 	void fireWeapon();
 	void reloadWeapon();
-	
+	void checkRange();
+	void checkDirection();
 	
 };
