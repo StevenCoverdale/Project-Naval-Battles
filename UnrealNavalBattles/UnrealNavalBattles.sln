@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnrealNavalBattles", "Intermediate\ProjectFiles\UnrealNavalBattles.vcxproj", "{C43B33FC-5103-48D6-B4FB-E8993973842C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnrealNavalBattles", "Intermediate\ProjectFiles\UnrealNavalBattles.vcxproj", "{434544D9-3E26-4D09-9E33-CB1EECAE6E48}"
 	ProjectSection(ProjectDependencies) = postProject
 	EndProjectSection
 EndProject
@@ -14,16 +14,16 @@ Global
 		Shipping|Windows = Shipping|Windows
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C43B33FC-5103-48D6-B4FB-E8993973842C}.DebugGame Editor|Windows.ActiveCfg = DebugGame_Editor|x64
-		{C43B33FC-5103-48D6-B4FB-E8993973842C}.DebugGame Editor|Windows.Build.0 = DebugGame_Editor|x64
-		{C43B33FC-5103-48D6-B4FB-E8993973842C}.DebugGame|Windows.ActiveCfg = DebugGame_RocketGame|x64
-		{C43B33FC-5103-48D6-B4FB-E8993973842C}.DebugGame|Windows.Build.0 = DebugGame_RocketGame|x64
-		{C43B33FC-5103-48D6-B4FB-E8993973842C}.Development Editor|Windows.ActiveCfg = Development_Editor|x64
-		{C43B33FC-5103-48D6-B4FB-E8993973842C}.Development Editor|Windows.Build.0 = Development_Editor|x64
-		{C43B33FC-5103-48D6-B4FB-E8993973842C}.Development|Windows.ActiveCfg = Development_RocketGame|x64
-		{C43B33FC-5103-48D6-B4FB-E8993973842C}.Development|Windows.Build.0 = Development_RocketGame|x64
-		{C43B33FC-5103-48D6-B4FB-E8993973842C}.Shipping|Windows.ActiveCfg = Shipping_RocketGame|Win32
-		{C43B33FC-5103-48D6-B4FB-E8993973842C}.Shipping|Windows.Build.0 = Shipping_RocketGame|Win32
+		{434544D9-3E26-4D09-9E33-CB1EECAE6E48}.DebugGame Editor|Windows.ActiveCfg = DebugGame_Editor|x64
+		{434544D9-3E26-4D09-9E33-CB1EECAE6E48}.DebugGame Editor|Windows.Build.0 = DebugGame_Editor|x64
+		{434544D9-3E26-4D09-9E33-CB1EECAE6E48}.DebugGame|Windows.ActiveCfg = DebugGame_Game|x64
+		{434544D9-3E26-4D09-9E33-CB1EECAE6E48}.DebugGame|Windows.Build.0 = DebugGame_Game|x64
+		{434544D9-3E26-4D09-9E33-CB1EECAE6E48}.Development Editor|Windows.ActiveCfg = Development_Editor|x64
+		{434544D9-3E26-4D09-9E33-CB1EECAE6E48}.Development Editor|Windows.Build.0 = Development_Editor|x64
+		{434544D9-3E26-4D09-9E33-CB1EECAE6E48}.Development|Windows.ActiveCfg = Development_Game|x64
+		{434544D9-3E26-4D09-9E33-CB1EECAE6E48}.Development|Windows.Build.0 = Development_Game|x64
+		{434544D9-3E26-4D09-9E33-CB1EECAE6E48}.Shipping|Windows.ActiveCfg = Shipping_Game|Win32
+		{434544D9-3E26-4D09-9E33-CB1EECAE6E48}.Shipping|Windows.Build.0 = Shipping_Game|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
