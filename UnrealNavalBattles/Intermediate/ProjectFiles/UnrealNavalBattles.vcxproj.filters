@@ -1,75 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
-    <None Include="..\..\UnrealNavalBattles.uproject" />
-    <Filter Include="Source">
-      <UniqueIdentifier>{D57D714D-97A4-4D3E-96C3-F703E76DED93}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Source\UnrealNavalBattles.Target.cs">
-      <Filter>Source</Filter>
-    </None>
-    <None Include="..\..\Source\UnrealNavalBattlesEditor.Target.cs">
-      <Filter>Source</Filter>
-    </None>
-    <Filter Include="Config">
-      <UniqueIdentifier>{DE5720A1-584B-49B6-8875-2FF6008878A8}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Config\DefaultEditor.ini">
-      <Filter>Config</Filter>
-    </None>
-    <None Include="..\..\Config\DefaultEngine.ini">
-      <Filter>Config</Filter>
-    </None>
-    <Filter Include="Source\UnrealNavalBattles">
-      <UniqueIdentifier>{3E7AF466-06B1-49B7-9A33-8661B6E638AF}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.Build.cs">
-      <Filter>Source\UnrealNavalBattles</Filter>
-    </None>
-    <Filter Include="Source\UnrealNavalBattles\Resources">
-      <UniqueIdentifier>{9C107280-29F1-448C-8F1F-C2B81CDB2B75}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\UnrealNavalBattles\Resources\Windows">
-      <UniqueIdentifier>{FF533600-9656-4051-840B-9D3C7B8A713E}</UniqueIdentifier>
-    </Filter>
-    <ResourceCompile Include="..\..\Source\UnrealNavalBattles\Resources\Windows\UnrealNavalBattles.rc">
-      <Filter>Source\UnrealNavalBattles\Resources\Windows</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Source\UnrealNavalBattles\Private">
-      <UniqueIdentifier>{3c09bea9-b8fd-4c10-9da0-21cfa9e3bba8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\UnrealNavalBattles\Public">
-      <UniqueIdentifier>{7f6084ae-2b94-4b3f-8e51-c5e7623d0677}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_GameMode.cpp">
-      <Filter>Source\UnrealNavalBattles\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_GameState.cpp">
-      <Filter>Source\UnrealNavalBattles\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_HUD.cpp">
-      <Filter>Source\UnrealNavalBattles\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.cpp">
-      <Filter>Source\UnrealNavalBattles\Private</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_GameMode.h">
-      <Filter>Source\UnrealNavalBattles\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_GameState.h">
-      <Filter>Source\UnrealNavalBattles\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_HUD.h">
-      <Filter>Source\UnrealNavalBattles\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.h">
-      <Filter>Source\UnrealNavalBattles\Public</Filter>
-    </ClInclude>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\UnrealNavalBattles.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{5E03F197-BE57-49FB-9EE9-160ED250B376}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\UnrealNavalBattles.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\UnrealNavalBattlesEditor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{A18BA648-E201-48DF-B54D-3B3385B13D62}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\UnrealNavalBattles">
+			<UniqueIdentifier>{C0B316B7-29A3-4C48-AA04-C2D12A6A02A8}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_GameMode.cpp">
+			<Filter>Source\UnrealNavalBattles</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_GameMode.h">
+			<Filter>Source\UnrealNavalBattles</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_GameState.cpp">
+			<Filter>Source\UnrealNavalBattles</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_GameState.h">
+			<Filter>Source\UnrealNavalBattles</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_HUD.cpp">
+			<Filter>Source\UnrealNavalBattles</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_HUD.h">
+			<Filter>Source\UnrealNavalBattles</Filter>
+		</ClInclude >
+		<None Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.Build.cs">
+			<Filter>Source\UnrealNavalBattles</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.cpp">
+			<Filter>Source\UnrealNavalBattles</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.h">
+			<Filter>Source\UnrealNavalBattles</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\UnrealNavalBattles\Waypoint.cpp">
+			<Filter>Source\UnrealNavalBattles</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\UnrealNavalBattles\Waypoint.h">
+			<Filter>Source\UnrealNavalBattles</Filter>
+		</ClInclude >
+		<Filter Include="Source\UnrealNavalBattles\Resources">
+			<UniqueIdentifier>{46E2EEEC-187B-4BA6-A3F4-24FA86EF69AF}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Source\UnrealNavalBattles\Resources\Windows">
+			<UniqueIdentifier>{CFF48173-DFAF-4856-8FC3-14CFCB9B8CAB}</UniqueIdentifier>
+		</Filter>
+		<ResourceCompile Include="..\..\Source\UnrealNavalBattles\Resources\Windows\UnrealNavalBattles.rc">
+			<Filter>Source\UnrealNavalBattles\Resources\Windows</Filter>
+		</ResourceCompile >
+	</ItemGroup>
 </Project>

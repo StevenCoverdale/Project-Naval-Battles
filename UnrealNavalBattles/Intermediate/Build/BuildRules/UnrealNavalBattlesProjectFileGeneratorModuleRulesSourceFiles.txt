@@ -334,7 +334,8 @@ C:\Program Files\Unreal Engine\4.6\Engine\Plugins\ScriptGeneratorPlugin\Source\S
 C:\Program Files\Unreal Engine\4.6\Engine\Plugins\ScriptPlugin\Source\ScriptEditorPlugin\ScriptEditorPlugin.Build.cs
 C:\Program Files\Unreal Engine\4.6\Engine\Plugins\ScriptPlugin\Source\ScriptPlugin\ScriptPlugin.Build.cs
 C:\Program Files\Unreal Engine\4.6\Engine\Plugins\Slate\SlateRemote\Source\SlateRemote\SlateRemote.Build.cs
-C:\Users\bicely\Documents\GitHub\Project-Naval-Battles\UnrealNavalBattles\Source\UnrealNavalBattles\UnrealNavalBattles.Build.cs
+C:\Users\sctcad\Desktop\Project-Naval-Battles\UnrealNavalBattles\Source\UnrealNavalBattles\UnrealNavalBattles.Build.cs
 C:\Program Files\Unreal Engine\4.6\Engine\Source\UE4Game.Target.cs
-C:\Users\bicely\Documents\GitHub\Project-Naval-Battles\UnrealNavalBattles\Source\UnrealNavalBattles.Target.cs
-C:\Users\bicely\Documents\GitHub\Project-Naval-Battles\UnrealNavalBattles\Source\UnrealNavalBattlesEditor.Target.cs
+C:\Users\sctcad\Desktop\Project-Naval-Battles\UnrealNavalBattles\Source\UnrealNavalBattles.Target.cs
+C:\Users\sctcad\Desktop\Project-Naval-Battles\UnrealNavalBattles\Source\UnrealNavalBattlesEditor.Target.cs
+alBattlesEditor.Target.cs
