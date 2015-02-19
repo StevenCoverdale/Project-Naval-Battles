@@ -57,6 +57,9 @@
     <ClCompile Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.cpp">
       <Filter>Source\UnrealNavalBattles\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_SpectatorPawn.cpp">
+      <Filter>Source\UnrealNavalBattles\Private</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_GameMode.h">
@@ -69,6 +72,9 @@
       <Filter>Source\UnrealNavalBattles\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.h">
+      <Filter>Source\UnrealNavalBattles\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_SpectatorPawn.h">
       <Filter>Source\UnrealNavalBattles\Public</Filter>
     </ClInclude>
   </ItemGroup>

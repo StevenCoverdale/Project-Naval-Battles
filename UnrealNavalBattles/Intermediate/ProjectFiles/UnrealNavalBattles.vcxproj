@@ -55,7 +55,9 @@
     <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_HUD.cpp" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_HUD.h" />
     <None Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.Build.cs" />
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_SpectatorPawn.cpp" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.cpp" />
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_SpectatorPawn.h" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.h" />
     <ResourceCompile Include="..\..\Source\UnrealNavalBattles\Resources\Windows\UnrealNavalBattles.rc" />
   </ItemGroup>

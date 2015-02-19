@@ -13,6 +13,7 @@ class UNREALNAVALBATTLES_API AUNB_HUD : public AHUD
 {
 	GENERATED_BODY()
 
+public:
 	//constructor
 	AUNB_HUD(FObjectInitializer const& ObjectInitializer);
 
@@ -27,5 +28,22 @@ class UNREALNAVALBATTLES_API AUNB_HUD : public AHUD
 	void UIScale(float scale);
 
 private:
+	void DrawShipHUD();
+	void DrawHealthBar(AActor * actor, float percent, int32 barHeight, int yOffset = 0) const;
+
+private:
 	float m_UIScale;
+
+
+	/** gray health bar texture */
+	UPROPERTY()
+	class UTexture2D* BarFillTexture;
+
+	/** player team health bar texture */
+	UPROPERTY()
+	class UTexture2D* PlayerTeamHPTexture;
+
+	/** enemy team health bar texture */
+	UPROPERTY()
+	class UTexture2D * EnemyTeamHPTexture;
 };
