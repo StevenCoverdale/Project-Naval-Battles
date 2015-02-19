@@ -63,6 +63,6 @@ void AShipWeapon::checkRange()
 
 void AShipWeapon::checkDirection()
 {
-	AShipWeapon::GetTargetLocation().SizeSquared;
-	AShipWeapon::GetActorLocation().SizeSquared;
+	AShipWeapon::GetTargetLocation().SizeSquared();
+	AShipWeapon::GetActorLocation().SizeSquared();
 }

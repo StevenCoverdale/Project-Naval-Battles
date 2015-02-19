@@ -8,6 +8,18 @@
 #include "UnrealNavalBattles.h"
 #include "UnrealNavalBattles.generated.dep.h"
 void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
+	void AShipBullet::StaticRegisterNativesAShipBullet()
+	{
+	}
+	IMPLEMENT_CLASS(AShipBullet, 675723691);
+	void AShipWeapon::StaticRegisterNativesAShipWeapon()
+	{
+	}
+	IMPLEMENT_CLASS(AShipWeapon, 3401766596);
+	void AShipWeaponSystem::StaticRegisterNativesAShipWeaponSystem()
+	{
+	}
+	IMPLEMENT_CLASS(AShipWeaponSystem, 1505229949);
 	void AUNB_GameMode::StaticRegisterNativesAUNB_GameMode()
 	{
 	}
@@ -19,20 +31,153 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	void AUNB_HUD::StaticRegisterNativesAUNB_HUD()
 	{
 	}
-	IMPLEMENT_CLASS(AUNB_HUD, 2119972129);
+	IMPLEMENT_CLASS(AUNB_HUD, 696928733);
+	void AUNB_Ships::StaticRegisterNativesAUNB_Ships()
+	{
+	}
+	IMPLEMENT_CLASS(AUNB_Ships, 3130211529);
+	void AUNB_SpectatorPawn::StaticRegisterNativesAUNB_SpectatorPawn()
+	{
+	}
+	IMPLEMENT_CLASS(AUNB_SpectatorPawn, 1707628834);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
+	ENGINE_API class UClass* Z_Construct_UClass_AActor();
+	ENGINE_API class UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_UProjectileMovementComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_USphereComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_APawn();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameState();
 	ENGINE_API class UClass* Z_Construct_UClass_AHUD();
+	ENGINE_API class UClass* Z_Construct_UClass_UTexture2D_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_ASpectatorPawn();
+	ENGINE_API class UClass* Z_Construct_UClass_AActor_NoRegister();
 
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipBullet_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipBullet();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeapon_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeapon();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponSystem_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponSystem();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameMode_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameMode();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameState_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameState();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_HUD_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_HUD();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Ships_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Ships();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_SpectatorPawn_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_SpectatorPawn();
 	UNREALNAVALBATTLES_API class UPackage* Z_Construct_UPackage_UnrealNavalBattles();
+	UClass* Z_Construct_UClass_AShipBullet_NoRegister()
+	{
+		return AShipBullet::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AShipBullet()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = AShipBullet::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				UProperty* NewProp_MeshComponent = new(OuterClass, TEXT("MeshComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(MeshComponent, AShipBullet), 0x00000000004a001d, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
+				UProperty* NewProp_MovementComponent = new(OuterClass, TEXT("MovementComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(MovementComponent, AShipBullet), 0x00000000004a001d, Z_Construct_UClass_UProjectileMovementComponent_NoRegister());
+				UProperty* NewProp_ColliderComponent = new(OuterClass, TEXT("ColliderComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ColliderComponent, AShipBullet), 0x00000000004a001d, Z_Construct_UClass_USphereComponent_NoRegister());
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("ShipBullet.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("ShipBullet.h"));
+				MetaData->SetValue(NewProp_MeshComponent, TEXT("Category"), TEXT("Rendering"));
+				MetaData->SetValue(NewProp_MeshComponent, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_MeshComponent, TEXT("ModuleRelativePath"), TEXT("ShipBullet.h"));
+				MetaData->SetValue(NewProp_MovementComponent, TEXT("Category"), TEXT("Movement"));
+				MetaData->SetValue(NewProp_MovementComponent, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_MovementComponent, TEXT("ModuleRelativePath"), TEXT("ShipBullet.h"));
+				MetaData->SetValue(NewProp_ColliderComponent, TEXT("Category"), TEXT("Collision"));
+				MetaData->SetValue(NewProp_ColliderComponent, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_ColliderComponent, TEXT("ModuleRelativePath"), TEXT("ShipBullet.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AShipBullet(Z_Construct_UClass_AShipBullet, TEXT("AShipBullet"));
+	UClass* Z_Construct_UClass_AShipWeapon_NoRegister()
+	{
+		return AShipWeapon::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AShipWeapon()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_APawn();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = AShipWeapon::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				UProperty* NewProp_ProjectileClass = new(OuterClass, TEXT("ProjectileClass"), RF_Public|RF_Transient|RF_Native) UClassProperty(CPP_PROPERTY_BASE(ProjectileClass, AShipWeapon), 0x0000000000000005, Z_Construct_UClass_AShipBullet_NoRegister());
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation AI|Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("ShipWeapon.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("ShipWeapon.h"));
+				MetaData->SetValue(NewProp_ProjectileClass, TEXT("Category"), TEXT("Projectiles"));
+				MetaData->SetValue(NewProp_ProjectileClass, TEXT("ModuleRelativePath"), TEXT("ShipWeapon.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AShipWeapon(Z_Construct_UClass_AShipWeapon, TEXT("AShipWeapon"));
+	UClass* Z_Construct_UClass_AShipWeaponSystem_NoRegister()
+	{
+		return AShipWeaponSystem::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AShipWeaponSystem()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_APawn();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = AShipWeaponSystem::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation AI|Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("ShipWeaponSystem.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("ShipWeaponSystem.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AShipWeaponSystem(Z_Construct_UClass_AShipWeaponSystem, TEXT("AShipWeaponSystem"));
 	UClass* Z_Construct_UClass_AUNB_GameMode_NoRegister()
 	{
 		return AUNB_GameMode::StaticClass();
@@ -116,6 +261,9 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 				OuterClass->ClassFlags |= 0x2090028C;
 
 
+				UProperty* NewProp_EnemyTeamHPTexture = new(OuterClass, TEXT("EnemyTeamHPTexture"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(EnemyTeamHPTexture, AUNB_HUD), 0x0000000000000000, Z_Construct_UClass_UTexture2D_NoRegister());
+				UProperty* NewProp_PlayerTeamHPTexture = new(OuterClass, TEXT("PlayerTeamHPTexture"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(PlayerTeamHPTexture, AUNB_HUD), 0x0000000000000000, Z_Construct_UClass_UTexture2D_NoRegister());
+				UProperty* NewProp_BarFillTexture = new(OuterClass, TEXT("BarFillTexture"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(BarFillTexture, AUNB_HUD), 0x0000000000000000, Z_Construct_UClass_UTexture2D_NoRegister());
 				OuterClass->ClassConfigName = FName(TEXT("Game"));
 				OuterClass->StaticLink();
 #if WITH_METADATA
@@ -124,6 +272,12 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_HUD.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_HUD.h"));
 				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
+				MetaData->SetValue(NewProp_EnemyTeamHPTexture, TEXT("ModuleRelativePath"), TEXT("UNB_HUD.h"));
+				MetaData->SetValue(NewProp_EnemyTeamHPTexture, TEXT("ToolTip"), TEXT("enemy team health bar texture"));
+				MetaData->SetValue(NewProp_PlayerTeamHPTexture, TEXT("ModuleRelativePath"), TEXT("UNB_HUD.h"));
+				MetaData->SetValue(NewProp_PlayerTeamHPTexture, TEXT("ToolTip"), TEXT("player team health bar texture"));
+				MetaData->SetValue(NewProp_BarFillTexture, TEXT("ModuleRelativePath"), TEXT("UNB_HUD.h"));
+				MetaData->SetValue(NewProp_BarFillTexture, TEXT("ToolTip"), TEXT("gray health bar texture"));
 #endif
 			}
 		}
@@ -131,6 +285,74 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 		return OuterClass;
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_HUD(Z_Construct_UClass_AUNB_HUD, TEXT("AUNB_HUD"));
+	UClass* Z_Construct_UClass_AUNB_Ships_NoRegister()
+	{
+		return AUNB_Ships::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AUNB_Ships()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = AUNB_Ships::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				UProperty* NewProp__health = new(OuterClass, TEXT("_health"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(_health, AUNB_Ships), 0x0000000000000005);
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_Ships.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_Ships.h"));
+				MetaData->SetValue(NewProp__health, TEXT("Category"), TEXT("Health"));
+				MetaData->SetValue(NewProp__health, TEXT("ModuleRelativePath"), TEXT("UNB_Ships.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_Ships(Z_Construct_UClass_AUNB_Ships, TEXT("AUNB_Ships"));
+	UClass* Z_Construct_UClass_AUNB_SpectatorPawn_NoRegister()
+	{
+		return AUNB_SpectatorPawn::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AUNB_SpectatorPawn()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_ASpectatorPawn();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = AUNB_SpectatorPawn::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900280;
+
+
+				UProperty* NewProp_selectedUnits = new(OuterClass, TEXT("selectedUnits"), RF_Public|RF_Transient|RF_Native) UArrayProperty(CPP_PROPERTY_BASE(selectedUnits, AUNB_SpectatorPawn), 0x0000000000000000);
+				UProperty* NewProp_selectedUnits_Inner = new(NewProp_selectedUnits, TEXT("selectedUnits"), RF_Public|RF_Transient|RF_Native) UObjectProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000, Z_Construct_UClass_AActor_NoRegister());
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation AI|Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_SpectatorPawn.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_SpectatorPawn.h"));
+				MetaData->SetValue(NewProp_selectedUnits, TEXT("ModuleRelativePath"), TEXT("UNB_SpectatorPawn.h"));
+				MetaData->SetValue(NewProp_selectedUnits, TEXT("ToolTip"), TEXT("List of all possible targets for us"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_SpectatorPawn(Z_Construct_UClass_AUNB_SpectatorPawn, TEXT("AUNB_SpectatorPawn"));
 	UPackage* Z_Construct_UPackage_UnrealNavalBattles()
 	{
 		static UPackage* ReturnPackage = NULL;
@@ -139,8 +361,8 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/UnrealNavalBattles")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x331351E0;
-			Guid.B = 0x025ED30F;
+			Guid.A = 0x93136B4F;
+			Guid.B = 0x72D0CB83;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

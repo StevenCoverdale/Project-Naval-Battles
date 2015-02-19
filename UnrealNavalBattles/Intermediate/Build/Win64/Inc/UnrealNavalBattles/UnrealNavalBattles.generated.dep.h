@@ -5,6 +5,15 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
+#ifndef UNREALNAVALBATTLES_ShipBullet_generated_h
+	#include "ShipBullet.h"
+#endif
+#ifndef UNREALNAVALBATTLES_ShipWeapon_generated_h
+	#include "ShipWeapon.h"
+#endif
+#ifndef UNREALNAVALBATTLES_ShipWeaponSystem_generated_h
+	#include "ShipWeaponSystem.h"
+#endif
 #ifndef UNREALNAVALBATTLES_UNB_GameMode_generated_h
 	#include "UNB_GameMode.h"
 #endif
@@ -13,4 +22,10 @@
 #endif
 #ifndef UNREALNAVALBATTLES_UNB_HUD_generated_h
 	#include "UNB_HUD.h"
+#endif
+#ifndef UNREALNAVALBATTLES_UNB_Ships_generated_h
+	#include "UNB_Ships.h"
+#endif
+#ifndef UNREALNAVALBATTLES_UNB_SpectatorPawn_generated_h
+	#include "UNB_SpectatorPawn.h"
 #endif

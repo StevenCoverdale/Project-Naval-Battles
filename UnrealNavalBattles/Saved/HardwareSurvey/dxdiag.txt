@@ -1,8 +1,8 @@
 ------------------
 System Information
 ------------------
-Time of this report: 2/17/2015, 13:39:39
-       Machine name: C401IT21
+Time of this report: 2/19/2015, 09:21:12
+       Machine name: C401IT29
    Operating System: Windows 7 Enterprise 64-bit (6.1, Build 7601) Service Pack 1 (7601.win7sp1_gdr.140303-2144)
            Language: English (Regional Setting: English)
 System Manufacturer: Alienware
@@ -11,7 +11,7 @@ System Manufacturer: Alienware
           Processor: Intel(R) Core(TM) i7 CPU         930  @ 2.80GHz (8 CPUs), ~2.8GHz
              Memory: 6144MB RAM
 Available OS Memory: 6134MB RAM
-          Page File: 6213MB used, 6055MB available
+          Page File: 5753MB used, 6514MB available
         Windows Dir: C:\Windows
     DirectX Version: DirectX 11
 DX Setup Parameters: Not found
@@ -303,7 +303,7 @@ PS/2 Devices
 Disk & DVD/CD-ROM Drives
 ------------------------
       Drive: C:
- Free Space: 64.7 GB
+ Free Space: 64.3 GB
 Total Space: 242.7 GB
 File System: NTFS
       Model: OCZ-VECTOR
@@ -319,34 +319,6 @@ File System: NTFS
 --------------
 System Devices
 --------------
-     Name: Intel(R) ICH10 Family USB Enhanced Host Controller - 3A3A
-Device ID: PCI\VEN_8086&DEV_3A3A&SUBSYS_02F71028&REV_00\3&11583659&0&EF
-   Driver: n/a
-
-     Name: Intel(R) ICH10R SATA AHCI Controller
-Device ID: PCI\VEN_8086&DEV_3A22&SUBSYS_02F71028&REV_00\3&11583659&0&FA
-   Driver: n/a
-
-     Name: Intel(R) 5520/5500/X58 I/O Hub PCI Express Root Port 3 - 340A
-Device ID: PCI\VEN_8086&DEV_340A&SUBSYS_02F71028&REV_13\3&11583659&0&18
-   Driver: n/a
-
-     Name: Silicon Image SiI 3132 SATALink Controller
-Device ID: PCI\VEN_1095&DEV_3132&SUBSYS_02F71028&REV_01\4&24931170&0&00E4
-   Driver: n/a
-
-     Name: Intel(R) ICH10 Family USB Universal Host Controller - 3A39
-Device ID: PCI\VEN_8086&DEV_3A39&SUBSYS_02F71028&REV_00\3&11583659&0&D2
-   Driver: n/a
-
-     Name: Intel(R) ICH10R LPC Interface Controller - 3A16
-Device ID: PCI\VEN_8086&DEV_3A16&SUBSYS_02F71028&REV_00\3&11583659&0&F8
-   Driver: n/a
-
-     Name: Intel(R) 5520/5500/X58 I/O Hub PCI Express Root Port 1 - 3408
-Device ID: PCI\VEN_8086&DEV_3408&SUBSYS_02F71028&REV_13\3&11583659&0&08
-   Driver: n/a
-
      Name: Intel(R) ICH10 Family PCI Express Root Port 5 - 3A48
 Device ID: PCI\VEN_8086&DEV_3A48&SUBSYS_02F71028&REV_00\3&11583659&0&E4
    Driver: n/a
@@ -441,6 +413,34 @@ Device ID: PCI\VEN_8086&DEV_340E&SUBSYS_02F71028&REV_13\3&11583659&0&38
 
      Name: NVIDIA GeForce GTX 260  
 Device ID: PCI\VEN_10DE&DEV_05EA&SUBSYS_073810DE&REV_A1\4&101B7E8&0&0018
+   Driver: n/a
+
+     Name: Intel(R) ICH10 Family USB Enhanced Host Controller - 3A3A
+Device ID: PCI\VEN_8086&DEV_3A3A&SUBSYS_02F71028&REV_00\3&11583659&0&EF
+   Driver: n/a
+
+     Name: Intel(R) ICH10R SATA AHCI Controller
+Device ID: PCI\VEN_8086&DEV_3A22&SUBSYS_02F71028&REV_00\3&11583659&0&FA
+   Driver: n/a
+
+     Name: Intel(R) 5520/5500/X58 I/O Hub PCI Express Root Port 3 - 340A
+Device ID: PCI\VEN_8086&DEV_340A&SUBSYS_02F71028&REV_13\3&11583659&0&18
+   Driver: n/a
+
+     Name: Silicon Image SiI 3132 SATALink Controller
+Device ID: PCI\VEN_1095&DEV_3132&SUBSYS_02F71028&REV_01\4&24931170&0&00E4
+   Driver: n/a
+
+     Name: Intel(R) ICH10 Family USB Universal Host Controller - 3A39
+Device ID: PCI\VEN_8086&DEV_3A39&SUBSYS_02F71028&REV_00\3&11583659&0&D2
+   Driver: n/a
+
+     Name: Intel(R) ICH10R LPC Interface Controller - 3A16
+Device ID: PCI\VEN_8086&DEV_3A16&SUBSYS_02F71028&REV_00\3&11583659&0&F8
+   Driver: n/a
+
+     Name: Intel(R) 5520/5500/X58 I/O Hub PCI Express Root Port 1 - 3408
+Device ID: PCI\VEN_8086&DEV_3408&SUBSYS_02F71028&REV_13\3&11583659&0&08
    Driver: n/a
 
 ------------------

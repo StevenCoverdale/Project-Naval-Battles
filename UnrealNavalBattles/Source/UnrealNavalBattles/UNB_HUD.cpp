@@ -5,7 +5,7 @@
 
 #include "UNB_GameMode.h"
 #include "UNB_GameState.h"
-#include "UNB_Ship.h"
+#include "UNB_Ships.h"
 #include "UNB_SpectatorPawn.h"
 
 /********************************************************************************\
@@ -131,7 +131,7 @@ void AUNB_HUD::DrawShipHUD()
 	//temp code, draws HUD on all ships.
 	for (FConstPawnIterator pawnIt = GetWorld()->GetPawnIterator(); pawnIt; ++pawnIt)
 	{
-		AUNB_Ship* ship = Cast<AUNB_Ship>(*pawnIt);
+		AUNB_Ships* ship = Cast<AUNB_Ships>(*pawnIt);
 		if (NULL != ship && ship->GetHealth() > 0)
 		{
 
@@ -165,7 +165,7 @@ void AUNB_HUD::DrawHealthBar(AActor * actor, float percent, int32 barHeight, int
 
 	if (NULL != Cast<APawn>(actor))
 	{
-		AUNB_Ship * ship = Cast<AUNB_Ship>(actor);
+		AUNB_Ships * ship = Cast<AUNB_Ships>(actor);
 		if ((NULL != ship) && (NULL != ship->GetCapsuleComponent()))
 		{
 			shipExtent = ship->GetCapsuleComponent()->GetScaledCapsuleRadius();
