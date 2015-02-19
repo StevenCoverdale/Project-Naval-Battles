@@ -4,6 +4,7 @@
 #include "UNB_GameMode.h"
 #include "UNB_HUD.h"
 #include "UNB_GameState.h"
+#include "UNB_SpectatorPawn.h"
 
 
 AUNB_GameMode::AUNB_GameMode(FObjectInitializer const& ObjectInitializer) :
@@ -11,4 +12,6 @@ AUNB_GameMode::AUNB_GameMode(FObjectInitializer const& ObjectInitializer) :
 {
 	HUDClass = AUNB_HUD::StaticClass();
 	GameStateClass = AUNB_GameState::StaticClass();
+
+	DefaultPawnClass = AUNB_SpectatorPawn::StaticClass();
 }
