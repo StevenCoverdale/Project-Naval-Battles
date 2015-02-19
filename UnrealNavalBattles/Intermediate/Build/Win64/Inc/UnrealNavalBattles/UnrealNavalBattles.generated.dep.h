@@ -23,6 +23,9 @@
 #ifndef UNREALNAVALBATTLES_UNB_HUD_generated_h
 	#include "UNB_HUD.h"
 #endif
+#ifndef UNREALNAVALBATTLES_UNB_PlayerController_generated_h
+	#include "UNB_PlayerController.h"
+#endif
 #ifndef UNREALNAVALBATTLES_UNB_Ships_generated_h
 	#include "UNB_Ships.h"
 #endif

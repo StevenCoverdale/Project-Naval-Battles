@@ -32,6 +32,10 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	{
 	}
 	IMPLEMENT_CLASS(AUNB_HUD, 696928733);
+	void AUNB_PlayerController::StaticRegisterNativesAUNB_PlayerController()
+	{
+	}
+	IMPLEMENT_CLASS(AUNB_PlayerController, 1740534661);
 	void AUNB_Ships::StaticRegisterNativesAUNB_Ships()
 	{
 	}
@@ -51,6 +55,7 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	ENGINE_API class UClass* Z_Construct_UClass_AGameState();
 	ENGINE_API class UClass* Z_Construct_UClass_AHUD();
 	ENGINE_API class UClass* Z_Construct_UClass_UTexture2D_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_APlayerController();
 	ENGINE_API class UClass* Z_Construct_UClass_ASpectatorPawn();
 	ENGINE_API class UClass* Z_Construct_UClass_AActor_NoRegister();
 
@@ -66,6 +71,8 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameState();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_HUD_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_HUD();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_PlayerController_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_PlayerController();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Ships_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Ships();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_SpectatorPawn_NoRegister();
@@ -285,6 +292,38 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 		return OuterClass;
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_HUD(Z_Construct_UClass_AUNB_HUD, TEXT("AUNB_HUD"));
+	UClass* Z_Construct_UClass_AUNB_PlayerController_NoRegister()
+	{
+		return AUNB_PlayerController::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AUNB_PlayerController()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_APlayerController();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = AUNB_PlayerController::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900284;
+
+
+				OuterClass->ClassConfigName = FName(TEXT("Game"));
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Collision Rendering Utilities|Transformation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_PlayerController.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_PlayerController.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_PlayerController(Z_Construct_UClass_AUNB_PlayerController, TEXT("AUNB_PlayerController"));
 	UClass* Z_Construct_UClass_AUNB_Ships_NoRegister()
 	{
 		return AUNB_Ships::StaticClass();
@@ -361,8 +400,8 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/UnrealNavalBattles")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x93136B4F;
-			Guid.B = 0x72D0CB83;
+			Guid.A = 0x56E6587B;
+			Guid.B = 0x2DEF3691;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

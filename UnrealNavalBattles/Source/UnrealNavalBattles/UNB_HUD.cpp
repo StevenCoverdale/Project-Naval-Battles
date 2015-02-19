@@ -49,6 +49,7 @@ void AUNB_HUD::DrawHUD()
 	AUNB_GameState const*const gameState = GetWorld()->GetGameState<AUNB_GameState>();
 	if (gameState)
 	{
+		DrawShipHUD();
 	}
 }
 
@@ -119,6 +120,7 @@ void AUNB_HUD::DrawShipHUD()
 
 	if (NULL != gameMode)
 	{
+		//Get specator pawn to retreave it's list of selected units
 		AUNB_SpectatorPawn * specPawn = Cast<AUNB_SpectatorPawn>(gameMode->DefaultPawnClass);
 
 		if (NULL != specPawn)
@@ -134,7 +136,6 @@ void AUNB_HUD::DrawShipHUD()
 		AUNB_Ships* ship = Cast<AUNB_Ships>(*pawnIt);
 		if (NULL != ship && ship->GetHealth() > 0)
 		{
-
 			DrawHealthBar(ship, ship->GetHealth() / (float)ship->GetMaxHealth(), 18 * m_UIScale);
 		}
 	}

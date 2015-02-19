@@ -25,7 +25,8 @@ public:
 	int GetHealth();
 	int GetMaxHealth();
 	UCapsuleComponent* GetCapsuleComponent();
-
-
 	
+	//Added mouse click function (Brian)
+	void ReceiveActorOnClicked() override;
+
 };

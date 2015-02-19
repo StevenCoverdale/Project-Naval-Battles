@@ -49,3 +49,13 @@ UCapsuleComponent* AUNB_Ships::GetCapsuleComponent()
 {
 	return NULL;
 }
+
+void AUNB_Ships::ReceiveActorOnClicked()
+{
+	Super::ReceiveActorOnClicked();
+
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-2, 20.0f, FColor::Red, TEXT("Sir we have been clicked!"));
+	}
+}

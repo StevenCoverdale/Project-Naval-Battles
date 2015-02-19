@@ -60,6 +60,8 @@
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_GameState.h" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_HUD.cpp" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_HUD.h" />
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_PlayerController.cpp" />
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_PlayerController.h" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_Ships.cpp" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_Ships.h" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_SpectatorPawn.cpp" />
