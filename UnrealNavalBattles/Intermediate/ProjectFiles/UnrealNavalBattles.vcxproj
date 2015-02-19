@@ -48,7 +48,13 @@
     <None Include="..\..\Source\UnrealNavalBattlesEditor.Target.cs" />
     <None Include="..\..\Config\DefaultEditor.ini" />
     <None Include="..\..\Config\DefaultEngine.ini" />
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\ShipBullet.cpp" />
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\ShipWeapon.cpp" />
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\ShipWeaponSystem.cpp" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_GameMode.cpp" />
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\ShipBullet.h" />
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\ShipWeapon.h" />
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\ShipWeaponSystem.h" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_GameMode.h" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_GameState.cpp" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_GameState.h" />
