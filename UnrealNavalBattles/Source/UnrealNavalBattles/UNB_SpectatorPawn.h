@@ -15,12 +15,16 @@ class UNREALNAVALBATTLES_API AUNB_SpectatorPawn : public ASpectatorPawn
 
 public:
 	TArray<class AActor*> const& getSelectedUnits() const;
+
+	void SetSelectedUnit(class AUNB_Ships * selection);
 	
 private:
 
 	/** List of all possible targets for us */
 	UPROPERTY()
 	TArray<class AActor*>	selectedUnits;
+
+
 	
 	
 };

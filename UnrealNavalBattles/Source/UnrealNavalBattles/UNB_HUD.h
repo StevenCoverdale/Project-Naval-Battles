@@ -37,11 +37,11 @@ private:
 
 	/** gray health bar texture */
 	UPROPERTY()
-	class UTexture2D* BarFillTexture;
+	class UTexture2D * BarFillTexture;
 
 	/** player team health bar texture */
 	UPROPERTY()
-	class UTexture2D* PlayerTeamHPTexture;
+	class UTexture2D * PlayerTeamHPTexture;
 
 	/** enemy team health bar texture */
 	UPROPERTY()

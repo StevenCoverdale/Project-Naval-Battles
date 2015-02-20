@@ -7,6 +7,7 @@
 #include "UNB_GameState.h"
 #include "UNB_Ships.h"
 #include "UNB_SpectatorPawn.h"
+#include "Public/EngineUtils.h"
 
 /********************************************************************************\
  * AUNB_HUD class																*
@@ -18,6 +19,13 @@
 AUNB_HUD::AUNB_HUD(FObjectInitializer const& ObjectInitializer) :
 	Super(ObjectInitializer)
 {
+	static ConstructorHelpers::FObjectFinder<UTexture2D> BarFillObj(TEXT("/Game/UI/HUD/BarFill"));
+	static ConstructorHelpers::FObjectFinder<UTexture2D> PlayerTeamHPObj(TEXT("/Game/UI/HUD/PlayerTeamHealthBar"));
+	static ConstructorHelpers::FObjectFinder<UTexture2D> EnemyTeamHPObj(TEXT("/Game/UI/HUD/EnemyTeamHealthBar"));
+
+	BarFillTexture = BarFillObj.Object;
+	PlayerTeamHPTexture = PlayerTeamHPObj.Object;
+	EnemyTeamHPTexture = EnemyTeamHPObj.Object;
 
 #if DEBUG_LEVEL > 0
 	if (GEngine)
@@ -114,8 +122,6 @@ void AUNB_HUD::UIScale(float scale)
 \********************************************************************************/
 void AUNB_HUD::DrawShipHUD()
 {
-
-
 	AUNB_GameMode * gameMode = Cast<AUNB_GameMode>(GetWorld()->GetAuthGameMode());
 
 	if (NULL != gameMode)
@@ -126,17 +132,23 @@ void AUNB_HUD::DrawShipHUD()
 		if (NULL != specPawn)
 		{
 			//Iterate through all selected units and draw their unit HUDs
+			/*for (TActorIterator<AShips> ShipIt = specPawn->getSelectedUnits; ShipIt; ++ShipIt)
+			{
+				DrawHealthBar(Cast<AActor>(*ShipIt), *ShipIt->GetHealth() / (float)*ShipIt->GetMaxHealth(), 18 * m_UIScale);
+			}*/
 		}
 	}
 
 
 	//temp code, draws HUD on all ships.
-	for (FConstPawnIterator pawnIt = GetWorld()->GetPawnIterator(); pawnIt; ++pawnIt)
+	/*for (FConstPawnIterator pawnIt = GetWorld()->GetPawnIterator(); pawnIt; ++pawnIt)
 	{
-		AUNB_Ships* ship = Cast<AUNB_Ships>(*pawnIt);
-		if (NULL != ship && ship->GetHealth() > 0)
+	}*/
+	for (TActorIterator<AUNB_Ships> shipIt(GetWorld()); shipIt; ++shipIt)
+	{
+		if ((*shipIt)->GetHealth() > 0)
 		{
-			DrawHealthBar(ship, ship->GetHealth() / (float)ship->GetMaxHealth(), 18 * m_UIScale);
+			DrawHealthBar(Cast<AActor>(*shipIt), shipIt->GetHealth() / (float)shipIt->GetMaxHealth(), 18 * m_UIScale);
 		}
 	}
 }

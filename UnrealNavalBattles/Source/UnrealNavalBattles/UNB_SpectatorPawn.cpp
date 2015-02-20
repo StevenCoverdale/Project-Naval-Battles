@@ -2,6 +2,7 @@
 
 #include "UnrealNavalBattles.h"
 #include "UNB_SpectatorPawn.h"
+#include "UNB_Ships.h"
 
 
 TArray<AActor*> const& AUNB_SpectatorPawn::getSelectedUnits() const
@@ -10,3 +11,8 @@ TArray<AActor*> const& AUNB_SpectatorPawn::getSelectedUnits() const
 }
 
 
+void AUNB_SpectatorPawn::SetSelectedUnit(AUNB_Ships * selection)
+{
+	selectedUnits.Empty();
+	selectedUnits.Add(Cast<AActor>(selection));
+}
