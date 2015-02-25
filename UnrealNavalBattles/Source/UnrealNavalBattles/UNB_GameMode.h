@@ -15,5 +15,11 @@ class UNREALNAVALBATTLES_API AUNB_GameMode : public AGameMode
 
 	AUNB_GameMode(FObjectInitializer const& ObjectInitializer);
 	
+public:
+	class AUNB_SpectatorPawn * GetSpecPawn();
+	void SetSpecPawn(class AUNB_SpectatorPawn * specPawn);
+
+private:
+	class AUNB_SpectatorPawn * m_specPawn;
 	
 };

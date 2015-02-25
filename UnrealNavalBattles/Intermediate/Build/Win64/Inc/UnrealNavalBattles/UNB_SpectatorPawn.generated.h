@@ -13,7 +13,29 @@
 #define UNREALNAVALBATTLES_UNB_SpectatorPawn_generated_h
 
 #define AUNB_SpectatorPawn_EVENTPARMS
-#define AUNB_SpectatorPawn_RPC_WRAPPERS
+#define AUNB_SpectatorPawn_RPC_WRAPPERS \
+	DECLARE_FUNCTION(execOnStopLeftClick) \
+	{ \
+		P_FINISH; \
+		this->OnStopLeftClick(); \
+	} \
+	DECLARE_FUNCTION(execOnStartLeftClick) \
+	{ \
+		P_FINISH; \
+		this->OnStartLeftClick(); \
+	} \
+	DECLARE_FUNCTION(execOnShiftRightClick) \
+	{ \
+		P_FINISH; \
+		this->OnShiftRightClick(); \
+	} \
+	DECLARE_FUNCTION(execOnRightClick) \
+	{ \
+		P_FINISH; \
+		this->OnRightClick(); \
+	}
+
+
 #define AUNB_SpectatorPawn_CALLBACK_WRAPPERS
 #define AUNB_SpectatorPawn_INCLASS \
 	private: \
@@ -37,8 +59,6 @@ public:
 
 
 #define AUNB_SpectatorPawn_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AUNB_SpectatorPawn(const class FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) { }; \
 private: \
 	/** Private copy-constructor, should never be used */ \
 	NO_API AUNB_SpectatorPawn(const AUNB_SpectatorPawn& InCopy); \

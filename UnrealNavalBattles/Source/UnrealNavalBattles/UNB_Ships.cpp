@@ -126,6 +126,7 @@ void AUNB_Ships::ReceiveActorOnClicked()
 		//Get specator pawn to retreave it's list of selected units
 		AUNB_SpectatorPawn * specPawn = Cast<AUNB_SpectatorPawn>(gameMode->DefaultPawnClass);
 
+
 		if (NULL != specPawn)
 		{
 			specPawn->SetSelectedUnit(this);

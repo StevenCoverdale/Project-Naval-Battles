@@ -9,11 +9,22 @@
 
 
 AUNB_GameMode::AUNB_GameMode(FObjectInitializer const& ObjectInitializer) :
-	Super(ObjectInitializer)
+	Super(ObjectInitializer),
+	m_specPawn(NULL)
 {
 	HUDClass = AUNB_HUD::StaticClass();
 	GameStateClass = AUNB_GameState::StaticClass();
 	PlayerControllerClass = AUNB_PlayerController::StaticClass();
 
 	DefaultPawnClass = AUNB_SpectatorPawn::StaticClass();
+}
+
+
+AUNB_SpectatorPawn * AUNB_GameMode::GetSpecPawn()
+{
+	return m_specPawn;
+}
+void AUNB_GameMode::SetSpecPawn(AUNB_SpectatorPawn * specPawn)
+{
+	m_specPawn = specPawn;
 }

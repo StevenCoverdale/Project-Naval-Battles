@@ -16,5 +16,6 @@ class UNREALNAVALBATTLES_API AUNB_PlayerController : public APlayerController
 public:
 	AUNB_PlayerController(FObjectInitializer const& ObjectInitializer);
 	
-	
+private:
+
 };

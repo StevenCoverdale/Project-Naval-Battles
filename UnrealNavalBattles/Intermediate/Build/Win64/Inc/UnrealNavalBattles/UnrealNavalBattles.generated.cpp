@@ -42,8 +42,12 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	IMPLEMENT_CLASS(AUNB_Ships, 3130211529);
 	void AUNB_SpectatorPawn::StaticRegisterNativesAUNB_SpectatorPawn()
 	{
+		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnRightClick",(Native)&AUNB_SpectatorPawn::execOnRightClick);
+		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnShiftRightClick",(Native)&AUNB_SpectatorPawn::execOnShiftRightClick);
+		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnStartLeftClick",(Native)&AUNB_SpectatorPawn::execOnStartLeftClick);
+		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnStopLeftClick",(Native)&AUNB_SpectatorPawn::execOnStopLeftClick);
 	}
-	IMPLEMENT_CLASS(AUNB_SpectatorPawn, 1707628834);
+	IMPLEMENT_CLASS(AUNB_SpectatorPawn, 2936719836);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
@@ -75,6 +79,10 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_PlayerController();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Ships_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Ships();
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_SpectatorPawn_OnRightClick();
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_SpectatorPawn_OnShiftRightClick();
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_SpectatorPawn_OnStartLeftClick();
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_SpectatorPawn_OnStopLeftClick();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_SpectatorPawn_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_SpectatorPawn();
 	UNREALNAVALBATTLES_API class UPackage* Z_Construct_UPackage_UnrealNavalBattles();
@@ -357,6 +365,70 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 		return OuterClass;
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_Ships(Z_Construct_UClass_AUNB_Ships, TEXT("AUNB_Ships"));
+	UFunction* Z_Construct_UFunction_AUNB_SpectatorPawn_OnRightClick()
+	{
+		UClass* OuterClass=Z_Construct_UClass_AUNB_SpectatorPawn();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(OuterClass, TEXT("OnRightClick"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00080401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("UNB_SpectatorPawn.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AUNB_SpectatorPawn_OnShiftRightClick()
+	{
+		UClass* OuterClass=Z_Construct_UClass_AUNB_SpectatorPawn();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(OuterClass, TEXT("OnShiftRightClick"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00080401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("UNB_SpectatorPawn.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AUNB_SpectatorPawn_OnStartLeftClick()
+	{
+		UClass* OuterClass=Z_Construct_UClass_AUNB_SpectatorPawn();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(OuterClass, TEXT("OnStartLeftClick"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00080401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("UNB_SpectatorPawn.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AUNB_SpectatorPawn_OnStopLeftClick()
+	{
+		UClass* OuterClass=Z_Construct_UClass_AUNB_SpectatorPawn();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(OuterClass, TEXT("OnStopLeftClick"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00080401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("UNB_SpectatorPawn.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_AUNB_SpectatorPawn_NoRegister()
 	{
 		return AUNB_SpectatorPawn::StaticClass();
@@ -374,9 +446,17 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= 0x20900280;
 
+				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_SpectatorPawn_OnRightClick());
+				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_SpectatorPawn_OnShiftRightClick());
+				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_SpectatorPawn_OnStartLeftClick());
+				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_SpectatorPawn_OnStopLeftClick());
 
 				UProperty* NewProp_selectedUnits = new(OuterClass, TEXT("selectedUnits"), RF_Public|RF_Transient|RF_Native) UArrayProperty(CPP_PROPERTY_BASE(selectedUnits, AUNB_SpectatorPawn), 0x0000000000000000);
 				UProperty* NewProp_selectedUnits_Inner = new(NewProp_selectedUnits, TEXT("selectedUnits"), RF_Public|RF_Transient|RF_Native) UObjectProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000000000, Z_Construct_UClass_AActor_NoRegister());
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_SpectatorPawn_OnRightClick()); // 3557282314
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_SpectatorPawn_OnShiftRightClick()); // 349484552
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_SpectatorPawn_OnStartLeftClick()); // 1061953895
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_SpectatorPawn_OnStopLeftClick()); // 356741500
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
@@ -384,7 +464,7 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_SpectatorPawn.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_SpectatorPawn.h"));
 				MetaData->SetValue(NewProp_selectedUnits, TEXT("ModuleRelativePath"), TEXT("UNB_SpectatorPawn.h"));
-				MetaData->SetValue(NewProp_selectedUnits, TEXT("ToolTip"), TEXT("List of all possible targets for us"));
+				MetaData->SetValue(NewProp_selectedUnits, TEXT("ToolTip"), TEXT("List of selected units"));
 #endif
 			}
 		}
@@ -400,8 +480,8 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/UnrealNavalBattles")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x56E6587B;
-			Guid.B = 0x2DEF3691;
+			Guid.A = 0xD04B4034;
+			Guid.B = 0x322AED0C;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

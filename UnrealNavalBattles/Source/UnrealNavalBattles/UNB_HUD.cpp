@@ -127,15 +127,18 @@ void AUNB_HUD::DrawShipHUD()
 	if (NULL != gameMode)
 	{
 		//Get specator pawn to retreave it's list of selected units
-		AUNB_SpectatorPawn * specPawn = Cast<AUNB_SpectatorPawn>(gameMode->DefaultPawnClass);
+		AUNB_SpectatorPawn * specPawn = gameMode->GetSpecPawn();
 
 		if (NULL != specPawn)
 		{
 			//Iterate through all selected units and draw their unit HUDs
-			/*for (TActorIterator<AShips> ShipIt = specPawn->getSelectedUnits; ShipIt; ++ShipIt)
+			TArray<AActor*> selected = specPawn->getSelectedUnits();
+			for (int i = 0; i < selected.Num(); ++i)
 			{
-				DrawHealthBar(Cast<AActor>(*ShipIt), *ShipIt->GetHealth() / (float)*ShipIt->GetMaxHealth(), 18 * m_UIScale);
-			}*/
+				AUNB_Ships * ship = Cast<AUNB_Ships>(selected[i]);
+
+				DrawHealthBar(selected[i], ship->GetHealth() / (float)ship->GetMaxHealth(), 18 * m_UIScale);
+			}
 		}
 	}
 
@@ -144,13 +147,15 @@ void AUNB_HUD::DrawShipHUD()
 	/*for (FConstPawnIterator pawnIt = GetWorld()->GetPawnIterator(); pawnIt; ++pawnIt)
 	{
 	}*/
-	for (TActorIterator<AUNB_Ships> shipIt(GetWorld()); shipIt; ++shipIt)
+
+
+	/*for (TActorIterator<AUNB_Ships> shipIt(GetWorld()); shipIt; ++shipIt)
 	{
 		if ((*shipIt)->GetHealth() > 0)
 		{
 			DrawHealthBar(Cast<AActor>(*shipIt), shipIt->GetHealth() / (float)shipIt->GetMaxHealth(), 18 * m_UIScale);
 		}
-	}
+	}*/
 }
 
 
