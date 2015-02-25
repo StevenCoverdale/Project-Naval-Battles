@@ -66,47 +66,96 @@ void AUNB_SpectatorPawn::OnStartLeftClick()
 void AUNB_SpectatorPawn::OnStopLeftClick()
 {
 	FHitResult Hit(ForceInit);
-	float leftClickStopX, leftClickStopY;
-	AUNB_PlayerController * pController = Cast<AUNB_PlayerController>(Controller);
 
-	if (pController)
+	if (RayTraceMouse(&Hit))
 	{
-		FVector WorldLocation, WorldDirection;
-
-		pController->GetMousePosition(leftClickStopX, leftClickStopY);
-
-
-		if (RayTrace(&Hit, leftClickStopX, leftClickStopY))
+		if (NULL != Hit.Actor)
 		{
-			if (NULL != Hit.Actor)
+			AUNB_Ships * ship = Cast<AUNB_Ships>(Hit.GetActor());
+			
+			if (ship)
 			{
-				AUNB_Ships * ship = Cast<AUNB_Ships>(Hit.GetActor());
-
-				if (ship)
-				{
-					SetSelectedUnit(ship);
-				}
-				else
-				{
-					SetSelectedUnit(NULL);
-				}
+				SetSelectedUnit(ship);
+			}
+			else
+			{
+				SetSelectedUnit(NULL);
 			}
 		}
 	}
-
-	
 }
 
 void AUNB_SpectatorPawn::OnRightClick()
 {
+	FHitResult Hit(ForceInit);
+
+	if (RayTraceMouse(&Hit))
+	{
+		if (NULL != Hit.Actor)
+		{
+			AUNB_Ships * ship = Cast<AUNB_Ships>(Hit.GetActor());
+
+			if (ship)
+			{
+				//set target of all selected ships
+				for (int i = 0; i < selectedUnits.Num(); ++i)
+				{
+					AUNB_Ships * selectedShip = Cast<AUNB_Ships>(selectedUnits[i]);
+					if (selectedShip)
+					{
+						selectedShip->SetTarget(ship);
+					}
+				}
+			}
+			else
+			{
+				//set destination of all selected ships
+				for (int i = 0; i < selectedUnits.Num(); ++i)
+				{
+					AUNB_Ships * selectedShip = Cast<AUNB_Ships>(selectedUnits[i]);
+					if (selectedShip)
+					{
+						selectedShip->GetMouseClickLocation(Hit.Location);
+					}
+				}
+			}
+		}
+	}
 }
 
 void AUNB_SpectatorPawn::OnShiftRightClick()
 {
+	FHitResult Hit(ForceInit);
+
+	if (RayTraceMouse(&Hit))
+	{
+		if (NULL != Hit.Actor)
+		{
+			AUNB_Ships * ship = Cast<AUNB_Ships>(Hit.GetActor());
+
+			if (ship)
+			{
+				//Shift right clicked on unit
+				
+			}
+			else
+			{
+				//set destination of all selected ships
+				for (int i = 0; i < selectedUnits.Num(); ++i)
+				{
+					AUNB_Ships * selectedShip = Cast<AUNB_Ships>(selectedUnits[i]);
+					if (ship)
+					{
+						selectedShip->GetMouseClickLocationWithShift(Hit.Location);
+					}
+				}
+			}
+		}
+	}
 }
 
 
-bool AUNB_SpectatorPawn::RayTrace(FHitResult * result, float mouseX, float mouseY) const
+bool AUNB_SpectatorPawn::RayTraceMouse(FHitResult * result) const
 {
 	FVector WorldLocation, WorldDirection;
 	FVector StartTrace, TraceDir, EndTrace;

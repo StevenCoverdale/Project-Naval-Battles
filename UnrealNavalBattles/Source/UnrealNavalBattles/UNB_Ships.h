@@ -32,7 +32,10 @@ public:
 
 	UCapsuleComponent* GetCapsuleComponent();
 	
-	//Added mouse click function (Brian)
-	void ReceiveActorOnClicked() override;
+	//Removed mouse click function (Brian)
+	//void ReceiveActorOnClicked() override;
+
+	//Added for setting target
+	void SetTarget(AUNB_Ships * target);
 
 };

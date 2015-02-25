@@ -108,31 +108,8 @@ UCapsuleComponent* AUNB_Ships::GetCapsuleComponent()
 	return NULL;
 }
 
-void AUNB_Ships::ReceiveActorOnClicked()
+
+void AUNB_Ships::SetTarget(AUNB_Ships * target)
 {
-	Super::ReceiveActorOnClicked();
-
-#if DEBUG_LEVEL > 0
-	if (GEngine)
-	{
-		GEngine->AddOnScreenDebugMessage(-2, 20.0f, FColor::Red, TEXT("Sir we have been clicked!"));
-	}
-#endif
-
-	AUNB_GameMode * gameMode = Cast<AUNB_GameMode>(GetWorld()->GetAuthGameMode());
-
-	if (NULL != gameMode)
-	{
-		//Get specator pawn to retreave it's list of selected units
-		AUNB_SpectatorPawn * specPawn = Cast<AUNB_SpectatorPawn>(gameMode->DefaultPawnClass);
-
-
-		if (NULL != specPawn)
-		{
-			specPawn->SetSelectedUnit(this);
-		}
-	}
-
-
 
 }

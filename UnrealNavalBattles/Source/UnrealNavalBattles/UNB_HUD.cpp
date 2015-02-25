@@ -141,21 +141,6 @@ void AUNB_HUD::DrawShipHUD()
 			}
 		}
 	}
-
-
-	//temp code, draws HUD on all ships.
-	/*for (FConstPawnIterator pawnIt = GetWorld()->GetPawnIterator(); pawnIt; ++pawnIt)
-	{
-	}*/
-
-
-	/*for (TActorIterator<AUNB_Ships> shipIt(GetWorld()); shipIt; ++shipIt)
-	{
-		if ((*shipIt)->GetHealth() > 0)
-		{
-			DrawHealthBar(Cast<AActor>(*shipIt), shipIt->GetHealth() / (float)shipIt->GetMaxHealth(), 18 * m_UIScale);
-		}
-	}*/
 }
 
 

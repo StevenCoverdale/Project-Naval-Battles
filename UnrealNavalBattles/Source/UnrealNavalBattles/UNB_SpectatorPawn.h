@@ -36,7 +36,7 @@ protected:
 	UFUNCTION()
 	void OnShiftRightClick();
 
-	bool RayTrace(FHitResult * result, float mouseX, float mouseY) const;
+	bool RayTraceMouse(FHitResult * result) const;
 
 private:
 
