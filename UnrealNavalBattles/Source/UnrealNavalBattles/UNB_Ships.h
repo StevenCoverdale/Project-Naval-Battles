@@ -3,13 +3,14 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
+#include "TeamInterface.h"
 #include "UNB_Ships.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class UNREALNAVALBATTLES_API AUNB_Ships : public AActor
+class UNREALNAVALBATTLES_API AUNB_Ships : public AActor, public ITeamInterface
 {
 	GENERATED_BODY()
 
@@ -35,7 +36,17 @@ public:
 	//Removed mouse click function (Brian)
 	//void ReceiveActorOnClicked() override;
 
-	//Added for setting target
+	//Added for setting target (Brian)
 	void SetTarget(AUNB_Ships * target);
+
+	//Added for Team Interface (Brian)
+	virtual class UNB_Team * GetTeam() const;
+	virtual void SetTeam(class UNB_Team * team);
+	virtual bool IsOnteam(UNB_Team const* team) const;
+
+
+private:
+	//Added team (Brian)
+	class UNB_Team * m_team;
 
 };

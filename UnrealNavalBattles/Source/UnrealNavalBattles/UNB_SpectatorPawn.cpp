@@ -5,11 +5,13 @@
 #include "UNB_Ships.h"
 #include "UNB_PlayerController.h"
 #include "UNB_GameMode.h"
+#include "UNB_Team.h"
 
 #include "Components/InputComponent.h"
 
 AUNB_SpectatorPawn::AUNB_SpectatorPawn(FObjectInitializer const& ObjectInitializer) :
-	Super(ObjectInitializer)
+	Super(ObjectInitializer),
+	m_team(NULL)
 {
 
 	UWorld * world = GetWorld();
@@ -185,4 +187,19 @@ bool AUNB_SpectatorPawn::RayTraceMouse(FHitResult * result) const
 #endif
 
 	return GetWorld()->LineTraceSingle(*result, StartTrace, EndTrace, ECC_EngineTraceChannel1, TraceParams);
+}
+
+
+UNB_Team * AUNB_SpectatorPawn::GetTeam() const
+{
+	return m_team;
+}
+void AUNB_SpectatorPawn::SetTeam(UNB_Team * team)
+{
+	m_team = team;
+}
+
+bool AUNB_SpectatorPawn::IsOnteam(UNB_Team const* team) const
+{
+	return m_team == team;
 }

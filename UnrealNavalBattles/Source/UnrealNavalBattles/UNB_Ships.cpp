@@ -6,9 +6,10 @@
 #include "Components/CapsuleComponent.h"
 #include "UNB_GameMode.h"
 #include "UNB_SpectatorPawn.h"
+#include "UNB_Team.h"
 
 AUNB_Ships::AUNB_Ships(FObjectInitializer const& ObjectInitializer)
-	: Super(ObjectInitializer), _maxHealth(100), _health(_maxHealth)
+: Super(ObjectInitializer), _maxHealth(100), _health(_maxHealth), m_team(NULL)
 {
 	//ships health
 	_health = 100.0f;
@@ -112,4 +113,18 @@ UCapsuleComponent* AUNB_Ships::GetCapsuleComponent()
 void AUNB_Ships::SetTarget(AUNB_Ships * target)
 {
 
+}
+
+UNB_Team * AUNB_Ships::GetTeam() const
+{
+	return m_team;
+}
+void AUNB_Ships::SetTeam(UNB_Team * team)
+{
+	m_team = team;
+}
+
+bool AUNB_Ships::IsOnteam(UNB_Team const* team) const
+{
+	return m_team == team;
 }

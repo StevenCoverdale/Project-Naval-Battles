@@ -20,6 +20,10 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	{
 	}
 	IMPLEMENT_CLASS(AShipWeaponSystem, 1505229949);
+	void UTeamInterface::StaticRegisterNativesUTeamInterface()
+	{
+	}
+	IMPLEMENT_CLASS(UTeamInterface, 2346148470);
 	void AUNB_GameMode::StaticRegisterNativesAUNB_GameMode()
 	{
 	}
@@ -39,7 +43,7 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	void AUNB_Ships::StaticRegisterNativesAUNB_Ships()
 	{
 	}
-	IMPLEMENT_CLASS(AUNB_Ships, 3130211529);
+	IMPLEMENT_CLASS(AUNB_Ships, 4074776929);
 	void AUNB_SpectatorPawn::StaticRegisterNativesAUNB_SpectatorPawn()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnRightClick",(Native)&AUNB_SpectatorPawn::execOnRightClick);
@@ -47,7 +51,7 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnStartLeftClick",(Native)&AUNB_SpectatorPawn::execOnStartLeftClick);
 		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnStopLeftClick",(Native)&AUNB_SpectatorPawn::execOnStopLeftClick);
 	}
-	IMPLEMENT_CLASS(AUNB_SpectatorPawn, 2936719836);
+	IMPLEMENT_CLASS(AUNB_SpectatorPawn, 1807372819);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
@@ -69,6 +73,8 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeapon();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponSystem_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponSystem();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UTeamInterface_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UTeamInterface();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameMode_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameMode();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameState_NoRegister();
@@ -193,6 +199,32 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 		return OuterClass;
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AShipWeaponSystem(Z_Construct_UClass_AShipWeaponSystem, TEXT("AShipWeaponSystem"));
+	UClass* Z_Construct_UClass_UTeamInterface_NoRegister()
+	{
+		return UTeamInterface::StaticClass();
+	}
+	UClass* Z_Construct_UClass_UTeamInterface()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			UInterface::StaticClass();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = UTeamInterface::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20004081;
+
+
+				OuterClass->ClassConfigName = FName(TEXT("Engine"));
+				OuterClass->StaticLink();
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_UTeamInterface(Z_Construct_UClass_UTeamInterface, TEXT("UTeamInterface"));
 	UClass* Z_Construct_UClass_AUNB_GameMode_NoRegister()
 	{
 		return AUNB_GameMode::StaticClass();
@@ -351,6 +383,7 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 
 
 				UProperty* NewProp__health = new(OuterClass, TEXT("_health"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(_health, AUNB_Ships), 0x0000000000000005);
+				OuterClass->Interfaces.Add(FImplementedInterface(Z_Construct_UClass_UTeamInterface_NoRegister(), VTABLE_OFFSET(AUNB_Ships, ITeamInterface), false ));
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
@@ -457,6 +490,7 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_SpectatorPawn_OnShiftRightClick()); // 349484552
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_SpectatorPawn_OnStartLeftClick()); // 1061953895
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_SpectatorPawn_OnStopLeftClick()); // 356741500
+				OuterClass->Interfaces.Add(FImplementedInterface(Z_Construct_UClass_UTeamInterface_NoRegister(), VTABLE_OFFSET(AUNB_SpectatorPawn, ITeamInterface), false ));
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
@@ -480,8 +514,8 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/UnrealNavalBattles")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xD04B4034;
-			Guid.B = 0x322AED0C;
+			Guid.A = 0xA3288385;
+			Guid.B = 0xA7FFC417;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);
