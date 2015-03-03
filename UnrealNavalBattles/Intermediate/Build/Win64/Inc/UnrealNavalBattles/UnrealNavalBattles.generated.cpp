@@ -8,6 +8,26 @@
 #include "UnrealNavalBattles.h"
 #include "UnrealNavalBattles.generated.dep.h"
 void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
+class UScriptStruct* FUNB_Team::StaticStruct()
+{
+	static class UScriptStruct* Singleton = NULL;
+	if (!Singleton)
+	{
+		extern UNREALNAVALBATTLES_API class UScriptStruct* Z_Construct_UScriptStruct_FUNB_Team();
+		extern UNREALNAVALBATTLES_API uint32 Get_Z_Construct_UScriptStruct_FUNB_Team_CRC();
+		extern UNREALNAVALBATTLES_API class UPackage* Z_Construct_UPackage_UnrealNavalBattles();
+		Singleton = GetStaticStruct(Z_Construct_UScriptStruct_FUNB_Team, Z_Construct_UPackage_UnrealNavalBattles(), TEXT("UNB_Team"), sizeof(FUNB_Team), Get_Z_Construct_UScriptStruct_FUNB_Team_CRC());
+	}
+	return Singleton;
+}
+static FCompiledInDeferStruct Z_CompiledInDeferStruct_UScriptStruct_FUNB_Team(FUNB_Team::StaticStruct, TEXT("/Script/UnrealNavalBattles"));
+static struct FScriptStruct_UnrealNavalBattles_StaticRegisterNativesFUNB_Team
+{
+	FScriptStruct_UnrealNavalBattles_StaticRegisterNativesFUNB_Team()
+	{
+		UScriptStruct::DeferCppStructOps(FName(TEXT("UNB_Team")),new UScriptStruct::TCppStructOps<FUNB_Team>);
+	}
+} ScriptStruct_UnrealNavalBattles_StaticRegisterNativesFUNB_Team;
 	void AUNB_GameMode::StaticRegisterNativesAUNB_GameMode()
 	{
 	}
@@ -26,6 +46,7 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	ENGINE_API class UClass* Z_Construct_UClass_AGameState();
 	ENGINE_API class UClass* Z_Construct_UClass_AHUD();
 
+	UNREALNAVALBATTLES_API class UScriptStruct* Z_Construct_UScriptStruct_FUNB_Team();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameMode_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameMode();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameState_NoRegister();
@@ -33,6 +54,24 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_HUD_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_HUD();
 	UNREALNAVALBATTLES_API class UPackage* Z_Construct_UPackage_UnrealNavalBattles();
+	UScriptStruct* Z_Construct_UScriptStruct_FUNB_Team()
+	{
+		UPackage* Outer=Z_Construct_UPackage_UnrealNavalBattles();
+		static UScriptStruct* ReturnStruct = NULL;
+		if (!ReturnStruct)
+		{
+			ReturnStruct = new(Outer, TEXT("UNB_Team"), RF_Public|RF_Transient|RF_Native) UScriptStruct(FObjectInitializer(), NULL, new UScriptStruct::TCppStructOps<FUNB_Team>, EStructFlags(0x00000201));
+			UProperty* NewProp_m_team = new(ReturnStruct, TEXT("m_team"), RF_Public|RF_Transient|RF_Native) UStrProperty(CPP_PROPERTY_BASE(m_team, FUNB_Team), 0x0000000000000000);
+			ReturnStruct->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnStruct->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnStruct, TEXT("ModuleRelativePath"), TEXT("UNB_Team.h"));
+			MetaData->SetValue(NewProp_m_team, TEXT("ModuleRelativePath"), TEXT("UNB_Team.h"));
+#endif
+		}
+		return ReturnStruct;
+	}
+	uint32 Get_Z_Construct_UScriptStruct_FUNB_Team_CRC() { return 2069054488U; }
 	UClass* Z_Construct_UClass_AUNB_GameMode_NoRegister()
 	{
 		return AUNB_GameMode::StaticClass();
@@ -139,8 +178,8 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/UnrealNavalBattles")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x331351E0;
-			Guid.B = 0x025ED30F;
+			Guid.A = 0x1A290614;
+			Guid.B = 0xB20FA984;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

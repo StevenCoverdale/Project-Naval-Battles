@@ -1,0 +1,13 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+#include "UnrealNavalBattles.h"
+#include "UNB_Team.h"
+
+UNB_Team::UNB_Team()
+{
+}
+
+UNB_Team::~UNB_Team()
+{
+}
+

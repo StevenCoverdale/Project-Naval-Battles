@@ -54,6 +54,8 @@
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_GameState.h" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_HUD.cpp" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_HUD.h" />
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_Team.cpp" />
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_Team.h" />
     <None Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.Build.cs" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.cpp" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.h" />
