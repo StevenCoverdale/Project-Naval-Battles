@@ -74,9 +74,9 @@ void AUNB_Ships::Destination(float delta)
 		SetActorLocation(position + (direction * 100 * delta), true);
 		
 		
-		if (click.X - position.X >= 1)
+		if (click.X - position.X <= 5 &&  click.X - position.X  >= -5)
 		{
-			if (click.Y - position.Y >= 1)
+			if (click.Y - position.Y <= 5 && click.Y - position.Y  >= -5)
 			{
 				Locations.RemoveAt(0);
 			}
