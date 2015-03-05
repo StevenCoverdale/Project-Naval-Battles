@@ -1,47 +1,33 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
-#include "UNB_Team.generated.h"
+
 
 /**
  * 
  */
-USTRUCT()
-struct UNREALNAVALBATTLES_API FUNB_Team
-{
-	GENERATED_USTRUCT_BODY()
-		UPROPERTY()
+typedef unsigned short tTeamID;
 
-	FString m_team;
-	FString m_shipType;
-
-	FString checkTeam(FString team)
-	{
-		m_team = team;
-
-		return team;
-	}
-
-	FString checkShip(FString shipType)
-	{
-		m_shipType = shipType;
-
-		return shipType;
-	}
-
-	FUNB_Team()
-	{
-		m_team;
-		m_shipType;
-	}
-};
-
+/**
+ * 
+ */
 class UNREALNAVALBATTLES_API UNB_Team
 {
+	friend bool operator==(UNB_Team const& rhs, UNB_Team const& lhs);
+	friend bool operator!=(UNB_Team const& rhs, UNB_Team const& lhs);
+
 public:
-	UNB_Team();
+	UNB_Team(tTeamID id);
 	~UNB_Team();
-private:
+
+	tTeamID GetID() const;
 
 protected:
+	bool Equals(UNB_Team const& other) const;
+
+private:
+	const tTeamID m_id;
 };
+
+bool operator==(UNB_Team const& rhs, UNB_Team const& lhs);
+bool operator!=(UNB_Team const& rhs, UNB_Team const& lhs);

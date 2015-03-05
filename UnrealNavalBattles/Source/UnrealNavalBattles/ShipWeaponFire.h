@@ -21,25 +21,11 @@ public:
 
 	UFUNCTION(Server, WithValidation, Reliable)
 	void Fire();
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Health)
-	int32 _health;
-	int32 const _maxHealth;
-	TArray<FVector> Locations;
 
 
 	virtual void AShipWeaponFire::Tick(float delta) override;
-	int GetHealth();
-	int GetMaxHealth();
-
-	void GetMouseClickLocation(FVector loc);
-	void GetMouseClickLocationWithShift(FVector loc);
-	void Destination(float delta);
 
 	UCapsuleComponent* GetCapsuleComponent();
-	
-	//Removed mouse click function (Brian)
-	//void ReceiveActorOnClicked() override;
 
 	//Added for setting target
 	void SetTarget(AShipWeaponFire * target);

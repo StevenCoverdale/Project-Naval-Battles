@@ -20,8 +20,8 @@
 #ifndef UNREALNAVALBATTLES_ShipWeaponSystem_generated_h
 	#include "ShipWeaponSystem.h"
 #endif
-#ifndef UNREALNAVALBATTLES_TemporaryUHTHeader_UNB_Team_generated_h
-	#include "UNB_Team.h"
+#ifndef UNREALNAVALBATTLES_TeamInterface_generated_h
+	#include "TeamInterface.h"
 #endif
 #ifndef UNREALNAVALBATTLES_UNB_GameMode_generated_h
 	#include "UNB_GameMode.h"

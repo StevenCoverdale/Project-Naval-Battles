@@ -33,7 +33,7 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AShipWeaponFire::StaticClass(),"Fire",(Native)&AShipWeaponFire::execFire);
 	}
-	IMPLEMENT_CLASS(AShipWeaponFire, 669191072);
+	IMPLEMENT_CLASS(AShipWeaponFire, 1982695575);
 	void AShipWeaponFire::Event_Fire()
 	{
 		ProcessEvent(FindFunctionChecked(UNREALNAVALBATTLES_Event_Fire),NULL);
@@ -46,26 +46,10 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	{
 	}
 	IMPLEMENT_CLASS(AShipWeaponSystem, 1505229949);
-class UScriptStruct* FUNB_Team::StaticStruct()
-{
-	static class UScriptStruct* Singleton = NULL;
-	if (!Singleton)
+	void UTeamInterface::StaticRegisterNativesUTeamInterface()
 	{
-		extern UNREALNAVALBATTLES_API class UScriptStruct* Z_Construct_UScriptStruct_FUNB_Team();
-		extern UNREALNAVALBATTLES_API uint32 Get_Z_Construct_UScriptStruct_FUNB_Team_CRC();
-		extern UNREALNAVALBATTLES_API class UPackage* Z_Construct_UPackage_UnrealNavalBattles();
-		Singleton = GetStaticStruct(Z_Construct_UScriptStruct_FUNB_Team, Z_Construct_UPackage_UnrealNavalBattles(), TEXT("UNB_Team"), sizeof(FUNB_Team), Get_Z_Construct_UScriptStruct_FUNB_Team_CRC());
 	}
-	return Singleton;
-}
-static FCompiledInDeferStruct Z_CompiledInDeferStruct_UScriptStruct_FUNB_Team(FUNB_Team::StaticStruct, TEXT("/Script/UnrealNavalBattles"));
-static struct FScriptStruct_UnrealNavalBattles_StaticRegisterNativesFUNB_Team
-{
-	FScriptStruct_UnrealNavalBattles_StaticRegisterNativesFUNB_Team()
-	{
-		UScriptStruct::DeferCppStructOps(FName(TEXT("UNB_Team")),new UScriptStruct::TCppStructOps<FUNB_Team>);
-	}
-} ScriptStruct_UnrealNavalBattles_StaticRegisterNativesFUNB_Team;
+	IMPLEMENT_CLASS(UTeamInterface, 2346148470);
 	void AUNB_GameMode::StaticRegisterNativesAUNB_GameMode()
 	{
 	}
@@ -125,7 +109,8 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponFire();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponSystem_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponSystem();
-	UNREALNAVALBATTLES_API class UScriptStruct* Z_Construct_UScriptStruct_FUNB_Team();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UTeamInterface_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UTeamInterface();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameMode_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameMode();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameState_NoRegister();
@@ -342,7 +327,6 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 				OuterClass->LinkChild(Z_Construct_UFunction_AShipWeaponFire_Event_Fire());
 				OuterClass->LinkChild(Z_Construct_UFunction_AShipWeaponFire_Fire());
 
-				UProperty* NewProp__health = new(OuterClass, TEXT("_health"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(_health, AShipWeaponFire), 0x0000000000000005);
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AShipWeaponFire_Event_Fire()); // 1714265526
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AShipWeaponFire_Fire()); // 3991725523
 				OuterClass->StaticLink();
@@ -350,8 +334,6 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("ShipWeaponFire.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("ShipWeaponFire.h"));
-				MetaData->SetValue(NewProp__health, TEXT("Category"), TEXT("Health"));
-				MetaData->SetValue(NewProp__health, TEXT("ModuleRelativePath"), TEXT("ShipWeaponFire.h"));
 #endif
 			}
 		}
@@ -390,24 +372,32 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 		return OuterClass;
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AShipWeaponSystem(Z_Construct_UClass_AShipWeaponSystem, TEXT("AShipWeaponSystem"));
-	UScriptStruct* Z_Construct_UScriptStruct_FUNB_Team()
+	UClass* Z_Construct_UClass_UTeamInterface_NoRegister()
 	{
-		UPackage* Outer=Z_Construct_UPackage_UnrealNavalBattles();
-		static UScriptStruct* ReturnStruct = NULL;
-		if (!ReturnStruct)
-		{
-			ReturnStruct = new(Outer, TEXT("UNB_Team"), RF_Public|RF_Transient|RF_Native) UScriptStruct(FObjectInitializer(), NULL, new UScriptStruct::TCppStructOps<FUNB_Team>, EStructFlags(0x00000201));
-			UProperty* NewProp_m_team = new(ReturnStruct, TEXT("m_team"), RF_Public|RF_Transient|RF_Native) UStrProperty(CPP_PROPERTY_BASE(m_team, FUNB_Team), 0x0000000000000000);
-			ReturnStruct->StaticLink();
-#if WITH_METADATA
-			UMetaData* MetaData = ReturnStruct->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnStruct, TEXT("ModuleRelativePath"), TEXT("UNB_Team.h"));
-			MetaData->SetValue(NewProp_m_team, TEXT("ModuleRelativePath"), TEXT("UNB_Team.h"));
-#endif
-		}
-		return ReturnStruct;
+		return UTeamInterface::StaticClass();
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FUNB_Team_CRC() { return 2069054488U; }
+	UClass* Z_Construct_UClass_UTeamInterface()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			UInterface::StaticClass();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = UTeamInterface::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20004081;
+
+
+				OuterClass->ClassConfigName = FName(TEXT("Engine"));
+				OuterClass->StaticLink();
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_UTeamInterface(Z_Construct_UClass_UTeamInterface, TEXT("UTeamInterface"));
 	UClass* Z_Construct_UClass_AUNB_GameMode_NoRegister()
 	{
 		return AUNB_GameMode::StaticClass();
@@ -695,8 +685,8 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/UnrealNavalBattles")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x98B8D03F;
-			Guid.B = 0x0018BC57;
+			Guid.A = 0xBA82C147;
+			Guid.B = 0xF741D3C4;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);
