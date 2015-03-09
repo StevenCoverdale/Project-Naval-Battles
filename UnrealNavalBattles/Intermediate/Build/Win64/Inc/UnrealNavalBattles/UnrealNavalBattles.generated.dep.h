@@ -8,9 +8,6 @@
 #ifndef UNREALNAVALBATTLES_ShipBullet_generated_h
 	#include "ShipBullet.h"
 #endif
-#ifndef UNREALNAVALBATTLES_ShipTest_generated_h
-	#include "ShipTest.h"
-#endif
 #ifndef UNREALNAVALBATTLES_ShipWeapon_generated_h
 	#include "ShipWeapon.h"
 #endif

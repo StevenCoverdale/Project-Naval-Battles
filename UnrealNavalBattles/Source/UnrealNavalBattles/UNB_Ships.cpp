@@ -12,7 +12,7 @@ AUNB_Ships::AUNB_Ships(FObjectInitializer const& ObjectInitializer)
 {
 	//ships health
 	_health = 100.0f;
-	Locations.Add(FVector(600,0,0));
+
 	// Tell the commander this ship is on route
 	if (GEngine)
 	{

@@ -12,19 +12,6 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	{
 	}
 	IMPLEMENT_CLASS(AShipBullet, 675723691);
-	void AShipTest::StaticRegisterNativesAShipTest()
-	{
-		FNativeFunctionRegistrar::RegisterFunction(AShipTest::StaticClass(),"Fire",(Native)&AShipTest::execFire);
-	}
-	IMPLEMENT_CLASS(AShipTest, 1010696795);
-	void AShipTest::Event_Fire()
-	{
-		ProcessEvent(FindFunctionChecked(UNREALNAVALBATTLES_Event_Fire),NULL);
-	}
-	void AShipTest::Fire()
-	{
-		ProcessEvent(FindFunctionChecked(UNREALNAVALBATTLES_Fire),NULL);
-	}
 	void AShipWeapon::StaticRegisterNativesAShipWeapon()
 	{
 	}
@@ -97,10 +84,6 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipBullet_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipBullet();
-	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AShipTest_Event_Fire();
-	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AShipTest_Fire();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipTest_NoRegister();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipTest();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeapon_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeapon();
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AShipWeaponFire_Event_Fire();
@@ -170,76 +153,6 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 		return OuterClass;
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AShipBullet(Z_Construct_UClass_AShipBullet, TEXT("AShipBullet"));
-	UFunction* Z_Construct_UFunction_AShipTest_Event_Fire()
-	{
-		UClass* OuterClass=Z_Construct_UClass_AShipTest();
-		static UFunction* ReturnFunction = NULL;
-		if (!ReturnFunction)
-		{
-			ReturnFunction = new(OuterClass, TEXT("Event_Fire"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x08020800, 65535);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
-#if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UNBEvent"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("ShipTest.h"));
-#endif
-		}
-		return ReturnFunction;
-	}
-	UFunction* Z_Construct_UFunction_AShipTest_Fire()
-	{
-		UClass* OuterClass=Z_Construct_UClass_AShipTest();
-		static UFunction* ReturnFunction = NULL;
-		if (!ReturnFunction)
-		{
-			ReturnFunction = new(OuterClass, TEXT("Fire"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x80220CC0, 65535);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
-#if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("ShipTest.h"));
-#endif
-		}
-		return ReturnFunction;
-	}
-	UClass* Z_Construct_UClass_AShipTest_NoRegister()
-	{
-		return AShipTest::StaticClass();
-	}
-	UClass* Z_Construct_UClass_AShipTest()
-	{
-		static UClass* OuterClass = NULL;
-		if (!OuterClass)
-		{
-			Z_Construct_UClass_AActor();
-			Z_Construct_UPackage_UnrealNavalBattles();
-			OuterClass = AShipTest::StaticClass();
-			if (!(OuterClass->ClassFlags & CLASS_Constructed))
-			{
-				UObjectForceRegistration(OuterClass);
-				OuterClass->ClassFlags |= 0x20900080;
-
-				OuterClass->LinkChild(Z_Construct_UFunction_AShipTest_Event_Fire());
-				OuterClass->LinkChild(Z_Construct_UFunction_AShipTest_Fire());
-
-				UProperty* NewProp__health = new(OuterClass, TEXT("_health"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(_health, AShipTest), 0x0000000000000005);
-				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AShipTest_Event_Fire()); // 3339161099
-				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AShipTest_Fire()); // 2573834965
-				OuterClass->StaticLink();
-#if WITH_METADATA
-				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("ShipTest.h"));
-				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("ShipTest.h"));
-				MetaData->SetValue(NewProp__health, TEXT("Category"), TEXT("Health"));
-				MetaData->SetValue(NewProp__health, TEXT("ModuleRelativePath"), TEXT("ShipTest.h"));
-#endif
-			}
-		}
-		check(OuterClass->GetClass());
-		return OuterClass;
-	}
-	static FCompiledInDefer Z_CompiledInDefer_UClass_AShipTest(Z_Construct_UClass_AShipTest, TEXT("AShipTest"));
 	UClass* Z_Construct_UClass_AShipWeapon_NoRegister()
 	{
 		return AShipWeapon::StaticClass();
@@ -685,8 +598,8 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/UnrealNavalBattles")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xBA82C147;
-			Guid.B = 0xF741D3C4;
+			Guid.A = 0xF040339B;
+			Guid.B = 0x8C4D86CD;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

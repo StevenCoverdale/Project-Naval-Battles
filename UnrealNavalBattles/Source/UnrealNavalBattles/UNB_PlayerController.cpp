@@ -15,6 +15,7 @@
 AUNB_PlayerController::AUNB_PlayerController(FObjectInitializer const& ObjectInitializer) :
 	Super(ObjectInitializer)
 {
+	bShowMouseCursor = true;
 	bEnableClickEvents = true;
 
 #if DEBUG_LEVEL > 0
