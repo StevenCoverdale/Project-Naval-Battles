@@ -10,7 +10,7 @@
  * 
  */
 UCLASS()
-class UNREALNAVALBATTLES_API AUNB_Ships : public APawn
+class UNREALNAVALBATTLES_API AUNB_Ships : public APawn, public ITeamInterface
 {
 	GENERATED_BODY()
 

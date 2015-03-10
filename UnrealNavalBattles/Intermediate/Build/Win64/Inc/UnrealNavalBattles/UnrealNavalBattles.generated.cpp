@@ -56,7 +56,7 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	void AUNB_Ships::StaticRegisterNativesAUNB_Ships()
 	{
 	}
-	IMPLEMENT_CLASS(AUNB_Ships, 676063826);
+	IMPLEMENT_CLASS(AUNB_Ships, 3484006866);
 	void AUNB_SpectatorPawn::StaticRegisterNativesAUNB_SpectatorPawn()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnRightClick",(Native)&AUNB_SpectatorPawn::execOnRightClick);
@@ -469,6 +469,7 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 
 
 				UProperty* NewProp__health = new(OuterClass, TEXT("_health"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(_health, AUNB_Ships), 0x0000000000000005);
+				OuterClass->Interfaces.Add(FImplementedInterface(Z_Construct_UClass_UTeamInterface_NoRegister(), VTABLE_OFFSET(AUNB_Ships, ITeamInterface), false ));
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
@@ -599,7 +600,7 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/UnrealNavalBattles")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x854AE2D2;
+			Guid.A = 0x040F6A3D;
 			Guid.B = 0x8C4D86CD;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
