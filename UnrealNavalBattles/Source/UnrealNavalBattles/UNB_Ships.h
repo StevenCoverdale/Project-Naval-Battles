@@ -9,7 +9,7 @@
  * 
  */
 UCLASS()
-class UNREALNAVALBATTLES_API AUNB_Ships : public AActor
+class UNREALNAVALBATTLES_API AUNB_Ships : public APawn
 {
 	GENERATED_BODY()
 
@@ -37,5 +37,12 @@ public:
 
 	//Added for setting target
 	void SetTarget(AUNB_Ships * target);
+
+	
+	virtual class UNB_Team * GetTeam() const;
+	virtual void SetTeam(class UNB_Team * team);
+	virtual bool IsOnteam(UNB_Team const* team) const;
+private:
+	class UNB_Team * m_team;
 
 };

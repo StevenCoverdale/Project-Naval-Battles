@@ -113,3 +113,17 @@ void AUNB_Ships::SetTarget(AUNB_Ships * target)
 {
 
 }
+
+UNB_Team * AUNB_Ships::GetTeam() const
+{
+	return m_team;
+}
+void AUNB_Ships::SetTeam(UNB_Team * team)
+{
+	m_team = team;
+}
+
+bool AUNB_Ships::IsOnteam(UNB_Team const* team) const
+{
+	return m_team == team;
+}
