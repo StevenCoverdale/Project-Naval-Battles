@@ -5,6 +5,7 @@
 #include "UNB_Ships.h"
 #include "UNB_PlayerController.h"
 #include "UNB_GameMode.h"
+#include "UNB_Team.h"
 
 #include "Components/InputComponent.h"
 

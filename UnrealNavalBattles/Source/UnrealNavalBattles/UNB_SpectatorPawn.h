@@ -3,6 +3,7 @@
 #pragma once
 
 #include "GameFramework/Pawn.h"
+#include "TeamInterface.h"
 #include "UNB_SpectatorPawn.generated.h"
 
 /**
