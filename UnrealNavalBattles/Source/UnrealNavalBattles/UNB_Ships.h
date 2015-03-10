@@ -3,6 +3,7 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
+#include "TeamInterface.h"
 #include "UNB_Ships.generated.h"
 
 /**
