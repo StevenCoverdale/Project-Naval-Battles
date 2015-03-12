@@ -136,7 +136,6 @@ void AUNB_HUD::DrawShipHUD()
 			for (int i = 0; i < selected.Num(); ++i)
 			{
 				AUNB_Ships * ship = Cast<AUNB_Ships>(selected[i]);
-
 				DrawHealthBar(selected[i], ship->GetHealth() / (float)ship->GetMaxHealth(), 18 * m_UIScale);
 			}
 		}

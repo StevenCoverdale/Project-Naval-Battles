@@ -26,6 +26,7 @@ public:
 	virtual void AUNB_Ships::Tick(float delta) override;
 	int GetHealth();
 	int GetMaxHealth();
+	void Damage(int damage);
 
 	void GetMouseClickLocation(FVector loc);
 	void GetMouseClickLocationWithShift(FVector loc);

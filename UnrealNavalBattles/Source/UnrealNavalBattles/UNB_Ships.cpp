@@ -104,6 +104,19 @@ int AUNB_Ships::GetMaxHealth()
 {
 	return _maxHealth;
 }
+void AUNB_Ships::Damage(int damage)
+{
+	if(_health >= 0)
+	{
+		_health -= damage;
+	}
+	else
+	{
+		Destroy();
+	}
+
+
+}
 UCapsuleComponent* AUNB_Ships::GetCapsuleComponent()
 {
 	return NULL;
