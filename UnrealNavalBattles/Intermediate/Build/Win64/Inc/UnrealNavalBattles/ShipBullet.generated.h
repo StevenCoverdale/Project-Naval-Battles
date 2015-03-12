@@ -13,7 +13,15 @@
 #define UNREALNAVALBATTLES_ShipBullet_generated_h
 
 #define AShipBullet_EVENTPARMS
-#define AShipBullet_RPC_WRAPPERS
+#define AShipBullet_RPC_WRAPPERS \
+	DECLARE_FUNCTION(execOnOverlap) \
+	{ \
+		P_GET_OBJECT(AActor,OtherActor); \
+		P_FINISH; \
+		this->OnOverlap(OtherActor); \
+	}
+
+
 #define AShipBullet_CALLBACK_WRAPPERS
 #define AShipBullet_INCLASS \
 	private: \

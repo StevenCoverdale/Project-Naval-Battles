@@ -19,6 +19,12 @@ AShipBullet::AShipBullet(const class FPostConstructInitializeProperties& PCIP)
 	MeshComponent = PCIP.CreateDefaultSubobject<UStaticMeshComponent>
 		(this, TEXT("MeshComponent"));
 	MeshComponent->AttachTo(RootComponent);
+
+	OnActorBeginOverlap.AddDynamic(this, &AShipBullet::OnOverlap);
+}
+void AShipBullet::OnOverlap(AActor* OtherActor)
+{
+	GEngine->AddOnScreenDebugMessage(-3, 2.0f, FColor::Green, TEXT("Collision Detection!!!"));
 }
 
 
