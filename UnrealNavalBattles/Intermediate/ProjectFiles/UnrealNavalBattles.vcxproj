@@ -48,6 +48,8 @@
     <None Include="..\..\Source\UnrealNavalBattlesEditor.Target.cs" />
     <None Include="..\..\Config\DefaultEditor.ini" />
     <None Include="..\..\Config\DefaultEngine.ini" />
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\MyClass.cpp" />
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\MyClass.h" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_GameMode.cpp" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_GameMode.h" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_GameState.cpp" />
@@ -56,6 +58,8 @@
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_HUD.h" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_Team.cpp" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_Team.h" />
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_Timer.cpp" />
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_Timer.h" />
     <None Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.Build.cs" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.cpp" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.h" />
