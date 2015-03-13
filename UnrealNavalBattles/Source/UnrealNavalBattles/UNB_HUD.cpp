@@ -182,7 +182,7 @@ void AUNB_HUD::DrawHealthBar(AActor * actor, float percent, int32 barHeight, int
 	/*This code checks the team of the actor and displays the appropreate health bar*/
 	//AStrategyPlayerController* MyPC = GetPlayerController();
 	//IStrategyTeamInterface* ActorTeam = Cast<IStrategyTeamInterface>(ForActor);
-	UTexture2D* HealthBarTexture = EnemyTeamHPTexture;
+	UTexture2D* HealthBarTexture = PlayerTeamHPTexture;
 
 	/*if (ActorTeam != NULL && MyPC != NULL && ActorTeam->GetTeamNum() == MyPC->GetTeamNum())
 	{

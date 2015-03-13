@@ -19,6 +19,12 @@
 		P_GET_OBJECT(AActor,OtherActor); \
 		P_FINISH; \
 		this->OnOverlap(OtherActor); \
+	} \
+	DECLARE_FUNCTION(execOnEndOverlap) \
+	{ \
+		P_GET_OBJECT(AActor,OtherActor); \
+		P_FINISH; \
+		this->OnEndOverlap(OtherActor); \
 	}
 
 

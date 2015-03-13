@@ -10,9 +10,10 @@
 void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	void AShipBullet::StaticRegisterNativesAShipBullet()
 	{
+		FNativeFunctionRegistrar::RegisterFunction(AShipBullet::StaticClass(),"OnEndOverlap",(Native)&AShipBullet::execOnEndOverlap);
 		FNativeFunctionRegistrar::RegisterFunction(AShipBullet::StaticClass(),"OnOverlap",(Native)&AShipBullet::execOnOverlap);
 	}
-	IMPLEMENT_CLASS(AShipBullet, 3891494369);
+	IMPLEMENT_CLASS(AShipBullet, 233045202);
 	void AShipWeapon::StaticRegisterNativesAShipWeapon()
 	{
 	}
@@ -83,6 +84,7 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 	ENGINE_API class UClass* Z_Construct_UClass_APlayerController();
 	ENGINE_API class UClass* Z_Construct_UClass_ASpectatorPawn();
 
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AShipBullet_OnEndOverlap();
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AShipBullet_OnOverlap();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipBullet_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipBullet();
@@ -113,6 +115,28 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_SpectatorPawn_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_SpectatorPawn();
 	UNREALNAVALBATTLES_API class UPackage* Z_Construct_UPackage_UnrealNavalBattles();
+	UFunction* Z_Construct_UFunction_AShipBullet_OnEndOverlap()
+	{
+		struct ShipBullet_eventOnEndOverlap_Parms
+		{
+			class AActor* OtherActor;
+		};
+		UClass* OuterClass=Z_Construct_UClass_AShipBullet();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(OuterClass, TEXT("OnEndOverlap"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535, sizeof(ShipBullet_eventOnEndOverlap_Parms));
+			UProperty* NewProp_OtherActor = new(ReturnFunction, TEXT("OtherActor"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherActor, ShipBullet_eventOnEndOverlap_Parms), 0x0000000000000080, Z_Construct_UClass_AActor_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("ShipBullet.h"));
+			MetaData->SetValue(NewProp_OtherActor, TEXT("ModuleRelativePath"), TEXT("ShipBullet.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UFunction* Z_Construct_UFunction_AShipBullet_OnOverlap()
 	{
 		struct ShipBullet_eventOnOverlap_Parms
@@ -152,11 +176,13 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= 0x20900080;
 
+				OuterClass->LinkChild(Z_Construct_UFunction_AShipBullet_OnEndOverlap());
 				OuterClass->LinkChild(Z_Construct_UFunction_AShipBullet_OnOverlap());
 
 				UProperty* NewProp_MeshComponent = new(OuterClass, TEXT("MeshComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(MeshComponent, AShipBullet), 0x00000000004a001d, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 				UProperty* NewProp_MovementComponent = new(OuterClass, TEXT("MovementComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(MovementComponent, AShipBullet), 0x00000000004a001d, Z_Construct_UClass_UProjectileMovementComponent_NoRegister());
 				UProperty* NewProp_ColliderComponent = new(OuterClass, TEXT("ColliderComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ColliderComponent, AShipBullet), 0x00000000004a001d, Z_Construct_UClass_USphereComponent_NoRegister());
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AShipBullet_OnEndOverlap()); // 3802347567
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AShipBullet_OnOverlap()); // 1234715262
 				OuterClass->StaticLink();
 #if WITH_METADATA
@@ -626,8 +652,8 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/UnrealNavalBattles")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x24D68A68;
-			Guid.B = 0x95ED89C7;
+			Guid.A = 0xC334E757;
+			Guid.B = 0x9DD4FB1C;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

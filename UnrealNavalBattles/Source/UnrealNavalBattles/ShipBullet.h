@@ -23,7 +23,12 @@ class UNREALNAVALBATTLES_API AShipBullet : public AActor
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = Rendering)
 		TSubobjectPtr<UStaticMeshComponent>MeshComponent;
 
+	bool isSpawning;
+
 	UFUNCTION()
 	void OnOverlap(AActor* OtherActor);
+
+	UFUNCTION()
+	void OnEndOverlap(AActor* OtherActor);
 	
 };
