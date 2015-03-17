@@ -16,6 +16,9 @@ class UNREALNAVALBATTLES_API AShipWeaponFire : public AActor
 	
 		AShipWeaponFire(const FObjectInitializer& ObjectInitializer);
 public:
+	float weaponFireTime;
+	float weaponReloadTime;
+
 	UFUNCTION(BlueprintImplementableEvent, Category = UNBEvent)
 	void Event_Fire();
 
@@ -29,4 +32,6 @@ public:
 
 	//Added for setting target
 	void SetTarget(AShipWeaponFire * target);
+
+	
 };

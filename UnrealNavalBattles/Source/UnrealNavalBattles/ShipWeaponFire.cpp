@@ -25,8 +25,18 @@ void AShipWeaponFire::Fire_Implementation()
 
 void AShipWeaponFire::Tick(float delta)
 {
+	weaponReloadTime = 3;
 	Super::Tick(delta);
-	Event_Fire();
+	if (weaponFireTime > weaponReloadTime)
+	{
+		Event_Fire();
+		weaponFireTime = 0;
+	}
+	else
+	{
+		weaponFireTime = weaponFireTime + delta;
+	}
+	
 }
 
 UCapsuleComponent* AShipWeaponFire::GetCapsuleComponent()
