@@ -25,3 +25,7 @@ AUNB_PlayerController::AUNB_PlayerController(FObjectInitializer const& ObjectIni
 	}
 #endif
 }
+UNB_Team * AUNB_PlayerController::GetTeam() const
+{
+	return m_team;
+}

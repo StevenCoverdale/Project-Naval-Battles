@@ -7,6 +7,7 @@
 #include "UNB_GameState.h"
 #include "UNB_Ships.h"
 #include "UNB_SpectatorPawn.h"
+#include "UNB_PlayerController.h"
 #include "Public/EngineUtils.h"
 
 /********************************************************************************\
@@ -180,14 +181,16 @@ void AUNB_HUD::DrawHealthBar(AActor * actor, float percent, int32 barHeight, int
 
 
 	/*This code checks the team of the actor and displays the appropreate health bar*/
-	//AStrategyPlayerController* MyPC = GetPlayerController();
-	//IStrategyTeamInterface* ActorTeam = Cast<IStrategyTeamInterface>(ForActor);
-	UTexture2D* HealthBarTexture = PlayerTeamHPTexture;
+	AUNB_PlayerController* MyPC = GetPlayerController();	ITeamInterface* ActorTeam = Cast<ITeamInterface>(actor);
+	UTexture2D* HealthBarTexture = EnemyTeamHPTexture;  
 
-	/*if (ActorTeam != NULL && MyPC != NULL && ActorTeam->GetTeamNum() == MyPC->GetTeamNum())
+	if (ActorTeam != NULL && MyPC != NULL && ActorTeam->GetTeam() == MyPC->GetTeam())
 	{
 		HealthBarTexture = PlayerTeamHPTexture;
-	}*/
+	}
+
+
+	
 
 
 	float X = centre2D.X - healthBarLength / 2;
@@ -207,4 +210,8 @@ void AUNB_HUD::DrawHealthBar(AActor * actor, float percent, int32 barHeight, int
 	TileItem.Size = FVector2D(healthBarLength * (1.0f - percent), barHeight);
 	TileItem.SetColor(FLinearColor(0.5f, 0.5f, 0.5f, 0.5f));
 	Canvas->DrawItem(TileItem);
+}
+AUNB_PlayerController* AUNB_HUD::GetPlayerController() const
+{
+	return Cast<AUNB_PlayerController>(PlayerOwner);
 }

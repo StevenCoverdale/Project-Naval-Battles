@@ -15,7 +15,11 @@ class UNREALNAVALBATTLES_API AUNB_PlayerController : public APlayerController
 	
 public:
 	AUNB_PlayerController(FObjectInitializer const& ObjectInitializer);
+
+	// Begin StrategyTeamInterface interface	
+	virtual class UNB_Team * GetTeam() const;
+	// End StrategyTeamInterface interface
 	
 private:
-
+	class UNB_Team * m_team;
 };

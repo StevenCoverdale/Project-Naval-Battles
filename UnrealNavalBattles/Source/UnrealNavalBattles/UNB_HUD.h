@@ -46,4 +46,7 @@ private:
 	/** enemy team health bar texture */
 	UPROPERTY()
 	class UTexture2D * EnemyTeamHPTexture;
+
+	/** gets player controller */
+	class AUNB_PlayerController* GetPlayerController() const;
 };
