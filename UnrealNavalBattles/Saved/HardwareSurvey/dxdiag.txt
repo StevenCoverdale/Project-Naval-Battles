@@ -1,7 +1,7 @@
 ------------------
 System Information
 ------------------
-Time of this report: 3/10/2015, 15:13:42
+Time of this report: 3/24/2015, 12:44:13
        Machine name: C401IT32
    Operating System: Windows 7 Enterprise 64-bit (6.1, Build 7601) Service Pack 1 (7601.win7sp1_gdr.140303-2144)
            Language: English (Regional Setting: English)
@@ -11,7 +11,7 @@ System Manufacturer: Alienware
           Processor: Intel(R) Core(TM) i7 CPU         930  @ 2.80GHz (8 CPUs), ~2.8GHz
              Memory: 6144MB RAM
 Available OS Memory: 4086MB RAM
-          Page File: 5514MB used, 2657MB available
+          Page File: 5409MB used, 2762MB available
         Windows Dir: C:\Windows
     DirectX Version: DirectX 11
 DX Setup Parameters: Not found
@@ -303,7 +303,7 @@ PS/2 Devices
 Disk & DVD/CD-ROM Drives
 ------------------------
       Drive: C:
- Free Space: 60.8 GB
+ Free Space: 62.7 GB
 Total Space: 242.7 GB
 File System: NTFS
       Model: OCZ-VECTOR
