@@ -25,10 +25,14 @@ class UNREALNAVALBATTLES_API AShipBullet : public AActor
 
 	bool isSpawning;
 
+	UParticleSystem* Explosion;
+
 	UFUNCTION()
 	void OnOverlap(AActor* OtherActor);
 
 	UFUNCTION()
 	void OnEndOverlap(AActor* OtherActor);
 	
+	UFUNCTION(BlueprintCallable, Category=Particles, Meta=(DeprecatedFunction))
+	virtual void SetTemplate(class UParticleSystem * NewTemplate);
 };

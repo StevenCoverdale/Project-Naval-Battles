@@ -14,6 +14,12 @@
 
 #define AShipBullet_EVENTPARMS
 #define AShipBullet_RPC_WRAPPERS \
+	DECLARE_FUNCTION(execSetTemplate) \
+	{ \
+		P_GET_OBJECT(UParticleSystem,NewTemplate); \
+		P_FINISH; \
+		this->SetTemplate(NewTemplate); \
+	} \
 	DECLARE_FUNCTION(execOnOverlap) \
 	{ \
 		P_GET_OBJECT(AActor,OtherActor); \
