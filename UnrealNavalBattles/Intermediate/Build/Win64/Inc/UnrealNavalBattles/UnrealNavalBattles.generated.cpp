@@ -39,6 +39,19 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	{
 	}
 	IMPLEMENT_CLASS(UTeamInterface, 2346148470);
+	void ATorpedoWeaponFire::StaticRegisterNativesATorpedoWeaponFire()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(ATorpedoWeaponFire::StaticClass(),"Fire",(Native)&ATorpedoWeaponFire::execFire);
+	}
+	IMPLEMENT_CLASS(ATorpedoWeaponFire, 623562787);
+	void ATorpedoWeaponFire::Event_Fire()
+	{
+		ProcessEvent(FindFunctionChecked(UNREALNAVALBATTLES_Event_Fire),NULL);
+	}
+	void ATorpedoWeaponFire::Fire()
+	{
+		ProcessEvent(FindFunctionChecked(UNREALNAVALBATTLES_Fire),NULL);
+	}
 	void AUNB_GameMode::StaticRegisterNativesAUNB_GameMode()
 	{
 	}
@@ -98,6 +111,10 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponSystem();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UTeamInterface_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UTeamInterface();
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_ATorpedoWeaponFire_Event_Fire();
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_ATorpedoWeaponFire_Fire();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_ATorpedoWeaponFire_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_ATorpedoWeaponFire();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameMode_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameMode();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameState_NoRegister();
@@ -363,6 +380,74 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 		return OuterClass;
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UTeamInterface(Z_Construct_UClass_UTeamInterface, TEXT("UTeamInterface"));
+	UFunction* Z_Construct_UFunction_ATorpedoWeaponFire_Event_Fire()
+	{
+		UClass* OuterClass=Z_Construct_UClass_ATorpedoWeaponFire();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(OuterClass, TEXT("Event_Fire"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x08020800, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UNBEvent"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("TorpedoWeaponFire.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_ATorpedoWeaponFire_Fire()
+	{
+		UClass* OuterClass=Z_Construct_UClass_ATorpedoWeaponFire();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(OuterClass, TEXT("Fire"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x80220CC0, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("TorpedoWeaponFire.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_ATorpedoWeaponFire_NoRegister()
+	{
+		return ATorpedoWeaponFire::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ATorpedoWeaponFire()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_APawn();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = ATorpedoWeaponFire::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+				OuterClass->LinkChild(Z_Construct_UFunction_ATorpedoWeaponFire_Event_Fire());
+				OuterClass->LinkChild(Z_Construct_UFunction_ATorpedoWeaponFire_Fire());
+
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ATorpedoWeaponFire_Event_Fire()); // 1700497518
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ATorpedoWeaponFire_Fire()); // 4061853485
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation AI|Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("TorpedoWeaponFire.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("TorpedoWeaponFire.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ATorpedoWeaponFire(Z_Construct_UClass_ATorpedoWeaponFire, TEXT("ATorpedoWeaponFire"));
 	UClass* Z_Construct_UClass_AUNB_GameMode_NoRegister()
 	{
 		return AUNB_GameMode::StaticClass();
@@ -652,8 +737,8 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/UnrealNavalBattles")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xC334E757;
-			Guid.B = 0x9DD4FB1C;
+			Guid.A = 0x64FA6C96;
+			Guid.B = 0x4C725781;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);
