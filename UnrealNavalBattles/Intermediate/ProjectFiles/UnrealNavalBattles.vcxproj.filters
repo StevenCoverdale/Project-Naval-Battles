@@ -4,7 +4,11 @@
 	<ItemGroup>
 		<None Include="..\..\UnrealNavalBattles.uproject" />
 		<Filter Include="Source">
+<<<<<<< HEAD
 			<UniqueIdentifier>{D420F91A-1B2D-489E-BEAB-C861789A5254}</UniqueIdentifier>
+=======
+			<UniqueIdentifier>{7D050FDA-747E-4C17-86E0-CA05D40EC17D}</UniqueIdentifier>
+>>>>>>> origin/master
 		</Filter>
 		<None Include="..\..\Source\UnrealNavalBattles.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +17,11 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
+<<<<<<< HEAD
 			<UniqueIdentifier>{62281701-7D7E-4426-B970-5F78341B340D}</UniqueIdentifier>
+=======
+			<UniqueIdentifier>{39DAAA8F-20D5-4B44-93BE-846B391974E1}</UniqueIdentifier>
+>>>>>>> origin/master
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -25,7 +33,11 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\UnrealNavalBattles">
+<<<<<<< HEAD
 			<UniqueIdentifier>{36BC0E7B-57B7-49E2-8CE8-CDA1E01403C8}</UniqueIdentifier>
+=======
+			<UniqueIdentifier>{B358EE82-9AFE-48DF-9CDB-4E4BCCDCAE45}</UniqueIdentifier>
+>>>>>>> origin/master
 		</Filter>
 		<ClCompile Include="..\..\Source\UnrealNavalBattles\ShipBullet.cpp">
 			<Filter>Source\UnrealNavalBattles</Filter>
@@ -121,10 +133,17 @@
 			<Filter>Source\UnrealNavalBattles</Filter>
 		</ClInclude >
 		<Filter Include="Source\UnrealNavalBattles\Resources">
+<<<<<<< HEAD
 			<UniqueIdentifier>{61F9CD55-F8C3-4ABB-8B86-8601560078F6}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="Source\UnrealNavalBattles\Resources\Windows">
 			<UniqueIdentifier>{51DD263D-E0F2-4D7C-B755-38F93E8BFA92}</UniqueIdentifier>
+=======
+			<UniqueIdentifier>{2697588B-4B99-43EB-B1D9-48246DD7A888}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Source\UnrealNavalBattles\Resources\Windows">
+			<UniqueIdentifier>{8C8A539C-83CF-41D2-9DC3-4D6A1F20C8ED}</UniqueIdentifier>
+>>>>>>> origin/master
 		</Filter>
 		<ResourceCompile Include="..\..\Source\UnrealNavalBattles\Resources\Windows\UnrealNavalBattles.rc">
 			<Filter>Source\UnrealNavalBattles\Resources\Windows</Filter>
