@@ -28,16 +28,16 @@ AShipBullet::AShipBullet(const class FPostConstructInitializeProperties& PCIP)
 	OnActorBeginOverlap.AddDynamic(this, &AShipBullet::OnOverlap);
 	OnActorEndOverlap.AddDynamic(this, &AShipBullet::OnEndOverlap);
 
-	/*ConstructorHelpers::FObjectFinder<UParticleSystem> ExplosionAsset(TEXT("Particles'/Explosion.Explosion'"));
+	ConstructorHelpers::FObjectFinder<UParticleSystem> ExplosionAsset(TEXT("Particles'/Game/Particles/Explosion.Explosion'"));
 	if (ExplosionAsset.Object != NULL)
 	{
 	  Explosion = ExplosionAsset.Object;
-	}*/
+	}
 }
 
 void AShipBullet::SetTemplate(class UParticleSystem * NewTemplate)
 {
-  
+	Explosion = NewTemplate;
 }
 
 void AShipBullet::OnOverlap(AActor* OtherActor)
@@ -61,6 +61,7 @@ void AShipBullet::OnOverlap(AActor* OtherActor)
 					AUNB_Ships * ship = Cast<AUNB_Ships>(OtherActor);
 					ship->Damage(50);
 					this->Destroy();
+					
 				}
 			}
 		}
