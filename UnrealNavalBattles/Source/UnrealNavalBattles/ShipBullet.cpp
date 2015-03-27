@@ -60,8 +60,22 @@ void AShipBullet::OnOverlap(AActor* OtherActor)
 				{
 					AUNB_Ships * ship = Cast<AUNB_Ships>(OtherActor);
 					ship->Damage(50);
-					this->Destroy();
+
+
+					//Array for stroing all mesh components
+					TArray<UStaticMeshComponent*> Components;
+					OtherActor->GetComponents<UStaticMeshComponent>(Components);
+					//Iterate through all 
+					for( int32 i=0; i<Components.Num(); i++ )
+					{
+						//Set Explosion particle to OtherActors meshes, wpSocket is attach point, this was the name found when function was found, offset, rotation, attachlocation, think true is for garbage cleanup just keep it
+						UGameplayStatics::SpawnEmitterAttached( Explosion, Components[i],"wpSocket", FVector(0, 0, 0),  FRotator(0, 0, 0), EAttachLocation::SnapToTarget, true);
+					}
+				
 					
+
+					this->Destroy();
+				    
 				}
 			}
 		}
