@@ -28,11 +28,8 @@ AShipBullet::AShipBullet(const class FPostConstructInitializeProperties& PCIP)
 	OnActorBeginOverlap.AddDynamic(this, &AShipBullet::OnOverlap);
 	OnActorEndOverlap.AddDynamic(this, &AShipBullet::OnEndOverlap);
 
-<<<<<<< HEAD
-	/*ConstructorHelpers::FObjectFinder<UParticleSystem> ExplosionAsset(TEXT("Particles'Explosion.Explosion'"));
-=======
 	ConstructorHelpers::FObjectFinder<UParticleSystem> ExplosionAsset(TEXT("Particles'/Game/Particles/Explosion.Explosion'"));
->>>>>>> origin/master
+
 	if (ExplosionAsset.Object != NULL)
 	{
 	  Explosion = ExplosionAsset.Object;
@@ -76,8 +73,6 @@ void AShipBullet::OnOverlap(AActor* OtherActor)
 						UGameplayStatics::SpawnEmitterAttached( Explosion, Components[i],"wpSocket", FVector(0, 0, 0),  FRotator(0, 0, 0), EAttachLocation::SnapToTarget, true);
 					}
 				
-					
-
 					this->Destroy();
 				    
 				}
