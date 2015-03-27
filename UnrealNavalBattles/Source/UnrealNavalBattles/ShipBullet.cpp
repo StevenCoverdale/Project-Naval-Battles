@@ -28,7 +28,7 @@ AShipBullet::AShipBullet(const class FPostConstructInitializeProperties& PCIP)
 	OnActorBeginOverlap.AddDynamic(this, &AShipBullet::OnOverlap);
 	OnActorEndOverlap.AddDynamic(this, &AShipBullet::OnEndOverlap);
 
-	/*ConstructorHelpers::FObjectFinder<UParticleSystem> ExplosionAsset(TEXT("Particles'/Explosion.Explosion'"));
+	/*ConstructorHelpers::FObjectFinder<UParticleSystem> ExplosionAsset(TEXT("Particles'Explosion.Explosion'"));
 	if (ExplosionAsset.Object != NULL)
 	{
 	  Explosion = ExplosionAsset.Object;

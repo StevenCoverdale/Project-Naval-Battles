@@ -28,10 +28,12 @@ public:
 
 	virtual void AShipWeaponFire::Tick(float delta) override;
 
+	bool InRange;
+
 	UCapsuleComponent* GetCapsuleComponent();
 
 	//Added for setting target
 	void SetTarget(AShipWeaponFire * target);
 
-	
+	void DistanceCheck(AActor* OtherActor);
 };

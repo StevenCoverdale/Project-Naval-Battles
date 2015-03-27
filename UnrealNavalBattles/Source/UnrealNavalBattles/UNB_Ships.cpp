@@ -114,8 +114,6 @@ void AUNB_Ships::Damage(int damage)
 	{
 		Destroy();
 	}
-
-
 }
 UCapsuleComponent* AUNB_Ships::GetCapsuleComponent()
 {
