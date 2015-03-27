@@ -29,7 +29,7 @@ void AShipWeaponFire::Tick(float delta)
 	Super::Tick(delta);
 	if (weaponFireTime > weaponReloadTime)
 	{
-		Event_Fire();
+		//Event_Fire();
 		weaponFireTime = 0;
 	}
 	else

@@ -17,4 +17,5 @@ class UNREALNAVALBATTLES_API AUNB_GameState : public AGameState
 	AUNB_GameState(FObjectInitializer const& ObjectInitializer);
 	
 	
+
 };

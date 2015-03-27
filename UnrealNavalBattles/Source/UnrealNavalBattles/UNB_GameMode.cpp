@@ -28,3 +28,25 @@ void AUNB_GameMode::SetSpecPawn(AUNB_SpectatorPawn * specPawn)
 {
 	m_specPawn = specPawn;
 }
+
+bool AUNB_GameMode::OnFriendlyTeam(const AActor* ActorA, const AActor* ActorB)
+{
+	const ITeamInterface* TeamA = Cast<const ITeamInterface>(ActorA);
+	const ITeamInterface* TeamB = Cast<const ITeamInterface>(ActorB);
+
+	//if( (TeamA != NULL && TeamA->GetTeam() == EUNB_Team::Unknown) || (TeamB != NULL && TeamB->GetTeam() == EUNB_Team::Unknown))
+	//	return true;
+
+	return (TeamA != NULL) && (TeamB != NULL) && (TeamA->GetTeam() == TeamB->GetTeam());
+}
+
+bool AUNB_GameMode::OnEnemyTeam(const AActor* ActorA, const AActor* ActorB)
+{
+	const ITeamInterface* TeamA = Cast<const ITeamInterface>(ActorA);
+	const ITeamInterface* TeamB = Cast<const ITeamInterface>(ActorB);
+
+	//if( (TeamA != NULL && TeamA->GetTeam() == EUNB_Team::Unknown) || (TeamB != NULL && TeamB->GetTeam() == EUNB_Team::Unknown))
+	//	return false;
+
+	return (TeamA != NULL) && (TeamB != NULL) && (TeamA->GetTeam() != TeamB->GetTeam());
+}

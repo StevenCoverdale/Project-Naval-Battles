@@ -10,13 +10,14 @@
  * 
  */
 UCLASS()
-class UNREALNAVALBATTLES_API AUNB_Ships : public APawn, public ITeamInterface
+class UNREALNAVALBATTLES_API AUNB_Ships : public ACharacter, public ITeamInterface
 {
 	GENERATED_BODY()
 
 
-		AUNB_Ships(const FObjectInitializer& ObjectInitializer);
 public:
+	AUNB_Ships(const FObjectInitializer& ObjectInitializer);
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Health)
 	int32 _health;
 	int32 const _maxHealth;
@@ -24,8 +25,8 @@ public:
 
 
 	virtual void AUNB_Ships::Tick(float delta) override;
-	int GetHealth();
-	int GetMaxHealth();
+	int32 GetHealth() const;
+	int32 GetMaxHealth() const;
 	void Damage(int damage);
 
 	void GetMouseClickLocation(FVector loc);
@@ -40,6 +41,9 @@ public:
 	//Added for setting target
 	void SetTarget(AUNB_Ships * target);
 
+	/** Identifies if pawn is in its dying state */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Health)
+	uint32 bIsDying:1;
 	
 	virtual class UNB_Team * GetTeam() const;
 	virtual void SetTeam(class UNB_Team * team);

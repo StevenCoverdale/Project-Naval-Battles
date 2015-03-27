@@ -20,6 +20,27 @@
 #ifndef UNREALNAVALBATTLES_TeamInterface_generated_h
 	#include "TeamInterface.h"
 #endif
+#ifndef UNREALNAVALBATTLES_TemporaryUHTHeader_UNB_Types_generated_h
+	#include "UNB_Types.h"
+#endif
+#ifndef UNREALNAVALBATTLES_UNB_AIAction_generated_h
+	#include "UNB_AIAction.h"
+#endif
+#ifndef UNREALNAVALBATTLES_UNB_AIController_generated_h
+	#include "UNB_AIController.h"
+#endif
+#ifndef UNREALNAVALBATTLES_UNB_AIAction_MoveTo_generated_h
+	#include "UNB_AIAction_MoveTo.h"
+#endif
+#ifndef UNREALNAVALBATTLES_UNB_Ships_generated_h
+	#include "UNB_Ships.h"
+#endif
+#ifndef UNREALNAVALBATTLES_UNB_AIDirector_generated_h
+	#include "UNB_AIDirector.h"
+#endif
+#ifndef UNREALNAVALBATTLES_UNB_AISensingComponent_generated_h
+	#include "UNB_AISensingComponent.h"
+#endif
 #ifndef UNREALNAVALBATTLES_UNB_GameMode_generated_h
 	#include "UNB_GameMode.h"
 #endif
@@ -31,9 +52,6 @@
 #endif
 #ifndef UNREALNAVALBATTLES_UNB_PlayerController_generated_h
 	#include "UNB_PlayerController.h"
-#endif
-#ifndef UNREALNAVALBATTLES_UNB_Ships_generated_h
-	#include "UNB_Ships.h"
 #endif
 #ifndef UNREALNAVALBATTLES_UNB_SpectatorPawn_generated_h
 	#include "UNB_SpectatorPawn.h"

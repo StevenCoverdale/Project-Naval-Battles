@@ -59,6 +59,16 @@
     <ClInclude Include="..\..\Source\UnrealNavalBattles\ShipWeaponSystem.h" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\TeamInterface.cpp" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\TeamInterface.h" />
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_AIAction.cpp" />
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_AIAction.h" />
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_AIAction_MoveTo.cpp" />
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_AIAction_MoveTo.h" />
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_AIController.cpp" />
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_AIController.h" />
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_AIDirector.cpp" />
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_AIDirector.h" />
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_AISensingComponent.cpp" />
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_AISensingComponent.h" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_GameMode.cpp" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_GameMode.h" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_GameState.cpp" />
@@ -73,6 +83,7 @@
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_SpectatorPawn.h" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_Team.cpp" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_Team.h" />
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_Types.h" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_Waypoint.cpp" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_Waypoint.h" />
     <None Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.Build.cs" />
@@ -130,6 +141,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame_Editor|x64'">
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <LibraryWPath />
     <SourcePath />
     <ExcludePath />
     <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>

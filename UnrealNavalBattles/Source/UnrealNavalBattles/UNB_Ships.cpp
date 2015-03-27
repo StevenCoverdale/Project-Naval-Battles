@@ -2,7 +2,7 @@
 
 #include "UnrealNavalBattles.h"
 #include "UNB_Ships.h"
-
+#include "UNB_AIController.h"
 #include "Components/CapsuleComponent.h"
 #include "UNB_GameMode.h"
 #include "UNB_SpectatorPawn.h"
@@ -11,16 +11,31 @@
 AUNB_Ships::AUNB_Ships(FObjectInitializer const& ObjectInitializer)
 	: Super(ObjectInitializer), _maxHealth(100), _health(_maxHealth),m_team(NULL)
 {
+
+	GetMesh()->BodyInstance.SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	
+	if (GetCharacterMovement())
+	{
+		GetCharacterMovement()->UpdatedComponent = GetCapsuleComponent();
+		GetCharacterMovement()->GetNavAgentProperties()->bCanJump = true;
+		GetCharacterMovement()->GetNavAgentProperties()->bCanWalk = true;
+		GetCharacterMovement()->SetJumpAllowed(true);
+		GetCharacterMovement()->bUseControllerDesiredRotation = false;
+		GetCharacterMovement()->bAlwaysCheckFloor = false;
+	}
 	//ships health
 	_health = 100.0f;
 
 	// Tell the commander this ship is on route
 	if (GEngine)
 	{
-		GEngine->AddOnScreenDebugMessage(-2, 2.0f, FColor::Green, TEXT("Ship to Commander!"));
+		GEngine->AddOnScreenDebugMessage(-2, 2.0f, FColor::Green, TEXT("Ship: On you're command!"));
 	}
 	// allow tick to update
 	PrimaryActorTick.bCanEverTick = true;
+
+	AIControllerClass = AUNB_AIController::StaticClass();
+
 
 }
 
@@ -73,7 +88,7 @@ void AUNB_Ships::Destination(float delta)
 
 		//move ship to the direction at 100(m/p)
 		SetActorLocation(position + (direction * 100 * delta), true);
-		
+		//MoveToLocation(position + (direction * 100 * delta), true);
 		
 		if (click.X - position.X <= 5 &&  click.X - position.X  >= -5)
 		{
@@ -86,21 +101,12 @@ void AUNB_Ships::Destination(float delta)
 	}
 }
 
-//IMPORTANT==================================================================(Steven)
-//DECISION TO MAKE
-/*
-have ship travel to each location as its pressed
 
-or
-
-have ship travel to closest location
-*/
-
-int AUNB_Ships::GetHealth()
+int32 AUNB_Ships::GetHealth()const
 {
 	return _health;
 }
-int AUNB_Ships::GetMaxHealth()
+int32 AUNB_Ships::GetMaxHealth() const
 {
 	return _maxHealth;
 }
