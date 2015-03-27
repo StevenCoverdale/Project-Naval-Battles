@@ -33,6 +33,8 @@ public:
 	void Destination(float delta);
 
 	UCapsuleComponent* GetCapsuleComponent();
+
+	FVector currentPostion;
 	
 	//Removed mouse click function (Brian)
 	//void ReceiveActorOnClicked() override;
