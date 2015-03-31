@@ -22,7 +22,6 @@ public:
 	int32 const _maxHealth;
 	TArray<FVector> Locations;
 
-
 	virtual void AUNB_Ships::Tick(float delta) override;
 	int GetHealth();
 	int GetMaxHealth();

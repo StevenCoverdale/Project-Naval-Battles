@@ -8,6 +8,8 @@
 #include "UNB_SpectatorPawn.h"
 #include "UNB_Team.h"
 
+
+
 AUNB_Ships::AUNB_Ships(FObjectInitializer const& ObjectInitializer)
 	: Super(ObjectInitializer), _maxHealth(100), _health(_maxHealth),m_team(NULL)
 {

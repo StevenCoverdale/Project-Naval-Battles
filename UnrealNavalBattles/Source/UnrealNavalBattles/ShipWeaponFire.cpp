@@ -29,6 +29,7 @@ void AShipWeaponFire::Tick(float delta)
 {
 	weaponReloadTime = 3;
 	Super::Tick(delta);
+	DistanceCheck(this);
 	if (weaponFireTime > weaponReloadTime && InRange == true)
 	{
 		Event_Fire();
@@ -52,33 +53,49 @@ void AShipWeaponFire::SetTarget(AShipWeaponFire * target)
 
 }
 
-
 void AShipWeaponFire::DistanceCheck(AActor* OtherActor)
 {
+	//gets the game mode
 	AUNB_GameMode * gameMode = Cast<AUNB_GameMode>(GetWorld()->GetAuthGameMode());
 
+	//if game mode loads, get the spectator pawn
 		if (NULL != gameMode)
 		{
 			AUNB_SpectatorPawn * specPawn = gameMode->GetSpecPawn();
 
+	//checks for spectator pawn
 			if (NULL != specPawn)
 			{
+				//initialization of variables
+				TSubclassOf<AUNB_Ships> ships;
+				AShipWeaponFire * ship = Cast<AShipWeaponFire>(OtherActor);
 				TArray<AActor*> selected = specPawn->getSelectedUnits();
+				TArray<AActor*> allShips;
+				
+				//gets all Ships, CURRENTLY DOES NOT WORK
+				UGameplayStatics::GetAllActorsOfClass(ship->GetWorld(), ships, allShips);
+				//gets selected ships
 				for (int i = 0; i < selected.Num(); ++i)
 				{
-					AUNB_Ships * ship = Cast<AUNB_Ships>(OtherActor);
+					//gets position of ship
 					FVector pos = ship->GetActorLocation();
 					FVector checkDistance;
-					float distance = checkDistance.Dist(pos, this->GetActorLocation());
-					if (distance < 10)
+					//for each ship
+					for (int s = 0; s < allShips.Num(); ++s)
 					{
-						GEngine->AddOnScreenDebugMessage(-3, 2.0f, FColor::Green, TEXT("In Range"));
-						InRange = true;
-					}
-					else
-					{
-						GEngine->AddOnScreenDebugMessage(-3, 2.0f, FColor::Green, TEXT("Not In Range"));
-						InRange = false;
+						//checks distance
+						float distance = checkDistance.Dist(allShips[s]->GetActorLocation(), this->GetActorLocation());
+						//if passes distance check, fires, if not, gives console printout
+						if (distance < 10)
+						{
+							GEngine->AddOnScreenDebugMessage(-3, 2.0f, FColor::Green, TEXT("In Range"));
+							InRange = true;
+						}
+						else
+						{
+							GEngine->AddOnScreenDebugMessage(-3, 2.0f, FColor::Green, TEXT("Not In Range"));
+							InRange = false;
+						}
 					}
 				}
 			}

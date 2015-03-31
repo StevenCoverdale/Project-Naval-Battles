@@ -48,6 +48,7 @@ private:
 	/** List of selected units */
 	UPROPERTY()
 	TArray<class AActor*>	selectedUnits;
+	TArray<class AActor*> notSelectedUnits;
 
 
 	float leftClickStartX;
