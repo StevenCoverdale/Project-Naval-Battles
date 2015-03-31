@@ -1,8 +1,8 @@
 ------------------
 System Information
 ------------------
-Time of this report: 3/24/2015, 12:44:13
-       Machine name: C401IT32
+Time of this report: 3/31/2015, 12:14:22
+       Machine name: C401IT30
    Operating System: Windows 7 Enterprise 64-bit (6.1, Build 7601) Service Pack 1 (7601.win7sp1_gdr.140303-2144)
            Language: English (Regional Setting: English)
 System Manufacturer: Alienware
@@ -10,8 +10,8 @@ System Manufacturer: Alienware
                BIOS: Default System BIOS
           Processor: Intel(R) Core(TM) i7 CPU         930  @ 2.80GHz (8 CPUs), ~2.8GHz
              Memory: 6144MB RAM
-Available OS Memory: 4086MB RAM
-          Page File: 5409MB used, 2762MB available
+Available OS Memory: 6134MB RAM
+          Page File: 6272MB used, 5996MB available
         Windows Dir: C:\Windows
     DirectX Version: DirectX 11
 DX Setup Parameters: Not found
@@ -26,6 +26,7 @@ DxDiag Notes
       Display Tab 1: No problems found.
         Sound Tab 1: No problems found.
         Sound Tab 2: No problems found.
+        Sound Tab 3: No problems found.
           Input Tab: No problems found.
 
 --------------------
@@ -47,9 +48,9 @@ Display Devices
           Chip type: GeForce GTX 260
            DAC type: Integrated RAMDAC
          Device Key: Enum\PCI\VEN_10DE&DEV_05EA&SUBSYS_073810DE&REV_A1
-     Display Memory: 3558 MB
-   Dedicated Memory: 1771 MB
-      Shared Memory: 1787 MB
+     Display Memory: 4070 MB
+   Dedicated Memory: 1767 MB
+      Shared Memory: 2303 MB
        Current Mode: 1920 x 1080 (32 bit) (60Hz)
        Monitor Name: Alienware AW2210 (Digital)
       Monitor Model: Alienware2210
@@ -122,9 +123,34 @@ Driver File Version: 9.18.0013.4052 (English)
 -------------
 Sound Devices
 -------------
-            Description: Digital Audio (HDMI) (2- High Definition Audio Device)
+            Description: Speakers (2- High Definition Audio Device)
  Default Sound Playback: Yes
  Default Voice Playback: Yes
+            Hardware ID: HDAUDIO\FUNC_01&VEN_10EC&DEV_0888&SUBSYS_102802F7&REV_1001
+        Manufacturer ID: 1
+             Product ID: 65535
+                   Type: WDM
+            Driver Name: HdAudio.sys
+         Driver Version: 6.01.7601.17514 (English)
+      Driver Attributes: Final Retail
+            WHQL Logo'd: n/a
+          Date and Size: 11/20/2010 23:23:47, 350208 bytes
+            Other Files: 
+        Driver Provider: Microsoft
+         HW Accel Level: Basic
+              Cap Flags: 0x0
+    Min/Max Sample Rate: 0, 0
+Static/Strm HW Mix Bufs: 0, 0
+ Static/Strm HW 3D Bufs: 0, 0
+              HW Memory: 0
+       Voice Management: No
+ EAX(tm) 2.0 Listen/Src: No, No
+   I3DL2(tm) Listen/Src: No, No
+Sensaura(tm) ZoomFX(tm): No
+
+            Description: Digital Audio (HDMI) (2- High Definition Audio Device)
+ Default Sound Playback: No
+ Default Voice Playback: No
             Hardware ID: HDAUDIO\FUNC_01&VEN_10EC&DEV_0888&SUBSYS_102802F7&REV_1001
         Manufacturer ID: 1
              Product ID: 65535
@@ -303,26 +329,22 @@ PS/2 Devices
 Disk & DVD/CD-ROM Drives
 ------------------------
       Drive: C:
- Free Space: 62.7 GB
+ Free Space: 59.1 GB
 Total Space: 242.7 GB
 File System: NTFS
       Model: OCZ-VECTOR
-
-      Drive: E:
-      Model: ELBY CLONEDRIVE SCSI CdRom Device
-     Driver: c:\windows\system32\drivers\cdrom.sys, 6.01.7601.17514 (English), , 0 bytes
 
       Drive: D:
       Model: PLDS DVD+-RW DH-24AAS
      Driver: c:\windows\system32\drivers\cdrom.sys, 6.01.7601.17514 (English), , 0 bytes
 
+      Drive: E:
+      Model: ELBY CLONEDRIVE SCSI CdRom Device
+     Driver: c:\windows\system32\drivers\cdrom.sys, 6.01.7601.17514 (English), , 0 bytes
+
 --------------
 System Devices
 --------------
-     Name: NVIDIA GeForce GTX 260  
-Device ID: PCI\VEN_10DE&DEV_05EA&SUBSYS_073810DE&REV_A1\4&246044E2&0&0038
-   Driver: n/a
-
      Name: Intel(R) ICH10 Family USB Enhanced Host Controller - 3A3C
 Device ID: PCI\VEN_8086&DEV_3A3C&SUBSYS_02F71028&REV_00\3&11583659&0&D7
    Driver: n/a
@@ -443,6 +465,10 @@ Device ID: PCI\VEN_8086&DEV_3A34&SUBSYS_02F71028&REV_00\3&11583659&0&E8
 Device ID: PCI\VEN_8086&DEV_3410&SUBSYS_02F71028&REV_13\3&11583659&0&48
    Driver: n/a
 
+     Name: NVIDIA GeForce GTX 260  
+Device ID: PCI\VEN_10DE&DEV_05EA&SUBSYS_073810DE&REV_A1\4&246044E2&0&0038
+   Driver: n/a
+
 ------------------
 DirectShow Filters
 ------------------
@@ -559,6 +585,7 @@ Default MidiOut Device,0x00800000,1,0,quartz.dll,6.06.7601.17713
 
 WDM Streaming Rendering Devices:
 HD Audio HDMI out,0x00200000,1,1,ksproxy.ax,6.01.7601.17514
+HD Audio Headphone/Speakers,0x00200000,1,1,ksproxy.ax,6.01.7601.17514
 HD Audio SPDIF out,0x00200000,1,1,ksproxy.ax,6.01.7601.17514
 
 BDA Network Providers:
@@ -585,12 +612,14 @@ WDM Streaming Communication Transforms:
 Tee/Sink-to-Sink Converter,0x00200000,1,1,ksproxy.ax,6.01.7601.17514
 
 Audio Renderers:
-Digital Audio (HDMI) (2- High D,0x00200000,1,0,quartz.dll,6.06.7601.17713
+Speakers (2- High Definition Au,0x00200000,1,0,quartz.dll,6.06.7601.17713
 Default DirectSound Device,0x00800000,1,0,quartz.dll,6.06.7601.17713
 Default WaveOut Device,0x00200000,1,0,quartz.dll,6.06.7601.17713
+Digital Audio (HDMI) (2- High D,0x00200000,1,0,quartz.dll,6.06.7601.17713
 Digital Audio (S/PDIF) (2- High,0x00200000,1,0,quartz.dll,6.06.7601.17713
 DirectSound: Digital Audio (HDMI) (2- High Definition Audio Device),0x00200000,1,0,quartz.dll,6.06.7601.17713
 DirectSound: Digital Audio (S/PDIF) (2- High Definition Audio Device),0x00200000,1,0,quartz.dll,6.06.7601.17713
+DirectSound: Speakers (2- High Definition Audio Device),0x00200000,1,0,quartz.dll,6.06.7601.17713
 
 ---------------
 EVR Power Information

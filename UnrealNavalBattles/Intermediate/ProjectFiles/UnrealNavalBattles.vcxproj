@@ -51,12 +51,8 @@
     <None Include="..\..\Config\DefaultInput.ini" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\ShipBullet.cpp" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\ShipBullet.h" />
-    <ClCompile Include="..\..\Source\UnrealNavalBattles\ShipWeapon.cpp" />
-    <ClInclude Include="..\..\Source\UnrealNavalBattles\ShipWeapon.h" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\ShipWeaponFire.cpp" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\ShipWeaponFire.h" />
-    <ClCompile Include="..\..\Source\UnrealNavalBattles\ShipWeaponSystem.cpp" />
-    <ClInclude Include="..\..\Source\UnrealNavalBattles\ShipWeaponSystem.h" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\TeamInterface.cpp" />
     <ClInclude Include="..\..\Source\UnrealNavalBattles\TeamInterface.h" />
     <ClCompile Include="..\..\Source\UnrealNavalBattles\TorpedoWeaponFire.cpp" />
@@ -132,6 +128,8 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame_Editor|x64'">
+    <SourcePath />
+    <ExcludePath />
     <OutDir>$(ProjectDir)..\Build\Unused\</OutDir>
     <IntDir>$(ProjectDir)..\Build\Unused\</IntDir>
     <NMakeBuildCommandLine>"C:\Program Files\Unreal Engine\4.6\Engine\Build\BatchFiles\Build.bat" UnrealNavalBattlesEditor Win64 DebugGame "$(SolutionDir)$(ProjectName).uproject" -rocket</NMakeBuildCommandLine>
