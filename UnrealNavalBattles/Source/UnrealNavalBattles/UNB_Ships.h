@@ -4,23 +4,30 @@
 
 #include "GameFramework/Actor.h"
 #include "TeamInterface.h"
+#include "UNB_AIController.h"
 #include "UNB_Ships.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class UNREALNAVALBATTLES_API AUNB_Ships : public APawn, public ITeamInterface
+class UNREALNAVALBATTLES_API AUNB_Ships : public ACharacter, public ITeamInterface
 {
 	GENERATED_BODY()
 
 
 		AUNB_Ships(const FObjectInitializer& ObjectInitializer);
 public:
+	UPROPERTY(EditAnywhere, Category = Behavior)
+	class UBehaviorTree* ShipBehavior;
+	AUNB_AIController* AIController;
+
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Health)
 	int32 _health;
 	int32 const _maxHealth;
 	TArray<FVector> Locations;
+
 
 	virtual void AUNB_Ships::Tick(float delta) override;
 	int GetHealth();

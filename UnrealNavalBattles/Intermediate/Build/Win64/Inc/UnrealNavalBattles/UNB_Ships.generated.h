@@ -20,7 +20,7 @@
 	static void StaticRegisterNativesAUNB_Ships(); \
 	friend UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Ships(); \
 	public: \
-	DECLARE_CLASS(AUNB_Ships, APawn, COMPILED_IN_FLAGS(0), 0, UnrealNavalBattles, NO_API) \
+	DECLARE_CLASS(AUNB_Ships, ACharacter, COMPILED_IN_FLAGS(0), 0, UnrealNavalBattles, NO_API) \
 	DECLARE_SERIALIZER(AUNB_Ships) \
 	/** Indicates whether the class is compiled into the engine */    enum {IsIntrinsic=COMPILED_IN_INTRINSIC}; \
 	UObject* _getUObject() const { return const_cast<AUNB_Ships*>(this); }

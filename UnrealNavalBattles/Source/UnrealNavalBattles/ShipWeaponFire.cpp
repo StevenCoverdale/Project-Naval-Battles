@@ -59,45 +59,45 @@ void AShipWeaponFire::DistanceCheck(AActor* OtherActor)
 	AUNB_GameMode * gameMode = Cast<AUNB_GameMode>(GetWorld()->GetAuthGameMode());
 
 	//if game mode loads, get the spectator pawn
-		if (NULL != gameMode)
-		{
-			AUNB_SpectatorPawn * specPawn = gameMode->GetSpecPawn();
+	if (NULL != gameMode)
+	{
+		AUNB_SpectatorPawn * specPawn = gameMode->GetSpecPawn();
 
-	//checks for spectator pawn
-			if (NULL != specPawn)
+		//checks for spectator pawn
+		if (specPawn == NULL)
+		{
+			return;
+		}
+	}
+
+	const FVector MyLoc = OtherActor->GetActorLocation();
+
+	AUNB_Ships* BestPawn = NULL;
+	for (FConstPawnIterator It = GetWorld()->GetPawnIterator(); It; ++It)
+	{
+		AUNB_Ships* TestPawn = Cast<AUNB_Ships>(*It);
+		if(TestPawn && TestPawn != OtherActor /*Check for ShipTeam here*/)
+		{
+			const float DistSq = FVector::Dist(TestPawn->GetActorLocation(), MyLoc);
+			if (DistSq > 10)
 			{
-				//initialization of variables
-				TSubclassOf<AUNB_Ships> ships;
-				AShipWeaponFire * ship = Cast<AShipWeaponFire>(OtherActor);
-				TArray<AActor*> selected = specPawn->getSelectedUnits();
-				TArray<AActor*> allShips;
-				
-				//gets all Ships, CURRENTLY DOES NOT WORK
-				UGameplayStatics::GetAllActorsOfClass(ship->GetWorld(), ships, allShips);
-				//gets selected ships
-				for (int i = 0; i < selected.Num(); ++i)
-				{
-					//gets position of ship
-					FVector pos = ship->GetActorLocation();
-					FVector checkDistance;
-					//for each ship
-					for (int s = 0; s < allShips.Num(); ++s)
-					{
-						//checks distance
-						float distance = checkDistance.Dist(allShips[s]->GetActorLocation(), this->GetActorLocation());
-						//if passes distance check, fires, if not, gives console printout
-						if (distance < 10)
-						{
-							GEngine->AddOnScreenDebugMessage(-3, 2.0f, FColor::Green, TEXT("In Range"));
-							InRange = true;
-						}
-						else
-						{
-							GEngine->AddOnScreenDebugMessage(-3, 2.0f, FColor::Green, TEXT("Not In Range"));
-							InRange = false;
-						}
-					}
-				}
+				BestPawn = TestPawn;
 			}
 		}
+	}
+	if(BestPawn)
+	{
+		GEngine->AddOnScreenDebugMessage(-3, 2.0f, FColor::Green, TEXT("In Range"));
+		InRange = true;
+	}
+	else
+	{
+		GEngine->AddOnScreenDebugMessage(-3, 2.0f, FColor::Green, TEXT("Not In Range"));
+		InRange = false;
+	}
+
+
+
 }
+
+

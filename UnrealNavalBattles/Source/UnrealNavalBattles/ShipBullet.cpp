@@ -63,7 +63,7 @@ void AShipBullet::OnOverlap(AActor* OtherActor)
 					ship->Damage(50);
 
 
-					//Array for stroing all mesh components
+					//Array for storing all mesh components
 					TArray<UStaticMeshComponent*> Components;
 					OtherActor->GetComponents<UStaticMeshComponent>(Components);
 					//Iterate through all 

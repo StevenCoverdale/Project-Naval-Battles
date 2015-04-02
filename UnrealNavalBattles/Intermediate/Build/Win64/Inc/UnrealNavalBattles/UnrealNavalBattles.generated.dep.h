@@ -20,8 +20,14 @@
 #ifndef UNREALNAVALBATTLES_TeamInterface_generated_h
 	#include "TeamInterface.h"
 #endif
+#ifndef UNREALNAVALBATTLES_Test_Ship_generated_h
+	#include "Test_Ship.h"
+#endif
 #ifndef UNREALNAVALBATTLES_TorpedoWeaponFire_generated_h
 	#include "TorpedoWeaponFire.h"
+#endif
+#ifndef UNREALNAVALBATTLES_UNB_AIController_generated_h
+	#include "UNB_AIController.h"
 #endif
 #ifndef UNREALNAVALBATTLES_UNB_GameMode_generated_h
 	#include "UNB_GameMode.h"

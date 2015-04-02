@@ -1,0 +1,79 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+#include "UnrealNavalBattles.h"
+#include "UNB_Ships.h"
+#include "Test_Ship.h"
+#include "BehaviorTree/BlackboardComponent.h"
+#include "BehaviorTree/BehaviorTreeComponent.h"
+#include "BehaviorTree/BehaviorTree.h"
+#include "UNB_AIController.h"
+
+
+
+
+AUNB_AIController::AUNB_AIController(FObjectInitializer const& ObjectInitializer)
+	: Super(ObjectInitializer)
+{
+	BlackboardComp = ObjectInitializer.CreateDefaultSubobject<UBlackboardComponent>(this, TEXT("BlackBoardComp"));
+	BehaviorComp = ObjectInitializer.CreateDefaultSubobject<UBehaviorTreeComponent>(this, TEXT("BehaviorComp"));
+
+}
+
+void AUNB_AIController::Possess(class APawn* InPawn)
+{
+	Super::Possess(InPawn);
+	AUNB_Ships* Ship = Cast<AUNB_Ships>(InPawn);
+	if(Ship && Ship->ShipBehavior)
+	{
+		BlackboardComp->InitializeBlackboard(Ship->ShipBehavior->BlackboardAsset);
+		 
+		EnemyKeyID = BlackboardComp->GetKeyID("Ships");
+		EnemyLocationID = BlackboardComp->GetKeyID("Destination");
+
+		BehaviorComp->StartTree(*(Ship->ShipBehavior));
+	}
+}
+
+void AUNB_AIController::SearchForEnemy()
+{
+	APawn* MyShip = GetPawn();
+	if(MyShip == NULL)
+	{
+		return;
+	}
+
+	const FVector MyLoc = MyShip->GetActorLocation();
+	float BestDistSq = MAX_FLT;
+
+	AUNB_Ships*BestPawn = NULL;
+
+	for (FConstPawnIterator It = GetWorld()->GetPawnIterator(); It; ++It)
+	{
+		AUNB_Ships* TestPawn = Cast<AUNB_Ships>(*It);
+		if(TestPawn && TestPawn != MyShip /*Check for ShipTeam here*/)
+		{
+			const float DistSq = FVector::Dist(TestPawn->GetActorLocation(), MyLoc);
+			if (DistSq < BestDistSq)
+			{
+				BestDistSq = DistSq;
+				BestPawn = TestPawn;
+			}
+		}
+	}
+	if(BestPawn)
+	{
+	//	SetEnemy(BestPawn);
+	}
+}
+
+void AUNB_AIController::GetClickLocation(FVector loc)
+{
+	ClickLocationID = FVector (1150,1100,0);
+}
+
+void AUNB_AIController::SetEnemy(class APawn *InPawn)
+{
+	//GetClickLocation(FVector(0,0,0));
+	BlackboardComp->SetValueAsObject(EnemyKeyID, InPawn);
+	BlackboardComp->SetValueAsVector(EnemyLocationID,ClickLocationID);//InPawn->GetActorLocation());
+}
