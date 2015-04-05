@@ -62,6 +62,14 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 		FNativeFunctionRegistrar::RegisterFunction(AUNB_AIController::StaticClass(),"SearchForEnemy",(Native)&AUNB_AIController::execSearchForEnemy);
 	}
 	IMPLEMENT_CLASS(AUNB_AIController, 3166149541);
+	void UUNB_BTTask_ClickLocation::StaticRegisterNativesUUNB_BTTask_ClickLocation()
+	{
+	}
+	IMPLEMENT_CLASS(UUNB_BTTask_ClickLocation, 1474886405);
+	void UUNB_BTTask_MoveWithinDistance::StaticRegisterNativesUUNB_BTTask_MoveWithinDistance()
+	{
+	}
+	IMPLEMENT_CLASS(UUNB_BTTask_MoveWithinDistance, 859376838);
 	void AUNB_GameMode::StaticRegisterNativesAUNB_GameMode()
 	{
 	}
@@ -106,6 +114,7 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 	AIMODULE_API class UClass* Z_Construct_UClass_AAIController();
 	AIMODULE_API class UClass* Z_Construct_UClass_UBehaviorTreeComponent_NoRegister();
 	AIMODULE_API class UClass* Z_Construct_UClass_UBlackboardComponent_NoRegister();
+	AIMODULE_API class UClass* Z_Construct_UClass_UBTTask_BlackboardBase();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameState();
 	ENGINE_API class UClass* Z_Construct_UClass_AHUD();
@@ -137,6 +146,10 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_AIController_SearchForEnemy();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_AIController_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_AIController();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UUNB_BTTask_ClickLocation_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UUNB_BTTask_ClickLocation();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UUNB_BTTask_MoveWithinDistance_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UUNB_BTTask_MoveWithinDistance();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameMode_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameMode();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameState_NoRegister();
@@ -586,6 +599,66 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 		return OuterClass;
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_AIController(Z_Construct_UClass_AUNB_AIController, TEXT("AUNB_AIController"));
+	UClass* Z_Construct_UClass_UUNB_BTTask_ClickLocation_NoRegister()
+	{
+		return UUNB_BTTask_ClickLocation::StaticClass();
+	}
+	UClass* Z_Construct_UClass_UUNB_BTTask_ClickLocation()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_UBTTask_BlackboardBase();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = UUNB_BTTask_ClickLocation::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20100080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_BTTask_ClickLocation.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_BTTask_ClickLocation.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_UUNB_BTTask_ClickLocation(Z_Construct_UClass_UUNB_BTTask_ClickLocation, TEXT("UUNB_BTTask_ClickLocation"));
+	UClass* Z_Construct_UClass_UUNB_BTTask_MoveWithinDistance_NoRegister()
+	{
+		return UUNB_BTTask_MoveWithinDistance::StaticClass();
+	}
+	UClass* Z_Construct_UClass_UUNB_BTTask_MoveWithinDistance()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_UBTTask_BlackboardBase();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = UUNB_BTTask_MoveWithinDistance::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20100080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_BTTask_MoveWithinDistance.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_BTTask_MoveWithinDistance.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_UUNB_BTTask_MoveWithinDistance(Z_Construct_UClass_UUNB_BTTask_MoveWithinDistance, TEXT("UUNB_BTTask_MoveWithinDistance"));
 	UClass* Z_Construct_UClass_AUNB_GameMode_NoRegister()
 	{
 		return AUNB_GameMode::StaticClass();
@@ -878,8 +951,8 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/UnrealNavalBattles")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xBC85A883;
-			Guid.B = 0x6EF7DD53;
+			Guid.A = 0xBA2E1F78;
+			Guid.B = 0x7B1AA757;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

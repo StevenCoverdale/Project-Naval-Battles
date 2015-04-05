@@ -79,7 +79,7 @@ void AShipWeaponFire::DistanceCheck(AActor* OtherActor)
 		if(TestPawn && TestPawn != OtherActor /*Check for ShipTeam here*/)
 		{
 			const float DistSq = FVector::Dist(TestPawn->GetActorLocation(), MyLoc);
-			if (DistSq > 10)
+			if (DistSq < 10)
 			{
 				BestPawn = TestPawn;
 			}

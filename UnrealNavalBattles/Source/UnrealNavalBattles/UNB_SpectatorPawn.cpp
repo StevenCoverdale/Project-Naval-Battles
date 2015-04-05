@@ -115,7 +115,7 @@ void AUNB_SpectatorPawn::OnRightClick()
 					AUNB_Ships * selectedShip = Cast<AUNB_Ships>(selectedUnits[i]);
 					if (selectedShip)
 					{
-						selectedShip->GetMouseClickLocation(Hit.Location);
+						selectedShip->GetMouseClickLocation(Hit.Location,selectedShip );
 					}
 				}
 			}

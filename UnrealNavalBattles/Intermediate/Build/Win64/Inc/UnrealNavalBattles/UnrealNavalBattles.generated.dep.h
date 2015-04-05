@@ -29,6 +29,12 @@
 #ifndef UNREALNAVALBATTLES_UNB_AIController_generated_h
 	#include "UNB_AIController.h"
 #endif
+#ifndef UNREALNAVALBATTLES_UNB_BTTask_ClickLocation_generated_h
+	#include "UNB_BTTask_ClickLocation.h"
+#endif
+#ifndef UNREALNAVALBATTLES_UNB_BTTask_MoveWithinDistance_generated_h
+	#include "UNB_BTTask_MoveWithinDistance.h"
+#endif
 #ifndef UNREALNAVALBATTLES_UNB_GameMode_generated_h
 	#include "UNB_GameMode.h"
 #endif

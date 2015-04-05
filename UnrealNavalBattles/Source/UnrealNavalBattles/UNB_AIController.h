@@ -26,10 +26,15 @@ public:
 	class UBehaviorTreeComponent* BehaviorComp;
 
 	virtual void Possess(class APawn *inPawn);
+	//virtual void BeginInactiveState() override;
 
 	void SetEnemy(class APawn *InPawn);
+	class AUNB_Ships* GetEnemy() const;
 
-	void GetClickLocation(FVector loc);
+	FVector SetClickLocation();
+
+	//UFUNCTION(BlueprintCallable, Category = Behavior)
+	void ActivateClick(class AUNB_Ships* CurrentShip);
 
 	UFUNCTION(BlueprintCallable, Category = Behavior)
 	void SearchForEnemy();
@@ -37,6 +42,8 @@ public:
 protected:
 	uint8 EnemyKeyID;//object
 	uint8 EnemyLocationID;//Vector
+	uint8 NeedToMoveTowardsLoc; //bool
+	uint8 ClickEnabled;//bool
 
 	FVector ClickLocationID;//vector//
 

@@ -2,7 +2,7 @@
 
 #include "UnrealNavalBattles.h"
 #include "UNB_Ships.h"
-
+#include "UNB_BTTask_ClickLocation.h"
 #include "Components/CapsuleComponent.h"
 #include "UNB_GameMode.h"
 #include "UNB_SpectatorPawn.h"
@@ -29,7 +29,7 @@ AUNB_Ships::AUNB_Ships(FObjectInitializer const& ObjectInitializer)
 	// allow tick to update
 	PrimaryActorTick.bCanEverTick = true;
 
-
+	
 }
 
 void AUNB_Ships::Tick(float delta)
@@ -41,9 +41,17 @@ void AUNB_Ships::Tick(float delta)
 	
 }
 
-void AUNB_Ships::GetMouseClickLocation(FVector loc)
+void AUNB_Ships::GetMouseClickLocation(FVector loc, AUNB_Ships* ship)
 {
 	// if no shift click then Empty array then add new location(loc)
+	MyPawn = ship;
+	//sets current mouse click
+	CurrentLocation = loc;
+	AUNB_AIController* BotAI = MyPawn ? Cast<AUNB_AIController>(MyPawn->GetController()) : NULL;
+	if (BotAI)
+	{
+		BotAI->ActivateClick(this);
+	}
 	Locations.Empty();
 	Locations.Add(loc);
 
@@ -57,19 +65,32 @@ void AUNB_Ships::GetMouseClickLocationWithShift(FVector loc)
 }
 void AUNB_Ships::Destination(float delta)
 {
+	FVector position = this->GetActorLocation();
+
+	const float DistSq = FVector::Dist(position, CurrentLocation);
+		if (DistSq < 125)
+		{
+			AUNB_AIController* BotAI = MyPawn ? Cast<AUNB_AIController>(MyPawn->GetController()) : NULL;
+			if (BotAI)
+			{
+				TempLocation = CurrentLocation;
+				BotAI->ActivateClick(this);
+			}
+		}
+
 	////if no vector in array then skip
 
 	//if (Locations.Num() == 0)
 	//{
 	//	GEngine->AddOnScreenDebugMessage(-3, 2.0f, FColor::Green, TEXT("Ship: Destination Arrived!!"));
 	//}
-	//else grab first element in array to travel to
+	////else grab first element in array to travel to
 	//else
 	//{
 	////	this ships position
 	//	FVector position = this->GetActorLocation();
 
-	//	target direction (mouse click)
+	//	//target direction (mouse click)
 	//	FVector click(Locations.Top());
 	//	click += FVector(0, 0, 20);
 	//	FVector direction = click - position;
@@ -111,6 +132,14 @@ int AUNB_Ships::GetHealth()
 int AUNB_Ships::GetMaxHealth()
 {
 	return _maxHealth;
+}
+FVector AUNB_Ships::GetTempMouseClick()
+{
+	return TempLocation;
+}
+FVector AUNB_Ships::GetCurrentMouseClick()
+{
+	return CurrentLocation;
 }
 void AUNB_Ships::Damage(int damage)
 {

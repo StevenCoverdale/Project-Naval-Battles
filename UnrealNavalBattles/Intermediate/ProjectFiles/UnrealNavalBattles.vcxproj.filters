@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\UnrealNavalBattles.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{EB4B577A-A024-4C94-8FA6-2BC2CFC99491}</UniqueIdentifier>
+			<UniqueIdentifier>{11BB1DE9-E767-4AC7-B264-2D0FD0D50395}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\UnrealNavalBattles.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{B3FDB9CC-5F27-41D4-A468-FEF2837FC182}</UniqueIdentifier>
+			<UniqueIdentifier>{51268DF1-D805-493B-A65C-C3C9FD482455}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -25,7 +25,7 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\UnrealNavalBattles">
-			<UniqueIdentifier>{274EAE80-C0E7-43E8-9E6D-2B373CB0B808}</UniqueIdentifier>
+			<UniqueIdentifier>{86178960-E0F7-4425-AABA-21B8BA1923E2}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\UnrealNavalBattles\ShipBullet.cpp">
 			<Filter>Source\UnrealNavalBattles</Filter>
@@ -73,6 +73,18 @@
 			<Filter>Source\UnrealNavalBattles</Filter>
 		</ClCompile >
 		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_AIController.h">
+			<Filter>Source\UnrealNavalBattles</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_BTTask_ClickLocation.cpp">
+			<Filter>Source\UnrealNavalBattles</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_BTTask_ClickLocation.h">
+			<Filter>Source\UnrealNavalBattles</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_BTTask_MoveWithinDistance.cpp">
+			<Filter>Source\UnrealNavalBattles</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_BTTask_MoveWithinDistance.h">
 			<Filter>Source\UnrealNavalBattles</Filter>
 		</ClInclude >
 		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_GameMode.cpp">
@@ -133,10 +145,10 @@
 			<Filter>Source\UnrealNavalBattles</Filter>
 		</ClInclude >
 		<Filter Include="Source\UnrealNavalBattles\Resources">
-			<UniqueIdentifier>{A0ECC306-E6AD-45F9-BA3C-E0F72DD7B06C}</UniqueIdentifier>
+			<UniqueIdentifier>{760FC30D-3C44-4604-9065-A5E45E384DBE}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="Source\UnrealNavalBattles\Resources\Windows">
-			<UniqueIdentifier>{8C20F19A-9CFE-4637-9FD8-031FF37BCC32}</UniqueIdentifier>
+			<UniqueIdentifier>{691FCB58-7C81-49F6-B902-4F0C473CB090}</UniqueIdentifier>
 		</Filter>
 		<ResourceCompile Include="..\..\Source\UnrealNavalBattles\Resources\Windows\UnrealNavalBattles.rc">
 			<Filter>Source\UnrealNavalBattles\Resources\Windows</Filter>

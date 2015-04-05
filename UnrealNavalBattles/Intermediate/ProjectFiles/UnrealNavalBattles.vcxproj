@@ -66,6 +66,10 @@
 		<ClInclude Include="..\..\Source\UnrealNavalBattles\TorpedoWeaponFire.h" />
 		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_AIController.cpp" />
 		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_AIController.h" />
+		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_BTTask_ClickLocation.cpp" />
+		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_BTTask_ClickLocation.h" />
+		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_BTTask_MoveWithinDistance.cpp" />
+		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_BTTask_MoveWithinDistance.h" />
 		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_GameMode.cpp" />
 		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_GameMode.h" />
 		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_GameState.cpp" />

@@ -22,16 +22,30 @@ AUNB_AIController::AUNB_AIController(FObjectInitializer const& ObjectInitializer
 void AUNB_AIController::Possess(class APawn* InPawn)
 {
 	Super::Possess(InPawn);
+
 	AUNB_Ships* Ship = Cast<AUNB_Ships>(InPawn);
+
 	if(Ship && Ship->ShipBehavior)
 	{
 		BlackboardComp->InitializeBlackboard(Ship->ShipBehavior->BlackboardAsset);
 		 
 		EnemyKeyID = BlackboardComp->GetKeyID("Ships");
 		EnemyLocationID = BlackboardComp->GetKeyID("Destination");
+		NeedToMoveTowardsLoc = BlackboardComp->GetKeyID("MoveTo");
+		ClickEnabled = BlackboardComp->GetKeyID("ClickEnabled");
+
 
 		BehaviorComp->StartTree(*(Ship->ShipBehavior));
 	}
+}
+class AUNB_Ships* AUNB_AIController::GetEnemy() const
+{
+	if (BlackboardComp)
+	{
+		return Cast<AUNB_Ships>(BlackboardComp->GetValueAsObject(EnemyKeyID));
+	}
+
+	return NULL;
 }
 
 void AUNB_AIController::SearchForEnemy()
@@ -44,8 +58,8 @@ void AUNB_AIController::SearchForEnemy()
 
 	const FVector MyLoc = MyShip->GetActorLocation();
 	float BestDistSq = MAX_FLT;
-
 	AUNB_Ships*BestPawn = NULL;
+	BlackboardComp->SetValueAsObject(EnemyKeyID, BestPawn);
 
 	for (FConstPawnIterator It = GetWorld()->GetPawnIterator(); It; ++It)
 	{
@@ -53,27 +67,48 @@ void AUNB_AIController::SearchForEnemy()
 		if(TestPawn && TestPawn != MyShip /*Check for ShipTeam here*/)
 		{
 			const float DistSq = FVector::Dist(TestPawn->GetActorLocation(), MyLoc);
-			if (DistSq < BestDistSq)
+			if (DistSq < 2000)
 			{
-				BestDistSq = DistSq;
-				BestPawn = TestPawn;
+				if (DistSq < BestDistSq)
+				{
+					BestDistSq = DistSq;
+					BestPawn = TestPawn;
+				}
 			}
+			//BlackboardComp->SetValueAsBool(CloseEnough, ( DistSq < 1000));
+
 		}
 	}
 	if(BestPawn)
 	{
-	//	SetEnemy(BestPawn);
+		SetEnemy(BestPawn);
 	}
+
 }
 
-void AUNB_AIController::GetClickLocation(FVector loc)
+FVector AUNB_AIController::SetClickLocation()
 {
-	ClickLocationID = FVector (1150,1100,0);
+	if (BlackboardComp)
+	{
+		return ClickLocationID;
+	}
+
+	return FVector::ZeroVector;
+}
+void AUNB_AIController::ActivateClick(class AUNB_Ships *CurrentShip)
+{
+	if(CurrentShip && BlackboardComp)
+	{
+
+		ClickLocationID = CurrentShip->GetCurrentMouseClick();
+		FVector TempClick = CurrentShip->GetTempMouseClick();
+
+		BlackboardComp->SetValueAsBool(ClickEnabled, ( ClickLocationID != TempClick));
+		
+	}
 }
 
 void AUNB_AIController::SetEnemy(class APawn *InPawn)
 {
-	//GetClickLocation(FVector(0,0,0));
 	BlackboardComp->SetValueAsObject(EnemyKeyID, InPawn);
-	BlackboardComp->SetValueAsVector(EnemyLocationID,ClickLocationID);//InPawn->GetActorLocation());
 }
