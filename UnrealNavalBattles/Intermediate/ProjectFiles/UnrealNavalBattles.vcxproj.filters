@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\UnrealNavalBattles.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{91F66019-26C3-4A63-879B-05858956D98B}</UniqueIdentifier>
+			<UniqueIdentifier>{8B6D5DF3-006A-4347-ABE1-66DCB5A5F90B}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\UnrealNavalBattles.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{97E36BA3-3A85-47EC-B26A-0C8FFA64942D}</UniqueIdentifier>
+			<UniqueIdentifier>{53EB1224-60CD-4A14-B776-E5E9E0F57B5D}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -25,7 +25,7 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\UnrealNavalBattles">
-			<UniqueIdentifier>{8EBEBC26-C937-40D6-AA97-C4A56AD25C4A}</UniqueIdentifier>
+			<UniqueIdentifier>{7DC2351D-5729-48D9-8C17-07A5B3CAF5AC}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\UnrealNavalBattles\ShipBullet.cpp">
 			<Filter>Source\UnrealNavalBattles</Filter>
@@ -145,10 +145,10 @@
 			<Filter>Source\UnrealNavalBattles</Filter>
 		</ClInclude >
 		<Filter Include="Source\UnrealNavalBattles\Resources">
-			<UniqueIdentifier>{54A3B63C-386F-4EAB-8185-59890EE2A6A7}</UniqueIdentifier>
+			<UniqueIdentifier>{E7E5B132-15ED-4129-B95F-511F16BC98BA}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="Source\UnrealNavalBattles\Resources\Windows">
-			<UniqueIdentifier>{40692E8F-5214-4EA8-BD43-D11F4095E29E}</UniqueIdentifier>
+			<UniqueIdentifier>{E4B5DD60-BEB7-4390-B9B4-F58785A593EF}</UniqueIdentifier>
 		</Filter>
 		<ResourceCompile Include="..\..\Source\UnrealNavalBattles\Resources\Windows\UnrealNavalBattles.rc">
 			<Filter>Source\UnrealNavalBattles\Resources\Windows</Filter>
