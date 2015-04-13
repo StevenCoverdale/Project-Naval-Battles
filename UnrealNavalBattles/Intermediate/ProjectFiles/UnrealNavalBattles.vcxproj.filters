@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\UnrealNavalBattles.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{8B6D5DF3-006A-4347-ABE1-66DCB5A5F90B}</UniqueIdentifier>
+			<UniqueIdentifier>{C0D81B04-7E55-440C-956B-A8A4E0A49D3F}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\UnrealNavalBattles.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{53EB1224-60CD-4A14-B776-E5E9E0F57B5D}</UniqueIdentifier>
+			<UniqueIdentifier>{3B91E3C7-2CDE-4CE2-951D-E988CB15AC22}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -25,7 +25,7 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\UnrealNavalBattles">
-			<UniqueIdentifier>{7DC2351D-5729-48D9-8C17-07A5B3CAF5AC}</UniqueIdentifier>
+			<UniqueIdentifier>{25E2CAC5-68F0-4A08-9E24-EB5BED7D9D8E}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\UnrealNavalBattles\ShipBullet.cpp">
 			<Filter>Source\UnrealNavalBattles</Filter>
@@ -129,6 +129,12 @@
 		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_Team.h">
 			<Filter>Source\UnrealNavalBattles</Filter>
 		</ClInclude >
+		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_Torpedo_Bullet.cpp">
+			<Filter>Source\UnrealNavalBattles</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_Torpedo_Bullet.h">
+			<Filter>Source\UnrealNavalBattles</Filter>
+		</ClInclude >
 		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_Waypoint.cpp">
 			<Filter>Source\UnrealNavalBattles</Filter>
 		</ClCompile >
@@ -145,10 +151,10 @@
 			<Filter>Source\UnrealNavalBattles</Filter>
 		</ClInclude >
 		<Filter Include="Source\UnrealNavalBattles\Resources">
-			<UniqueIdentifier>{E7E5B132-15ED-4129-B95F-511F16BC98BA}</UniqueIdentifier>
+			<UniqueIdentifier>{B6110DB6-44BB-4B0A-A997-9F26F0AC24FB}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="Source\UnrealNavalBattles\Resources\Windows">
-			<UniqueIdentifier>{E4B5DD60-BEB7-4390-B9B4-F58785A593EF}</UniqueIdentifier>
+			<UniqueIdentifier>{1426FDD0-74AA-4903-AED5-3EB522C3E00B}</UniqueIdentifier>
 		</Filter>
 		<ResourceCompile Include="..\..\Source\UnrealNavalBattles\Resources\Windows\UnrealNavalBattles.rc">
 			<Filter>Source\UnrealNavalBattles\Resources\Windows</Filter>

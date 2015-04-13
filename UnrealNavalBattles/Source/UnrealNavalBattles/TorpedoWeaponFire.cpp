@@ -2,15 +2,15 @@
 
 #include "UnrealNavalBattles.h"
 #include "TorpedoWeaponFire.h"
+#include "UNB_Ships.h"
 #include "UNB_GameMode.h"
 #include "UNB_SpectatorPawn.h"
 
-#include "Components/InputComponent.h"
 ATorpedoWeaponFire::ATorpedoWeaponFire(FObjectInitializer const& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
 	PrimaryActorTick.bCanEverTick = true;
-	isTorpedoSet = false;
+	InRange = false;
 }
 
 bool ATorpedoWeaponFire::Fire_Validate()
@@ -25,16 +25,17 @@ void ATorpedoWeaponFire::Fire_Implementation()
 
 void ATorpedoWeaponFire::Tick(float delta)
 {
-	weaponReloadTime = 5;
+	m_torpedoReloadTime = 5;
 	Super::Tick(delta);
-	if (weaponFireTime > weaponReloadTime && isTorpedoSet == true)
+	DistanceCheck(this);
+	if (m_torpedoFireTime > m_torpedoReloadTime && InRange == true)
 	{
-		Event_Fire();
-		weaponFireTime = 0;
+		Event_FireTorpedo();
+		m_torpedoFireTime = 0;
 	}
 	else
 	{
-		weaponFireTime = weaponFireTime + delta;
+		m_torpedoFireTime = m_torpedoFireTime + delta;
 	}
 	
 }
@@ -50,22 +51,51 @@ void ATorpedoWeaponFire::SetTarget(ATorpedoWeaponFire * target)
 
 }
 
-void ATorpedoWeaponFire::SetupPlayerInputComponent(UInputComponent * inputComponent)
-{
-	Super::SetupPlayerInputComponent(inputComponent);
 
-	inputComponent->BindAction("TorpedoShift", IE_Pressed, this, &ATorpedoWeaponFire::SetTorpedo);
-}
-
-void ATorpedoWeaponFire::SetTorpedo()
+void ATorpedoWeaponFire::DistanceCheck(AActor* OtherActor)
 {
-	GEngine->AddOnScreenDebugMessage(-2, 2.0f, FColor::Green, TEXT("TORPEDO LOADED"));
-	if (isTorpedoSet)
+	//gets the game mode
+	AUNB_GameMode * gameMode = Cast<AUNB_GameMode>(GetWorld()->GetAuthGameMode());
+
+	//if game mode loads, get the spectator pawn
+	if (NULL != gameMode)
 	{
-		isTorpedoSet = false;
+		AUNB_SpectatorPawn * specPawn = gameMode->GetSpecPawn();
+
+		//checks for spectator pawn
+		if (specPawn == NULL)
+		{
+			return;
+		}
+	}
+
+	const FVector MyLoc = OtherActor->GetActorLocation();
+
+	AUNB_Ships* BestPawn = NULL;
+	for (FConstPawnIterator It = GetWorld()->GetPawnIterator(); It; ++It)
+	{
+		AUNB_Ships* TestPawn = Cast<AUNB_Ships>(*It);
+		if(TestPawn && TestPawn != OtherActor /*Check for ShipTeam here*/)
+		{
+			const float DistSq = FVector::Dist(TestPawn->GetActorLocation(), MyLoc);
+			if (DistSq < 1500)
+			{
+				BestPawn = TestPawn;
+			}
+		}
+	}
+	if(BestPawn)
+	{
+		GEngine->AddOnScreenDebugMessage(-3, 2.0f, FColor::Green, TEXT("Torpedo In Range"));
+		InRange = true;
 	}
 	else
 	{
-		isTorpedoSet = true;
+		GEngine->AddOnScreenDebugMessage(-3, 2.0f, FColor::Green, TEXT("Torpedo Not In Range"));
+		InRange = false;
 	}
+
+
+
 }
+

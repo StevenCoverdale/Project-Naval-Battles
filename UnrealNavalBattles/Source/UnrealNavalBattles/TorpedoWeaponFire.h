@@ -14,27 +14,28 @@ class UNREALNAVALBATTLES_API ATorpedoWeaponFire : public APawn
 	GENERATED_BODY()
 	
 	ATorpedoWeaponFire(const FObjectInitializer& ObjectInitializer);
-	virtual void SetupPlayerInputComponent(class UInputComponent * inputComponent) override;
+
 public:
-	float weaponFireTime;
-	float weaponReloadTime;
+	float m_torpedoFireTime;
+	float m_torpedoReloadTime;
 
 	UFUNCTION(BlueprintImplementableEvent, Category = UNBEvent)
-	void Event_Fire();
+	void Event_FireTorpedo();
 
 	UFUNCTION(Server, WithValidation, Reliable)
 	void Fire();
 
-	void SetTorpedo();
 
 	virtual void ATorpedoWeaponFire::Tick(float delta) override;
+
+	bool InRange;
 
 	UCapsuleComponent* GetCapsuleComponent();
 
 	//Added for setting target
 	void SetTarget(ATorpedoWeaponFire *target);
 	
-	bool isTorpedoSet;
+	void DistanceCheck(AActor* OtherActor);
 	
 	
 };

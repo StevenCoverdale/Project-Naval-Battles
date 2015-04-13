@@ -72,8 +72,8 @@ void AShipBullet::OnOverlap(AActor* OtherActor)
 						//Set Explosion particle to OtherActors meshes, wpSocket is attach point, this was the name found when function was found, offset, rotation, attachlocation, think true is for garbage cleanup just keep it
 						UGameplayStatics::SpawnEmitterAttached( Explosion, Components[i],"wpSocket", FVector(0, 0, 0),  FRotator(0, 0, 0), EAttachLocation::SnapToTarget, true);
 					}
-				
-					this->Destroy();
+					if(OtherActor == ship)
+						this->Destroy();
 				    
 				}
 			}

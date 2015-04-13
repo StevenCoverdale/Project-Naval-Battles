@@ -12,7 +12,7 @@
 #endif
 #define UNREALNAVALBATTLES_TorpedoWeaponFire_generated_h
 
-extern UNREALNAVALBATTLES_API FName UNREALNAVALBATTLES_Event_Fire;
+extern UNREALNAVALBATTLES_API FName UNREALNAVALBATTLES_Event_FireTorpedo;
 extern UNREALNAVALBATTLES_API FName UNREALNAVALBATTLES_Fire;
 #define ATorpedoWeaponFire_EVENTPARMS
 #define ATorpedoWeaponFire_RPC_WRAPPERS \

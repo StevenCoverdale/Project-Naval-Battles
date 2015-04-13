@@ -22,4 +22,5 @@ public:
 	
 private:
 	class UNB_Team * m_team;
+
 };

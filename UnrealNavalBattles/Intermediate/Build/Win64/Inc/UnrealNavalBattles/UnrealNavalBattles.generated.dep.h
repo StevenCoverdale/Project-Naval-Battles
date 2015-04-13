@@ -53,3 +53,6 @@
 #ifndef UNREALNAVALBATTLES_UNB_SpectatorPawn_generated_h
 	#include "UNB_SpectatorPawn.h"
 #endif
+#ifndef UNREALNAVALBATTLES_UNB_Torpedo_Bullet_generated_h
+	#include "UNB_Torpedo_Bullet.h"
+#endif

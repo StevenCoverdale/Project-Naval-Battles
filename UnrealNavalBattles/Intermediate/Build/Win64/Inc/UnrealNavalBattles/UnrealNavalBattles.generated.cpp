@@ -48,10 +48,10 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	{
 		FNativeFunctionRegistrar::RegisterFunction(ATorpedoWeaponFire::StaticClass(),"Fire",(Native)&ATorpedoWeaponFire::execFire);
 	}
-	IMPLEMENT_CLASS(ATorpedoWeaponFire, 623562787);
-	void ATorpedoWeaponFire::Event_Fire()
+	IMPLEMENT_CLASS(ATorpedoWeaponFire, 2379822417);
+	void ATorpedoWeaponFire::Event_FireTorpedo()
 	{
-		ProcessEvent(FindFunctionChecked(UNREALNAVALBATTLES_Event_Fire),NULL);
+		ProcessEvent(FindFunctionChecked(UNREALNAVALBATTLES_Event_FireTorpedo),NULL);
 	}
 	void ATorpedoWeaponFire::Fire()
 	{
@@ -89,7 +89,7 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	void AUNB_Ships::StaticRegisterNativesAUNB_Ships()
 	{
 	}
-	IMPLEMENT_CLASS(AUNB_Ships, 4029553587);
+	IMPLEMENT_CLASS(AUNB_Ships, 4266604862);
 	void AUNB_SpectatorPawn::StaticRegisterNativesAUNB_SpectatorPawn()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnRightClick",(Native)&AUNB_SpectatorPawn::execOnRightClick);
@@ -98,7 +98,15 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnStopLeftClick",(Native)&AUNB_SpectatorPawn::execOnStopLeftClick);
 	}
 	IMPLEMENT_CLASS(AUNB_SpectatorPawn, 2936719836);
+	void AUNB_Torpedo_Bullet::StaticRegisterNativesAUNB_Torpedo_Bullet()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(AUNB_Torpedo_Bullet::StaticClass(),"OnEndOverlap",(Native)&AUNB_Torpedo_Bullet::execOnEndOverlap);
+		FNativeFunctionRegistrar::RegisterFunction(AUNB_Torpedo_Bullet::StaticClass(),"OnOverlap",(Native)&AUNB_Torpedo_Bullet::execOnOverlap);
+		FNativeFunctionRegistrar::RegisterFunction(AUNB_Torpedo_Bullet::StaticClass(),"SetTemplate",(Native)&AUNB_Torpedo_Bullet::execSetTemplate);
+	}
+	IMPLEMENT_CLASS(AUNB_Torpedo_Bullet, 4161881456);
 FName UNREALNAVALBATTLES_Event_Fire = FName(TEXT("Event_Fire"));
+FName UNREALNAVALBATTLES_Event_FireTorpedo = FName(TEXT("Event_FireTorpedo"));
 FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
@@ -139,7 +147,7 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UTeamInterface();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_ATest_Ship_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_ATest_Ship();
-	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_ATorpedoWeaponFire_Event_Fire();
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_ATorpedoWeaponFire_Event_FireTorpedo();
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_ATorpedoWeaponFire_Fire();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_ATorpedoWeaponFire_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_ATorpedoWeaponFire();
@@ -166,6 +174,11 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_SpectatorPawn_OnStopLeftClick();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_SpectatorPawn_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_SpectatorPawn();
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnEndOverlap();
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnOverlap();
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_SetTemplate();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Torpedo_Bullet_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Torpedo_Bullet();
 	UNREALNAVALBATTLES_API class UPackage* Z_Construct_UPackage_UnrealNavalBattles();
 	UFunction* Z_Construct_UFunction_AShipBullet_OnEndOverlap()
 	{
@@ -475,13 +488,13 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 		return OuterClass;
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ATest_Ship(Z_Construct_UClass_ATest_Ship, TEXT("ATest_Ship"));
-	UFunction* Z_Construct_UFunction_ATorpedoWeaponFire_Event_Fire()
+	UFunction* Z_Construct_UFunction_ATorpedoWeaponFire_Event_FireTorpedo()
 	{
 		UClass* OuterClass=Z_Construct_UClass_ATorpedoWeaponFire();
 		static UFunction* ReturnFunction = NULL;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(OuterClass, TEXT("Event_Fire"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x08020800, 65535);
+			ReturnFunction = new(OuterClass, TEXT("Event_FireTorpedo"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x08020800, 65535);
 			ReturnFunction->Bind();
 			ReturnFunction->StaticLink();
 #if WITH_METADATA
@@ -525,10 +538,10 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= 0x20900080;
 
-				OuterClass->LinkChild(Z_Construct_UFunction_ATorpedoWeaponFire_Event_Fire());
+				OuterClass->LinkChild(Z_Construct_UFunction_ATorpedoWeaponFire_Event_FireTorpedo());
 				OuterClass->LinkChild(Z_Construct_UFunction_ATorpedoWeaponFire_Fire());
 
-				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ATorpedoWeaponFire_Event_Fire()); // 1700497518
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ATorpedoWeaponFire_Event_FireTorpedo()); // 3757617366
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ATorpedoWeaponFire_Fire()); // 4061853485
 				OuterClass->StaticLink();
 #if WITH_METADATA
@@ -816,6 +829,7 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 				OuterClass->ClassFlags |= 0x20900080;
 
 
+				UProperty* NewProp__maxHealth = new(OuterClass, TEXT("_maxHealth"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(_maxHealth, AUNB_Ships), 0x0000000000000005);
 				UProperty* NewProp__health = new(OuterClass, TEXT("_health"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(_health, AUNB_Ships), 0x0000000000000005);
 				UProperty* NewProp_ShipBehavior = new(OuterClass, TEXT("ShipBehavior"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ShipBehavior, AUNB_Ships), 0x0000000000000001, Z_Construct_UClass_UBehaviorTree_NoRegister());
 				OuterClass->Interfaces.Add(FImplementedInterface(Z_Construct_UClass_UTeamInterface_NoRegister(), VTABLE_OFFSET(AUNB_Ships, ITeamInterface), false ));
@@ -825,6 +839,8 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation AI|Navigation Pawn|Character|InternalEvents"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_Ships.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_Ships.h"));
+				MetaData->SetValue(NewProp__maxHealth, TEXT("Category"), TEXT("Health"));
+				MetaData->SetValue(NewProp__maxHealth, TEXT("ModuleRelativePath"), TEXT("UNB_Ships.h"));
 				MetaData->SetValue(NewProp__health, TEXT("Category"), TEXT("Health"));
 				MetaData->SetValue(NewProp__health, TEXT("ModuleRelativePath"), TEXT("UNB_Ships.h"));
 				MetaData->SetValue(NewProp_ShipBehavior, TEXT("Category"), TEXT("Behavior"));
@@ -943,6 +959,122 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 		return OuterClass;
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_SpectatorPawn(Z_Construct_UClass_AUNB_SpectatorPawn, TEXT("AUNB_SpectatorPawn"));
+	UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnEndOverlap()
+	{
+		struct UNB_Torpedo_Bullet_eventOnEndOverlap_Parms
+		{
+			class AActor* OtherActor;
+		};
+		UClass* OuterClass=Z_Construct_UClass_AUNB_Torpedo_Bullet();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(OuterClass, TEXT("OnEndOverlap"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535, sizeof(UNB_Torpedo_Bullet_eventOnEndOverlap_Parms));
+			UProperty* NewProp_OtherActor = new(ReturnFunction, TEXT("OtherActor"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherActor, UNB_Torpedo_Bullet_eventOnEndOverlap_Parms), 0x0000000000000080, Z_Construct_UClass_AActor_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("UNB_Torpedo_Bullet.h"));
+			MetaData->SetValue(NewProp_OtherActor, TEXT("ModuleRelativePath"), TEXT("UNB_Torpedo_Bullet.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnOverlap()
+	{
+		struct UNB_Torpedo_Bullet_eventOnOverlap_Parms
+		{
+			class AActor* OtherActor;
+		};
+		UClass* OuterClass=Z_Construct_UClass_AUNB_Torpedo_Bullet();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(OuterClass, TEXT("OnOverlap"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535, sizeof(UNB_Torpedo_Bullet_eventOnOverlap_Parms));
+			UProperty* NewProp_OtherActor = new(ReturnFunction, TEXT("OtherActor"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherActor, UNB_Torpedo_Bullet_eventOnOverlap_Parms), 0x0000000000000080, Z_Construct_UClass_AActor_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("UNB_Torpedo_Bullet.h"));
+			MetaData->SetValue(NewProp_OtherActor, TEXT("ModuleRelativePath"), TEXT("UNB_Torpedo_Bullet.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_SetTemplate()
+	{
+		struct UNB_Torpedo_Bullet_eventSetTemplate_Parms
+		{
+			class UParticleSystem* NewTemplate;
+		};
+		UClass* OuterClass=Z_Construct_UClass_AUNB_Torpedo_Bullet();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(OuterClass, TEXT("SetTemplate"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x04020400, 65535, sizeof(UNB_Torpedo_Bullet_eventSetTemplate_Parms));
+			UProperty* NewProp_NewTemplate = new(ReturnFunction, TEXT("NewTemplate"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(NewTemplate, UNB_Torpedo_Bullet_eventSetTemplate_Parms), 0x0000000000000080, Z_Construct_UClass_UParticleSystem_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Particles"));
+			MetaData->SetValue(ReturnFunction, TEXT("DeprecatedFunction"), TEXT(""));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("UNB_Torpedo_Bullet.h"));
+			MetaData->SetValue(NewProp_NewTemplate, TEXT("ModuleRelativePath"), TEXT("UNB_Torpedo_Bullet.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_AUNB_Torpedo_Bullet_NoRegister()
+	{
+		return AUNB_Torpedo_Bullet::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AUNB_Torpedo_Bullet()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = AUNB_Torpedo_Bullet::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnEndOverlap());
+				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnOverlap());
+				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_Torpedo_Bullet_SetTemplate());
+
+				UProperty* NewProp_MeshComponent = new(OuterClass, TEXT("MeshComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(MeshComponent, AUNB_Torpedo_Bullet), 0x00000000004a001d, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
+				UProperty* NewProp_MovementComponent = new(OuterClass, TEXT("MovementComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(MovementComponent, AUNB_Torpedo_Bullet), 0x00000000004a001d, Z_Construct_UClass_UProjectileMovementComponent_NoRegister());
+				UProperty* NewProp_ColliderComponent = new(OuterClass, TEXT("ColliderComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ColliderComponent, AUNB_Torpedo_Bullet), 0x00000000004a001d, Z_Construct_UClass_USphereComponent_NoRegister());
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnEndOverlap()); // 3156234489
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnOverlap()); // 4171055053
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_Torpedo_Bullet_SetTemplate()); // 362593284
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_Torpedo_Bullet.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_Torpedo_Bullet.h"));
+				MetaData->SetValue(NewProp_MeshComponent, TEXT("Category"), TEXT("Rendering"));
+				MetaData->SetValue(NewProp_MeshComponent, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_MeshComponent, TEXT("ModuleRelativePath"), TEXT("UNB_Torpedo_Bullet.h"));
+				MetaData->SetValue(NewProp_MovementComponent, TEXT("Category"), TEXT("Movement"));
+				MetaData->SetValue(NewProp_MovementComponent, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_MovementComponent, TEXT("ModuleRelativePath"), TEXT("UNB_Torpedo_Bullet.h"));
+				MetaData->SetValue(NewProp_ColliderComponent, TEXT("Category"), TEXT("Collision"));
+				MetaData->SetValue(NewProp_ColliderComponent, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_ColliderComponent, TEXT("ModuleRelativePath"), TEXT("UNB_Torpedo_Bullet.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_Torpedo_Bullet(Z_Construct_UClass_AUNB_Torpedo_Bullet, TEXT("AUNB_Torpedo_Bullet"));
 	UPackage* Z_Construct_UPackage_UnrealNavalBattles()
 	{
 		static UPackage* ReturnPackage = NULL;
@@ -951,8 +1083,8 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/UnrealNavalBattles")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xBA2E1F78;
-			Guid.B = 0x7B1AA757;
+			Guid.A = 0x53EFA6E0;
+			Guid.B = 0x4707DDB2;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

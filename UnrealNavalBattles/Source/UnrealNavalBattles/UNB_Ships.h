@@ -29,7 +29,9 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Health)
 	int32 _health;
-	int32 const _maxHealth;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Health)
+	int32 _maxHealth;
 	TArray<FVector> Locations;
 	FVector TempLocation;
 	FVector CurrentLocation;
@@ -58,11 +60,11 @@ public:
 	//Added for setting target
 	void SetTarget(AUNB_Ships * target);
 
-	
+
 	virtual class UNB_Team * GetTeam() const;
 	virtual void SetTeam(class UNB_Team * team);
 	virtual bool IsOnteam(UNB_Team const* team) const;
-private:
+
 	class UNB_Team * m_team;
 
 };

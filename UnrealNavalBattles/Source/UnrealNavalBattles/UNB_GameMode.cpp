@@ -17,6 +17,7 @@ AUNB_GameMode::AUNB_GameMode(FObjectInitializer const& ObjectInitializer) :
 	PlayerControllerClass = AUNB_PlayerController::StaticClass();
 
 	DefaultPawnClass = AUNB_SpectatorPawn::StaticClass();
+	
 }
 
 

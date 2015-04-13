@@ -12,22 +12,24 @@
 
 
 AUNB_Ships::AUNB_Ships(FObjectInitializer const& ObjectInitializer)
-	: Super(ObjectInitializer), _maxHealth(100), _health(_maxHealth),m_team(NULL)
+	: Super(ObjectInitializer), _maxHealth(100), _health(_maxHealth),m_team(GetTeam())
 {
 	//ships health
 	_health = 100.0f;
-
 	// Tell the commander this ship is on route
 	if (GEngine)
 	{
 		GEngine->AddOnScreenDebugMessage(-2, 2.0f, FColor::Green, TEXT("Ship to Commander!"));
 	}
-
+	//SetActorEnableCollision(false);
 	AIControllerClass = AUNB_AIController::StaticClass();
 
 
 	// allow tick to update
 	PrimaryActorTick.bCanEverTick = true;
+
+	//AUNB_GameMode* mode;
+
 
 	
 }
@@ -52,15 +54,15 @@ void AUNB_Ships::GetMouseClickLocation(FVector loc, AUNB_Ships* ship)
 	{
 		BotAI->ActivateClick(this);
 	}
-	Locations.Empty();
-	Locations.Add(loc);
+	//Locations.Empty();
+	//Locations.Add(loc);
 
 }
 void AUNB_Ships::GetMouseClickLocationWithShift(FVector loc)
 {
 	//if shift click then add location(loc) to array
 
-	Locations.Add(loc);
+	//Locations.Add(loc);
 	
 }
 void AUNB_Ships::Destination(float delta)
@@ -90,9 +92,10 @@ void AUNB_Ships::Destination(float delta)
 	////	this ships position
 	//	FVector position = this->GetActorLocation();
 
-	//	//target direction (mouse click)
-	//	FVector click(Locations.Top());
-	//	click += FVector(0, 0, 20);
+
+//Death Animation here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	////	//target direction (mouse click)
+	//	FVector click(0, 0, -2000);
 	//	FVector direction = click - position;
 	////	Normalize the mouse click
 	//	direction.Normalize();
@@ -102,6 +105,8 @@ void AUNB_Ships::Destination(float delta)
 
 	////	move ship to the direction at 100(m/p)
 	//	SetActorLocation(position + (direction * 100 * delta), true);
+
+		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	//	
 	//	
 	//	if (click.X - position.X <= 5 &&  click.X - position.X  >= -5)
@@ -127,7 +132,10 @@ have ship travel to closest location
 
 int AUNB_Ships::GetHealth()
 {
+	if(_health)
 	return _health;
+	else 
+	return NULL;
 }
 int AUNB_Ships::GetMaxHealth()
 {
@@ -143,14 +151,15 @@ FVector AUNB_Ships::GetCurrentMouseClick()
 }
 void AUNB_Ships::Damage(int damage)
 {
-	if(_health >= 0)
+	if(this)
 	{
 		_health -= damage;
+		if(_health <= 0)
+		{
+			Destroy();
+		}
 	}
-	else
-	{
-		Destroy();
-	}
+	SetTeam(GetTeam());
 }
 UCapsuleComponent* AUNB_Ships::GetCapsuleComponent()
 {
