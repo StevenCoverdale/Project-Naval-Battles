@@ -29,3 +29,42 @@ void AUNB_GameMode::SetSpecPawn(AUNB_SpectatorPawn * specPawn)
 {
 	m_specPawn = specPawn;
 }
+void AUNB_GameMode::SetScoreTeam(int team, int score)
+{
+	if(team == 0)
+		m_scoreTeamOne = score;
+	else if(team == 1)
+		m_scoreTeamTwo = score;
+
+	CheckForWinner();
+}
+int AUNB_GameMode::GetScoreTeamOne()
+{
+	return m_scoreTeamOne;
+}
+
+int AUNB_GameMode::GetScoreTeamTwo()
+{
+	return m_scoreTeamTwo;
+}
+void AUNB_GameMode::CheckForWinner()
+{
+	if (m_scoreTeamOne >= 1)
+	{
+		//send to blueprint
+		if (GEngine)
+		{
+			GEngine->AddOnScreenDebugMessage(-2, 2.0f, FColor::Green, TEXT("Team One Wins!"));
+		}
+	}
+	else if(m_scoreTeamTwo >= 1)
+	{
+		//send to blueprint
+		if (GEngine)
+		{
+			GEngine->AddOnScreenDebugMessage(-2, 2.0f, FColor::Green, TEXT("Team Two Wins"));
+		}
+	}
+}
+
+

@@ -156,10 +156,10 @@ void AUNB_Ships::Damage(int damage)
 		_health -= damage;
 		if(_health <= 0)
 		{
+			GameMode->SetScoreTeam(0, 1);
 			Destroy();
 		}
 	}
-	SetTeam(GetTeam());
 }
 UCapsuleComponent* AUNB_Ships::GetCapsuleComponent()
 {
@@ -171,6 +171,7 @@ void AUNB_Ships::SetTarget(AUNB_Ships * target)
 {
 
 }
+
 
 UNB_Team * AUNB_Ships::GetTeam() const
 {

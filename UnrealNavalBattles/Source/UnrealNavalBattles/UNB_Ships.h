@@ -5,6 +5,7 @@
 #include "GameFramework/Actor.h"
 #include "TeamInterface.h"
 #include "UNB_AIController.h"
+#include "UNB_GameMode.h"
 #include "UNB_BTTask_ClickLocation.h"
 #include "UNB_Ships.generated.h"
 
@@ -25,6 +26,7 @@ public:
 	AUNB_AIController* AIController;
 	UUNB_BTTask_ClickLocation* TaskForce;
 	AUNB_Ships* MyPawn;
+	AUNB_GameMode* GameMode;
 
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Health)

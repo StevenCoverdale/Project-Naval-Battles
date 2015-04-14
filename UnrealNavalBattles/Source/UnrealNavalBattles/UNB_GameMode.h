@@ -18,10 +18,14 @@ class UNREALNAVALBATTLES_API AUNB_GameMode : public AGameMode
 public:
 	class AUNB_SpectatorPawn * GetSpecPawn();
 	void SetSpecPawn(class AUNB_SpectatorPawn * specPawn);
-	void SetScore();
+	void SetScoreTeam(int team, int score);
+	int GetScoreTeamOne();
+	int GetScoreTeamTwo();
+	void CheckForWinner();
 
 
 private:
 	class AUNB_SpectatorPawn * m_specPawn;
-	
+	int m_scoreTeamOne;
+	int m_scoreTeamTwo;
 };
