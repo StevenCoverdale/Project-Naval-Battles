@@ -12,7 +12,7 @@
 
 
 AUNB_Ships::AUNB_Ships(FObjectInitializer const& ObjectInitializer)
-	: Super(ObjectInitializer), _maxHealth(100), _health(_maxHealth),m_team(GetTeam())
+	: Super(ObjectInitializer), _maxHealth(100), _health(_maxHealth)
 {
 	//ships health
 	_health = 100.0f;
@@ -156,7 +156,6 @@ void AUNB_Ships::Damage(int damage)
 		_health -= damage;
 		if(_health <= 0)
 		{
-			GameMode->SetScoreTeam(0, 1);
 			Destroy();
 		}
 	}
@@ -169,20 +168,20 @@ UCapsuleComponent* AUNB_Ships::GetCapsuleComponent()
 
 void AUNB_Ships::SetTarget(AUNB_Ships * target)
 {
-
+	
 }
 
 
-UNB_Team * AUNB_Ships::GetTeam() const
+TEAM AUNB_Ships::GetTeam() const
 {
 	return m_team;
 }
-void AUNB_Ships::SetTeam(UNB_Team * team)
+void AUNB_Ships::SetTeam(TEAM team)
 {
 	m_team = team;
 }
 
-bool AUNB_Ships::IsOnteam(UNB_Team const* team) const
+bool AUNB_Ships::IsOnteam(TEAM team) const
 {
 	return m_team == team;
 }

@@ -1,163 +1,164 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<ItemGroup>
-		<None Include="..\..\UnrealNavalBattles.uproject" />
-		<Filter Include="Source">
-			<UniqueIdentifier>{C0D81B04-7E55-440C-956B-A8A4E0A49D3F}</UniqueIdentifier>
-		</Filter>
-		<None Include="..\..\Source\UnrealNavalBattles.Target.cs">
-			<Filter>Source</Filter>
-		</None >
-		<None Include="..\..\Source\UnrealNavalBattlesEditor.Target.cs">
-			<Filter>Source</Filter>
-		</None >
-		<Filter Include="Config">
-			<UniqueIdentifier>{3B91E3C7-2CDE-4CE2-951D-E988CB15AC22}</UniqueIdentifier>
-		</Filter>
-		<None Include="..\..\Config\DefaultEditor.ini">
-			<Filter>Config</Filter>
-		</None >
-		<None Include="..\..\Config\DefaultEngine.ini">
-			<Filter>Config</Filter>
-		</None >
-		<None Include="..\..\Config\DefaultInput.ini">
-			<Filter>Config</Filter>
-		</None >
-		<Filter Include="Source\UnrealNavalBattles">
-			<UniqueIdentifier>{25E2CAC5-68F0-4A08-9E24-EB5BED7D9D8E}</UniqueIdentifier>
-		</Filter>
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\ShipBullet.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\ShipBullet.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\ShipWeapon.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\ShipWeapon.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\ShipWeaponFire.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\ShipWeaponFire.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\ShipWeaponSystem.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\ShipWeaponSystem.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\TeamInterface.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\TeamInterface.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\Test_Ship.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\Test_Ship.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\TorpedoWeaponFire.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\TorpedoWeaponFire.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_AIController.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_AIController.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_BTTask_ClickLocation.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_BTTask_ClickLocation.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_BTTask_MoveWithinDistance.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_BTTask_MoveWithinDistance.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_GameMode.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_GameMode.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_GameState.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_GameState.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_HUD.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_HUD.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_PlayerController.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_PlayerController.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_Ships.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_Ships.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_SpectatorPawn.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_SpectatorPawn.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_Team.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_Team.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_Torpedo_Bullet.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_Torpedo_Bullet.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_Waypoint.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_Waypoint.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<None Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.Build.cs">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</None >
-		<ClCompile Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.cpp">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.h">
-			<Filter>Source\UnrealNavalBattles</Filter>
-		</ClInclude >
-		<Filter Include="Source\UnrealNavalBattles\Resources">
-			<UniqueIdentifier>{B6110DB6-44BB-4B0A-A997-9F26F0AC24FB}</UniqueIdentifier>
-		</Filter>
-		<Filter Include="Source\UnrealNavalBattles\Resources\Windows">
-			<UniqueIdentifier>{1426FDD0-74AA-4903-AED5-3EB522C3E00B}</UniqueIdentifier>
-		</Filter>
-		<ResourceCompile Include="..\..\Source\UnrealNavalBattles\Resources\Windows\UnrealNavalBattles.rc">
-			<Filter>Source\UnrealNavalBattles\Resources\Windows</Filter>
-		</ResourceCompile >
-	</ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\UnrealNavalBattles.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{51AA5E0D-1426-4C38-95A5-65B1A73C349D}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\UnrealNavalBattles.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\UnrealNavalBattlesEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{3D80A896-8C91-44BC-82A5-F2FBE70A3193}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\UnrealNavalBattles">
+      <UniqueIdentifier>{88B2454E-92F6-4116-9EFB-45AA76BDA86E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\ShipBullet.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\ShipBullet.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\ShipWeapon.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\ShipWeapon.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\ShipWeaponFire.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\ShipWeaponFire.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\ShipWeaponSystem.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\ShipWeaponSystem.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\TeamInterface.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\TeamInterface.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\Test_Ship.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\Test_Ship.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\TorpedoWeaponFire.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\TorpedoWeaponFire.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_AIController.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_AIController.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_BTTask_ClickLocation.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_BTTask_ClickLocation.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_BTTask_MoveWithinDistance.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_BTTask_MoveWithinDistance.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_GameMode.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_GameMode.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_GameState.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_GameState.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_HUD.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_HUD.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_PlayerController.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_PlayerController.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_Ships.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_Ships.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_SpectatorPawn.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_SpectatorPawn.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_Team.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_Torpedo_Bullet.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_Torpedo_Bullet.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_Waypoint.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UNB_Waypoint.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.Build.cs">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealNavalBattles\UnrealNavalBattles.h">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClInclude>
+    <Filter Include="Source\UnrealNavalBattles\Resources">
+      <UniqueIdentifier>{C710DEDD-9AF5-484D-AA48-FDB8BDAC9A2D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\UnrealNavalBattles\Resources\Windows">
+      <UniqueIdentifier>{7A193E9C-29C2-4BE0-841B-FBD9AF4CAC81}</UniqueIdentifier>
+    </Filter>
+    <ResourceCompile Include="..\..\Source\UnrealNavalBattles\Resources\Windows\UnrealNavalBattles.rc">
+      <Filter>Source\UnrealNavalBattles\Resources\Windows</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\UnrealNavalBattles\UNB_Team.cpp">
+      <Filter>Source\UnrealNavalBattles</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>

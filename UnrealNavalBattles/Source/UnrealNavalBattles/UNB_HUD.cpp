@@ -166,6 +166,7 @@ void AUNB_HUD::DrawHealthBar(AActor * actor, float percent, int32 barHeight, int
 	FVector2D centre2D = FVector2D(Canvas->Project(FVector(centre.X, centre.Y, centre.Z + extent.Z)));
 	float shipExtent = 40;
 
+
 	if (NULL != Cast<APawn>(actor))
 	{
 		AUNB_Ships * ship = Cast<AUNB_Ships>(actor);
@@ -174,6 +175,7 @@ void AUNB_HUD::DrawHealthBar(AActor * actor, float percent, int32 barHeight, int
 			shipExtent = ship->GetCapsuleComponent()->GetScaledCapsuleRadius();
 		}
 	}
+
 
 	FVector pos1 = Canvas->Project(FVector(centre.X, centre.Y - shipExtent * 2, centre.Z + extent.Z));
 	FVector pos2 = Canvas->Project(FVector(centre.X, centre.Y + shipExtent * 2, centre.Z + extent.Z));

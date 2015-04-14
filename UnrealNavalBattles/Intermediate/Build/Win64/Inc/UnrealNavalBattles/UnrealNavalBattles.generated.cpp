@@ -39,7 +39,7 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	void UTeamInterface::StaticRegisterNativesUTeamInterface()
 	{
 	}
-	IMPLEMENT_CLASS(UTeamInterface, 2346148470);
+	IMPLEMENT_CLASS(UTeamInterface, 207997930);
 	void ATest_Ship::StaticRegisterNativesATest_Ship()
 	{
 	}
@@ -89,7 +89,7 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	void AUNB_Ships::StaticRegisterNativesAUNB_Ships()
 	{
 	}
-	IMPLEMENT_CLASS(AUNB_Ships, 4266604862);
+	IMPLEMENT_CLASS(AUNB_Ships, 2576666190);
 	void AUNB_SpectatorPawn::StaticRegisterNativesAUNB_SpectatorPawn()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnRightClick",(Native)&AUNB_SpectatorPawn::execOnRightClick);
@@ -143,6 +143,7 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponFire();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponSystem_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponSystem();
+	UNREALNAVALBATTLES_API class UEnum* Z_Construct_UEnum_UTeamInterface_TEAM();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UTeamInterface_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UTeamInterface();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_ATest_Ship_NoRegister();
@@ -428,6 +429,26 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 		return OuterClass;
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AShipWeaponSystem(Z_Construct_UClass_AShipWeaponSystem, TEXT("AShipWeaponSystem"));
+	UEnum* Z_Construct_UEnum_UTeamInterface_TEAM()
+	{
+		UClass* Outer=Z_Construct_UClass_UTeamInterface();
+		static UEnum* ReturnEnum = NULL;
+		if (!ReturnEnum)
+		{
+			ReturnEnum = new(Outer, TEXT("TEAM"), RF_Public|RF_Transient|RF_Native) UEnum(FObjectInitializer());
+			TArray<FName> EnumNames;
+			EnumNames.Add(FName(TEXT("TEAM::Team_Red")));
+			EnumNames.Add(FName(TEXT("TEAM::Team_Blue")));
+			EnumNames.Add(FName(TEXT("TEAM::Team_MAX")));
+			ReturnEnum->SetEnums(EnumNames, UEnum::ECppForm::EnumClass);
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnEnum->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnEnum, TEXT("BlueprintType"), TEXT("true"));
+			MetaData->SetValue(ReturnEnum, TEXT("ModuleRelativePath"), TEXT("TeamInterface.h"));
+#endif
+		}
+		return ReturnEnum;
+	}
 	UClass* Z_Construct_UClass_UTeamInterface_NoRegister()
 	{
 		return UTeamInterface::StaticClass();
@@ -445,6 +466,7 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= 0x20004081;
 
+				OuterClass->LinkChild(Z_Construct_UEnum_UTeamInterface_TEAM()); // 2301669100
 
 				OuterClass->ClassConfigName = FName(TEXT("Engine"));
 				OuterClass->StaticLink();
@@ -829,6 +851,7 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 				OuterClass->ClassFlags |= 0x20900080;
 
 
+				UProperty* NewProp_m_team = new(OuterClass, TEXT("m_team"), RF_Public|RF_Transient|RF_Native) UByteProperty(CPP_PROPERTY_BASE(m_team, AUNB_Ships), 0x0000000000000005, Z_Construct_UEnum_UTeamInterface_TEAM());
 				UProperty* NewProp__maxHealth = new(OuterClass, TEXT("_maxHealth"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(_maxHealth, AUNB_Ships), 0x0000000000000005);
 				UProperty* NewProp__health = new(OuterClass, TEXT("_health"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(_health, AUNB_Ships), 0x0000000000000005);
 				UProperty* NewProp_ShipBehavior = new(OuterClass, TEXT("ShipBehavior"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ShipBehavior, AUNB_Ships), 0x0000000000000001, Z_Construct_UClass_UBehaviorTree_NoRegister());
@@ -839,6 +862,8 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation AI|Navigation Pawn|Character|InternalEvents"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_Ships.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_Ships.h"));
+				MetaData->SetValue(NewProp_m_team, TEXT("Category"), TEXT("Teams"));
+				MetaData->SetValue(NewProp_m_team, TEXT("ModuleRelativePath"), TEXT("UNB_Ships.h"));
 				MetaData->SetValue(NewProp__maxHealth, TEXT("Category"), TEXT("Health"));
 				MetaData->SetValue(NewProp__maxHealth, TEXT("ModuleRelativePath"), TEXT("UNB_Ships.h"));
 				MetaData->SetValue(NewProp__health, TEXT("Category"), TEXT("Health"));
@@ -1083,8 +1108,8 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/UnrealNavalBattles")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x53EFA6E0;
-			Guid.B = 0x4707DDB2;
+			Guid.A = 0x48ED4AA7;
+			Guid.B = 0x19B2C967;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

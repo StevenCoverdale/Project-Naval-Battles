@@ -7,6 +7,13 @@
  * 
  */
 
+UENUM(BlueprintType)
+enum class TEAM : uint8
+{
+	Team_Red,
+	Team_Blue,
+};
+
 /** Interface for actors which can be associated with teams */
 UINTERFACE()
 class UTeamInterface : public UInterface
@@ -20,7 +27,7 @@ class ITeamInterface
 
 public:
 	/** returns the team number of the actor */
-	virtual class UNB_Team * GetTeam() const = 0;
-	virtual void SetTeam(UNB_Team * team) = 0;
-	virtual bool IsOnteam(UNB_Team const* team) const = 0;
+	virtual TEAM GetTeam() const = 0;
+	virtual void SetTeam(TEAM team) = 0;
+	virtual bool IsOnteam(TEAM team) const = 0;
 };

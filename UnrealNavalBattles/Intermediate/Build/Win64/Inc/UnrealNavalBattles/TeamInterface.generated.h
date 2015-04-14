@@ -95,3 +95,6 @@ public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
+#define FOREACH_ENUM_TEAM(op) \
+	op(TEAM::Team_Red) \
+	op(TEAM::Team_Blue) 

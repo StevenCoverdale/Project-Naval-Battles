@@ -87,6 +87,16 @@ void AUNB_SpectatorPawn::OnStopLeftClick()
 
 void AUNB_SpectatorPawn::OnRightClick()
 {
+
+	//AUNB_PlayerController* MyPC = GetPlayerController();	ITeamInterface* ActorTeam = Cast<ITeamInterface>(actor);
+	//UTexture2D* HealthBarTexture = EnemyTeamHPTexture;  
+
+	//if (ActorTeam != NULL && MyPC != NULL && ActorTeam->GetTeam() == MyPC->GetTeam())
+	//{
+	//	HealthBarTexture = PlayerTeamHPTexture;
+	//}
+
+
 	FHitResult Hit(ForceInit);
 
 	if (RayTraceMouse(&Hit))
@@ -101,7 +111,7 @@ void AUNB_SpectatorPawn::OnRightClick()
 				for (int i = 0; i < selectedUnits.Num(); ++i)
 				{
 					AUNB_Ships * selectedShip = Cast<AUNB_Ships>(selectedUnits[i]);
-					if (selectedShip)
+					if (selectedShip )
 					{
 						selectedShip->SetTarget(ship);
 					}
@@ -113,7 +123,7 @@ void AUNB_SpectatorPawn::OnRightClick()
 				for (int i = 0; i < selectedUnits.Num(); ++i)
 				{
 					AUNB_Ships * selectedShip = Cast<AUNB_Ships>(selectedUnits[i]);
-					if (selectedShip)
+					if (selectedShip && selectedShip->GetTeam() == this->GetTeam())
 					{
 						selectedShip->GetMouseClickLocation(Hit.Location,selectedShip );
 					}
@@ -188,16 +198,16 @@ bool AUNB_SpectatorPawn::RayTraceMouse(FHitResult * result) const
 }
 
 
-UNB_Team * AUNB_SpectatorPawn::GetTeam() const
+TEAM AUNB_SpectatorPawn::GetTeam() const
 {
 	return m_team;
 }
-void AUNB_SpectatorPawn::SetTeam(UNB_Team * team)
+void AUNB_SpectatorPawn::SetTeam(TEAM team)
 {
 	m_team = team;
 }
 
-bool AUNB_SpectatorPawn::IsOnteam(UNB_Team const* team) const
+bool AUNB_SpectatorPawn::IsOnteam(TEAM team) const
 {
 	return m_team == team;
 }

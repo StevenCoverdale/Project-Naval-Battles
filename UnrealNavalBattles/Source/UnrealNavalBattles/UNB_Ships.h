@@ -4,6 +4,7 @@
 
 #include "GameFramework/Actor.h"
 #include "TeamInterface.h"
+#include "UNB_Team.h"
 #include "UNB_AIController.h"
 #include "UNB_GameMode.h"
 #include "UNB_BTTask_ClickLocation.h"
@@ -12,6 +13,7 @@
 /**
  * 
  */
+
 UCLASS()
 class UNREALNAVALBATTLES_API AUNB_Ships : public ACharacter, public ITeamInterface
 {
@@ -26,7 +28,6 @@ public:
 	AUNB_AIController* AIController;
 	UUNB_BTTask_ClickLocation* TaskForce;
 	AUNB_Ships* MyPawn;
-	AUNB_GameMode* GameMode;
 
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Health)
@@ -43,6 +44,7 @@ public:
 	int GetHealth();
 	int GetMaxHealth();
 	void Damage(int damage);
+	
 
 	void GetMouseClickLocation(FVector loc, AUNB_Ships* ship);
 	void GetMouseClickLocationWithShift(FVector loc);
@@ -63,10 +65,14 @@ public:
 	void SetTarget(AUNB_Ships * target);
 
 
-	virtual class UNB_Team * GetTeam() const;
-	virtual void SetTeam(class UNB_Team * team);
-	virtual bool IsOnteam(UNB_Team const* team) const;
+	virtual TEAM GetTeam() const;
+	virtual void SetTeam(TEAM team);
+	virtual bool IsOnteam(TEAM team) const;
 
-	class UNB_Team * m_team;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Teams)
+	TEAM m_team;
+
+
 
 };

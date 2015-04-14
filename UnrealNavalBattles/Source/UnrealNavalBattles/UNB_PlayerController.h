@@ -3,6 +3,7 @@
 #pragma once
 
 #include "GameFramework/PlayerController.h"
+#include "UNB_Team.h"
 #include "UNB_PlayerController.generated.h"
 
 /**
@@ -17,10 +18,10 @@ public:
 	AUNB_PlayerController(FObjectInitializer const& ObjectInitializer);
 
 	// Begin StrategyTeamInterface interface	
-	virtual class UNB_Team * GetTeam() const;
+	virtual TEAM GetTeam() const;
 	// End StrategyTeamInterface interface
 	
 private:
-	class UNB_Team * m_team;
+	TEAM  m_team;
 
 };

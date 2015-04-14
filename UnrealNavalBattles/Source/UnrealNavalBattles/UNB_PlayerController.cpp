@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "UnrealNavalBattles.h"
+#include "UNB_Team.h"
 #include "UNB_PlayerController.h"
 
 
@@ -25,7 +26,7 @@ AUNB_PlayerController::AUNB_PlayerController(FObjectInitializer const& ObjectIni
 	}
 #endif
 }
-UNB_Team * AUNB_PlayerController::GetTeam() const
+TEAM AUNB_PlayerController::GetTeam() const
 {
 	return m_team;
 }
