@@ -33,6 +33,7 @@ void ATorpedoWeaponFire::Tick(float delta)
 	{
 		Event_FireTorpedo();
 		m_torpedoFireTime = 0;
+
 	}
 	else
 	{

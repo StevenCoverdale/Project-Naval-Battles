@@ -50,9 +50,10 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	IMPLEMENT_CLASS(AUNB_Ships, 2576666190);
 	void AShipWeaponFire::StaticRegisterNativesAShipWeaponFire()
 	{
+		FNativeFunctionRegistrar::RegisterFunction(AShipWeaponFire::StaticClass(),"CannonFireTemplate",(Native)&AShipWeaponFire::execCannonFireTemplate);
 		FNativeFunctionRegistrar::RegisterFunction(AShipWeaponFire::StaticClass(),"Fire",(Native)&AShipWeaponFire::execFire);
 	}
-	IMPLEMENT_CLASS(AShipWeaponFire, 863000771);
+	IMPLEMENT_CLASS(AShipWeaponFire, 1663435483);
 	void AShipWeaponFire::Event_Fire()
 	{
 		ProcessEvent(FindFunctionChecked(UNREALNAVALBATTLES_Event_Fire),NULL);
@@ -104,10 +105,15 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 		FNativeFunctionRegistrar::RegisterFunction(AUNB_Torpedo_Bullet::StaticClass(),"OnOverlap",(Native)&AUNB_Torpedo_Bullet::execOnOverlap);
 		FNativeFunctionRegistrar::RegisterFunction(AUNB_Torpedo_Bullet::StaticClass(),"SetTemplate",(Native)&AUNB_Torpedo_Bullet::execSetTemplate);
 	}
-	IMPLEMENT_CLASS(AUNB_Torpedo_Bullet, 4161881456);
+	IMPLEMENT_CLASS(AUNB_Torpedo_Bullet, 687529015);
+	void AUNB_Torpedo_Bullet::PlayParticle()
+	{
+		ProcessEvent(FindFunctionChecked(UNREALNAVALBATTLES_PlayParticle),NULL);
+	}
 FName UNREALNAVALBATTLES_Event_Fire = FName(TEXT("Event_Fire"));
 FName UNREALNAVALBATTLES_Event_FireTorpedo = FName(TEXT("Event_FireTorpedo"));
 FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
+FName UNREALNAVALBATTLES_PlayParticle = FName(TEXT("PlayParticle"));
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AActor_NoRegister();
@@ -155,6 +161,7 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UUNB_BTTask_ClickLocation();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Ships_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Ships();
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AShipWeaponFire_CannonFireTemplate();
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AShipWeaponFire_Event_Fire();
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AShipWeaponFire_Fire();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponFire_NoRegister();
@@ -177,6 +184,7 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_PlayerController();
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnEndOverlap();
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnOverlap();
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_PlayParticle();
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_SetTemplate();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Torpedo_Bullet_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Torpedo_Bullet();
@@ -648,6 +656,30 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 		return OuterClass;
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_Ships(Z_Construct_UClass_AUNB_Ships, TEXT("AUNB_Ships"));
+	UFunction* Z_Construct_UFunction_AShipWeaponFire_CannonFireTemplate()
+	{
+		struct ShipWeaponFire_eventCannonFireTemplate_Parms
+		{
+			class UParticleSystem* NewTemplate;
+		};
+		UClass* OuterClass=Z_Construct_UClass_AShipWeaponFire();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(OuterClass, TEXT("CannonFireTemplate"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x04020400, 65535, sizeof(ShipWeaponFire_eventCannonFireTemplate_Parms));
+			UProperty* NewProp_NewTemplate = new(ReturnFunction, TEXT("NewTemplate"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(NewTemplate, ShipWeaponFire_eventCannonFireTemplate_Parms), 0x0000000000000080, Z_Construct_UClass_UParticleSystem_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Particles"));
+			MetaData->SetValue(ReturnFunction, TEXT("DeprecatedFunction"), TEXT(""));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("ShipWeaponFire.h"));
+			MetaData->SetValue(NewProp_NewTemplate, TEXT("ModuleRelativePath"), TEXT("ShipWeaponFire.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UFunction* Z_Construct_UFunction_AShipWeaponFire_Event_Fire()
 	{
 		UClass* OuterClass=Z_Construct_UClass_AShipWeaponFire();
@@ -698,10 +730,12 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= 0x20900080;
 
+				OuterClass->LinkChild(Z_Construct_UFunction_AShipWeaponFire_CannonFireTemplate());
 				OuterClass->LinkChild(Z_Construct_UFunction_AShipWeaponFire_Event_Fire());
 				OuterClass->LinkChild(Z_Construct_UFunction_AShipWeaponFire_Fire());
 
 				UProperty* NewProp_m_teams = new(OuterClass, TEXT("m_teams"), RF_Public|RF_Transient|RF_Native) UByteProperty(CPP_PROPERTY_BASE(m_teams, AShipWeaponFire), 0x0000000000000005, Z_Construct_UEnum_UTeamInterface_TEAM());
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AShipWeaponFire_CannonFireTemplate()); // 3193514948
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AShipWeaponFire_Event_Fire()); // 1714265526
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AShipWeaponFire_Fire()); // 3991725523
 				OuterClass->StaticLink();
@@ -1034,6 +1068,23 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 		}
 		return ReturnFunction;
 	}
+	UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_PlayParticle()
+	{
+		UClass* OuterClass=Z_Construct_UClass_AUNB_Torpedo_Bullet();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(OuterClass, TEXT("PlayParticle"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x08020800, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UNBEvent"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("UNB_Torpedo_Bullet.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_SetTemplate()
 	{
 		struct UNB_Torpedo_Bullet_eventSetTemplate_Parms
@@ -1077,6 +1128,7 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 
 				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnEndOverlap());
 				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnOverlap());
+				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_Torpedo_Bullet_PlayParticle());
 				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_Torpedo_Bullet_SetTemplate());
 
 				UProperty* NewProp_MeshComponent = new(OuterClass, TEXT("MeshComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(MeshComponent, AUNB_Torpedo_Bullet), 0x00000000004a001d, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
@@ -1084,6 +1136,7 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 				UProperty* NewProp_ColliderComponent = new(OuterClass, TEXT("ColliderComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ColliderComponent, AUNB_Torpedo_Bullet), 0x00000000004a001d, Z_Construct_UClass_USphereComponent_NoRegister());
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnEndOverlap()); // 3156234489
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnOverlap()); // 4171055053
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_Torpedo_Bullet_PlayParticle()); // 258806697
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_Torpedo_Bullet_SetTemplate()); // 362593284
 				OuterClass->StaticLink();
 #if WITH_METADATA
@@ -1114,8 +1167,8 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/UnrealNavalBattles")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x31413D2E;
-			Guid.B = 0x19ABB655;
+			Guid.A = 0x404FCD7F;
+			Guid.B = 0x2266CD25;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

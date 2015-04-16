@@ -27,6 +27,12 @@ class UNREALNAVALBATTLES_API AUNB_Torpedo_Bullet : public AActor
 
 	UParticleSystem* Explosion;
 
+	UFUNCTION(BlueprintImplementableEvent, Category = UNBEvent)
+	void PlayParticle();
+
+	
+	virtual void AUNB_Torpedo_Bullet::Tick(float delta) override;
+
 	UFUNCTION()
 	void OnOverlap(AActor* OtherActor);
 

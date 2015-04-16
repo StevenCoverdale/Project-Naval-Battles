@@ -34,6 +34,11 @@ public:
 	bool InRange;
 	FVector direction;
 
+	UParticleSystem* Cannon_Fire;
+
+	UFUNCTION(BlueprintCallable, Category=Particles, Meta=(DeprecatedFunction))
+	virtual void CannonFireTemplate(class UParticleSystem * NewTemplate);
+
 	UCapsuleComponent* GetCapsuleComponent();
 	AUNB_SpectatorPawn* specPawn;
 

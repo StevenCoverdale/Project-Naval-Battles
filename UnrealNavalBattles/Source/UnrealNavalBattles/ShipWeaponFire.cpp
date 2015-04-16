@@ -14,6 +14,13 @@ AShipWeaponFire::AShipWeaponFire(FObjectInitializer const& ObjectInitializer)
 	PrimaryActorTick.bCanEverTick = true;
 	InRange = false;
 
+	ConstructorHelpers::FObjectFinder<UParticleSystem> CannonFireAsset(TEXT("Particles'/Game/Particles/Cannon_Fire.Cannon_Fire'"));
+
+	if (CannonFireAsset.Object != NULL)
+	{
+		Cannon_Fire = CannonFireAsset.Object;
+	}
+
 }
 
 bool AShipWeaponFire::Fire_Validate()
@@ -26,6 +33,11 @@ void AShipWeaponFire::Fire_Implementation()
 
 }
 
+void AShipWeaponFire::CannonFireTemplate(class UParticleSystem * NewTemplate)
+{
+	Cannon_Fire = NewTemplate;
+}
+
 void AShipWeaponFire::Tick(float delta)
 {
 	weaponReloadTime = 3;
@@ -35,6 +47,15 @@ void AShipWeaponFire::Tick(float delta)
 	{
 
 		Event_Fire();
+		//Array for storing all mesh components
+					TArray<UStaticMeshComponent*> Components;
+					this->GetComponents<UStaticMeshComponent>(Components);
+					//Iterate through all 
+					for( int32 i=0; i<Components.Num(); i++ )
+					{
+						//Set Explosion particle to OtherActors meshes, wpSocket is attach point, this was the name found when function was found, offset, rotation, attachlocation, think true is for garbage cleanup just keep it
+						UGameplayStatics::SpawnEmitterAttached(Cannon_Fire, Components[i],"wpSocket", FVector(0, 0, 0),  FRotator(0, 0, 0), EAttachLocation::SnapToTarget, true);
+					}
 		weaponFireTime = 0;
 	}
 	else

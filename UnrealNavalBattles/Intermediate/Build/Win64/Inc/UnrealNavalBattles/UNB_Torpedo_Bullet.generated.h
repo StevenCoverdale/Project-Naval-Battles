@@ -12,6 +12,7 @@
 #endif
 #define UNREALNAVALBATTLES_UNB_Torpedo_Bullet_generated_h
 
+extern UNREALNAVALBATTLES_API FName UNREALNAVALBATTLES_PlayParticle;
 #define AUNB_Torpedo_Bullet_EVENTPARMS
 #define AUNB_Torpedo_Bullet_RPC_WRAPPERS \
 	DECLARE_FUNCTION(execSetTemplate) \

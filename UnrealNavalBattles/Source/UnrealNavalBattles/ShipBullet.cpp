@@ -55,27 +55,45 @@ void AShipBullet::OnOverlap(AActor* OtherActor)
 
 			if (NULL != specPawn)
 			{
-				//Iterate through all selected units and draw their unit HUDs
-				TArray<AActor*> selected = specPawn->getSelectedUnits();
-				for (int i = 0; i < selected.Num(); ++i)
-				{
-					AUNB_Ships * ship = Cast<AUNB_Ships>(OtherActor);
-					ship->Damage(10);
 
+				AUNB_Ships * ship = Cast<AUNB_Ships>(OtherActor);
 
-					//Array for storing all mesh components
-					TArray<UStaticMeshComponent*> Components;
+				ship->Damage(30);
+
+				TArray<UStaticMeshComponent*> Components;
 					OtherActor->GetComponents<UStaticMeshComponent>(Components);
 					//Iterate through all 
 					for( int32 i=0; i<Components.Num(); i++ )
 					{
 						//Set Explosion particle to OtherActors meshes, wpSocket is attach point, this was the name found when function was found, offset, rotation, attachlocation, think true is for garbage cleanup just keep it
+						if(OtherActor == ship)
 						UGameplayStatics::SpawnEmitterAttached( Explosion, Components[i],"wpSocket", FVector(0, 0, 0),  FRotator(0, 0, 0), EAttachLocation::SnapToTarget, true);
 					}
 					if(OtherActor == ship)
 						this->Destroy();
-				    
-				}
+
+
+				//Iterate through all selected units and draw their unit HUDs
+				//TArray<AActor*> selected = specPawn->getSelectedUnits();
+				//for (int i = 0; i < selected.Num(); ++i)
+				//{
+				//	AUNB_Ships * ship = Cast<AUNB_Ships>(OtherActor);
+				//	ship->Damage(10);
+
+
+				//	//Array for storing all mesh components
+				//	TArray<UStaticMeshComponent*> Components;
+				//	OtherActor->GetComponents<UStaticMeshComponent>(Components);
+				//	//Iterate through all 
+				//	for( int32 i=0; i<Components.Num(); i++ )
+				//	{
+				//		//Set Explosion particle to OtherActors meshes, wpSocket is attach point, this was the name found when function was found, offset, rotation, attachlocation, think true is for garbage cleanup just keep it
+				//		UGameplayStatics::SpawnEmitterAttached( Explosion, Components[i],"wpSocket", FVector(0, 0, 0),  FRotator(0, 0, 0), EAttachLocation::SnapToTarget, true);
+				//	}
+				//	if(OtherActor == ship)
+				//		this->Destroy();
+				//    
+				//}
 			}
 		}
 	}

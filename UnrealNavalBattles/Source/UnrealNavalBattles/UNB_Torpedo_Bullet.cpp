@@ -30,6 +30,8 @@ AUNB_Torpedo_Bullet::AUNB_Torpedo_Bullet(const class FPostConstructInitializePro
 
 	ConstructorHelpers::FObjectFinder<UParticleSystem> ExplosionAsset(TEXT("Particles'/Game/Particles/Explosion.Explosion'"));
 
+	PrimaryActorTick.bCanEverTick = true;
+
 	if (ExplosionAsset.Object != NULL)
 	{
 	  Explosion = ExplosionAsset.Object;
@@ -39,6 +41,7 @@ AUNB_Torpedo_Bullet::AUNB_Torpedo_Bullet(const class FPostConstructInitializePro
 void AUNB_Torpedo_Bullet::SetTemplate(class UParticleSystem * NewTemplate)
 {
 	Explosion = NewTemplate;
+	
 }
 
 void AUNB_Torpedo_Bullet::OnOverlap(AActor* OtherActor)
@@ -55,16 +58,11 @@ void AUNB_Torpedo_Bullet::OnOverlap(AActor* OtherActor)
 
 			if (NULL != specPawn)
 			{
-				//Iterate through all selected units and draw their unit HUDs
-				TArray<AActor*> selected = specPawn->getSelectedUnits();
-				for (int i = 0; i < selected.Num(); ++i)
-				{
-					AUNB_Ships * ship = Cast<AUNB_Ships>(OtherActor);
-					ship->Damage(30);
+				AUNB_Ships * ship = Cast<AUNB_Ships>(OtherActor);
 
+				ship->Damage(30);
 
-					//Array for storing all mesh components
-					TArray<UStaticMeshComponent*> Components;
+				TArray<UStaticMeshComponent*> Components;
 					OtherActor->GetComponents<UStaticMeshComponent>(Components);
 					//Iterate through all 
 					for( int32 i=0; i<Components.Num(); i++ )
@@ -75,8 +73,20 @@ void AUNB_Torpedo_Bullet::OnOverlap(AActor* OtherActor)
 					}
 					if(OtherActor == ship)
 						this->Destroy();
+
+				//Iterate through all selected units and draw their unit HUDs
+				/*for (FConstPawnIterator It = GetWorld()->GetPawnIterator(); It; ++It)
+				{
+					AUNB_Ships* TestPawn = Cast<AUNB_Ships>(*It);
+
+					if(OtherActor == TestPawn)
+						ship->Damage(30);
+
+
+					//Array for storing all mesh components
+					
 				    
-				}
+				}*/
 			}
 		}
 	}
@@ -87,3 +97,9 @@ void AUNB_Torpedo_Bullet::OnEndOverlap(AActor* OtherActor)
 	isSpawning = false;
 	GEngine->AddOnScreenDebugMessage(-3, 2.0f, FColor::Green, TEXT("Collision Lost!!!"));
 }
+
+void AUNB_Torpedo_Bullet::Tick(float delta)
+{
+		
+}
+

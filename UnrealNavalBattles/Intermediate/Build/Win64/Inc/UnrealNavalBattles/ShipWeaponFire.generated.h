@@ -28,6 +28,12 @@ extern UNREALNAVALBATTLES_API FName UNREALNAVALBATTLES_Fire;
 			return; \
 		} \
 		this->Fire_Implementation(); \
+	} \
+	DECLARE_FUNCTION(execCannonFireTemplate) \
+	{ \
+		P_GET_OBJECT(UParticleSystem,NewTemplate); \
+		P_FINISH; \
+		this->CannonFireTemplate(NewTemplate); \
 	}
 
 

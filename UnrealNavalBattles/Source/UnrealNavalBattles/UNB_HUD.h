@@ -27,12 +27,14 @@ public:
 	float UIScale() const;
 	void UIScale(float scale);
 
+
 private:
 	void DrawShipHUD();
 	void DrawHealthBar(AActor * actor, float percent, int32 barHeight, int yOffset = 0) const;
 
 private:
 	float m_UIScale;
+	virtual void AUNB_HUD::Tick(float delta) override;
 
 
 	/** gray health bar texture */

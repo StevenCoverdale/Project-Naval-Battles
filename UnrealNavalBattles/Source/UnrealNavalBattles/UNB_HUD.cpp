@@ -27,6 +27,7 @@ AUNB_HUD::AUNB_HUD(FObjectInitializer const& ObjectInitializer) :
 	BarFillTexture = BarFillObj.Object;
 	PlayerTeamHPTexture = PlayerTeamHPObj.Object;
 	EnemyTeamHPTexture = EnemyTeamHPObj.Object;
+	PrimaryActorTick.bCanEverTick = true;
 
 #if DEBUG_LEVEL > 0
 	if (GEngine)
@@ -136,13 +137,21 @@ void AUNB_HUD::DrawShipHUD()
 			TArray<AActor*> selected = specPawn->getSelectedUnits();
 			for (int i = 0; i < selected.Num(); ++i)
 			{
+
 				AUNB_Ships * ship = Cast<AUNB_Ships>(selected[i]);
 				DrawHealthBar(selected[i], ship->GetHealth() / (float)ship->GetMaxHealth(), 18 * m_UIScale);
 			}
 		}
 	}
 }
-
+void AUNB_HUD::Tick(float delta)
+{
+	/*for (FConstPawnIterator It = GetWorld()->GetPawnIterator(); It; ++It)
+	{
+		AUNB_Ships * ship = Cast<AUNB_Ships>(*It);
+		DrawHealthBar(*It, ship->GetHealth() / (float)ship->GetMaxHealth(), 18 * m_UIScale);
+	}*/
+}
 
 
 
@@ -192,7 +201,9 @@ void AUNB_HUD::DrawHealthBar(AActor * actor, float percent, int32 barHeight, int
 	}
 
 
-	
+
+
+
 
 
 	float X = centre2D.X - healthBarLength / 2;

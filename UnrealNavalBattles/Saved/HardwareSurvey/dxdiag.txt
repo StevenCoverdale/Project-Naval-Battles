@@ -1,8 +1,8 @@
 ------------------
 System Information
 ------------------
-Time of this report: 4/14/2015, 13:38:28
-       Machine name: C401IT20
+Time of this report: 4/16/2015, 08:51:33
+       Machine name: C401IT21
    Operating System: Windows 7 Enterprise 64-bit (6.1, Build 7601) Service Pack 1 (7601.win7sp1_gdr.140303-2144)
            Language: English (Regional Setting: English)
 System Manufacturer: Alienware
@@ -11,7 +11,7 @@ System Manufacturer: Alienware
           Processor: Intel(R) Core(TM) i7 CPU         930  @ 2.80GHz (8 CPUs), ~2.8GHz
              Memory: 6144MB RAM
 Available OS Memory: 6134MB RAM
-          Page File: 6749MB used, 5518MB available
+          Page File: 6178MB used, 6089MB available
         Windows Dir: C:\Windows
     DirectX Version: DirectX 11
 DX Setup Parameters: Not found
@@ -26,6 +26,7 @@ DxDiag Notes
       Display Tab 1: No problems found.
         Sound Tab 1: No problems found.
         Sound Tab 2: No problems found.
+        Sound Tab 3: No problems found.
           Input Tab: No problems found.
 
 --------------------
@@ -122,9 +123,34 @@ Driver File Version: 9.18.0013.4052 (English)
 -------------
 Sound Devices
 -------------
-            Description: Digital Audio (HDMI) (2- High Definition Audio Device)
+            Description: Speakers (2- High Definition Audio Device)
  Default Sound Playback: Yes
  Default Voice Playback: Yes
+            Hardware ID: HDAUDIO\FUNC_01&VEN_10EC&DEV_0888&SUBSYS_102802F7&REV_1001
+        Manufacturer ID: 1
+             Product ID: 65535
+                   Type: WDM
+            Driver Name: HdAudio.sys
+         Driver Version: 6.01.7601.17514 (English)
+      Driver Attributes: Final Retail
+            WHQL Logo'd: n/a
+          Date and Size: 11/20/2010 23:23:47, 350208 bytes
+            Other Files: 
+        Driver Provider: Microsoft
+         HW Accel Level: Basic
+              Cap Flags: 0x0
+    Min/Max Sample Rate: 0, 0
+Static/Strm HW Mix Bufs: 0, 0
+ Static/Strm HW 3D Bufs: 0, 0
+              HW Memory: 0
+       Voice Management: No
+ EAX(tm) 2.0 Listen/Src: No, No
+   I3DL2(tm) Listen/Src: No, No
+Sensaura(tm) ZoomFX(tm): No
+
+            Description: Digital Audio (HDMI) (2- High Definition Audio Device)
+ Default Sound Playback: No
+ Default Voice Playback: No
             Hardware ID: HDAUDIO\FUNC_01&VEN_10EC&DEV_0888&SUBSYS_102802F7&REV_1001
         Manufacturer ID: 1
              Product ID: 65535
@@ -303,7 +329,7 @@ PS/2 Devices
 Disk & DVD/CD-ROM Drives
 ------------------------
       Drive: C:
- Free Space: 55.9 GB
+ Free Space: 58.7 GB
 Total Space: 242.7 GB
 File System: NTFS
       Model: OCZ-VECTOR
@@ -319,6 +345,34 @@ File System: NTFS
 --------------
 System Devices
 --------------
+     Name: Intel(R) ICH10 Family USB Enhanced Host Controller - 3A3A
+Device ID: PCI\VEN_8086&DEV_3A3A&SUBSYS_02F71028&REV_00\3&11583659&0&EF
+   Driver: n/a
+
+     Name: Intel(R) ICH10R SATA AHCI Controller
+Device ID: PCI\VEN_8086&DEV_3A22&SUBSYS_02F71028&REV_00\3&11583659&0&FA
+   Driver: n/a
+
+     Name: Intel(R) 5520/5500/X58 I/O Hub PCI Express Root Port 3 - 340A
+Device ID: PCI\VEN_8086&DEV_340A&SUBSYS_02F71028&REV_13\3&11583659&0&18
+   Driver: n/a
+
+     Name: Silicon Image SiI 3132 SATALink Controller
+Device ID: PCI\VEN_1095&DEV_3132&SUBSYS_02F71028&REV_01\4&24931170&0&00E4
+   Driver: n/a
+
+     Name: Intel(R) ICH10 Family USB Universal Host Controller - 3A39
+Device ID: PCI\VEN_8086&DEV_3A39&SUBSYS_02F71028&REV_00\3&11583659&0&D2
+   Driver: n/a
+
+     Name: Intel(R) ICH10R LPC Interface Controller - 3A16
+Device ID: PCI\VEN_8086&DEV_3A16&SUBSYS_02F71028&REV_00\3&11583659&0&F8
+   Driver: n/a
+
+     Name: Intel(R) 5520/5500/X58 I/O Hub PCI Express Root Port 1 - 3408
+Device ID: PCI\VEN_8086&DEV_3408&SUBSYS_02F71028&REV_13\3&11583659&0&08
+   Driver: n/a
+
      Name: Intel(R) ICH10 Family PCI Express Root Port 5 - 3A48
 Device ID: PCI\VEN_8086&DEV_3A48&SUBSYS_02F71028&REV_00\3&11583659&0&E4
    Driver: n/a
@@ -413,34 +467,6 @@ Device ID: PCI\VEN_8086&DEV_340E&SUBSYS_02F71028&REV_13\3&11583659&0&38
 
      Name: NVIDIA GeForce GTX 260  
 Device ID: PCI\VEN_10DE&DEV_05EA&SUBSYS_073810DE&REV_A1\4&101B7E8&0&0018
-   Driver: n/a
-
-     Name: Intel(R) ICH10 Family USB Enhanced Host Controller - 3A3A
-Device ID: PCI\VEN_8086&DEV_3A3A&SUBSYS_02F71028&REV_00\3&11583659&0&EF
-   Driver: n/a
-
-     Name: Intel(R) ICH10R SATA AHCI Controller
-Device ID: PCI\VEN_8086&DEV_3A22&SUBSYS_02F71028&REV_00\3&11583659&0&FA
-   Driver: n/a
-
-     Name: Intel(R) 5520/5500/X58 I/O Hub PCI Express Root Port 3 - 340A
-Device ID: PCI\VEN_8086&DEV_340A&SUBSYS_02F71028&REV_13\3&11583659&0&18
-   Driver: n/a
-
-     Name: Silicon Image SiI 3132 SATALink Controller
-Device ID: PCI\VEN_1095&DEV_3132&SUBSYS_02F71028&REV_01\4&24931170&0&00E4
-   Driver: n/a
-
-     Name: Intel(R) ICH10 Family USB Universal Host Controller - 3A39
-Device ID: PCI\VEN_8086&DEV_3A39&SUBSYS_02F71028&REV_00\3&11583659&0&D2
-   Driver: n/a
-
-     Name: Intel(R) ICH10R LPC Interface Controller - 3A16
-Device ID: PCI\VEN_8086&DEV_3A16&SUBSYS_02F71028&REV_00\3&11583659&0&F8
-   Driver: n/a
-
-     Name: Intel(R) 5520/5500/X58 I/O Hub PCI Express Root Port 1 - 3408
-Device ID: PCI\VEN_8086&DEV_3408&SUBSYS_02F71028&REV_13\3&11583659&0&08
    Driver: n/a
 
 ------------------
@@ -559,6 +585,7 @@ Default MidiOut Device,0x00800000,1,0,quartz.dll,6.06.7601.17713
 
 WDM Streaming Rendering Devices:
 HD Audio HDMI out,0x00200000,1,1,ksproxy.ax,6.01.7601.17514
+HD Audio Headphone/Speakers,0x00200000,1,1,ksproxy.ax,6.01.7601.17514
 HD Audio SPDIF out,0x00200000,1,1,ksproxy.ax,6.01.7601.17514
 
 BDA Network Providers:
@@ -585,12 +612,14 @@ WDM Streaming Communication Transforms:
 Tee/Sink-to-Sink Converter,0x00200000,1,1,ksproxy.ax,6.01.7601.17514
 
 Audio Renderers:
-Digital Audio (HDMI) (2- High D,0x00200000,1,0,quartz.dll,6.06.7601.17713
+Speakers (2- High Definition Au,0x00200000,1,0,quartz.dll,6.06.7601.17713
 Default DirectSound Device,0x00800000,1,0,quartz.dll,6.06.7601.17713
 Default WaveOut Device,0x00200000,1,0,quartz.dll,6.06.7601.17713
+Digital Audio (HDMI) (2- High D,0x00200000,1,0,quartz.dll,6.06.7601.17713
 Digital Audio (S/PDIF) (2- High,0x00200000,1,0,quartz.dll,6.06.7601.17713
 DirectSound: Digital Audio (HDMI) (2- High Definition Audio Device),0x00200000,1,0,quartz.dll,6.06.7601.17713
 DirectSound: Digital Audio (S/PDIF) (2- High Definition Audio Device),0x00200000,1,0,quartz.dll,6.06.7601.17713
+DirectSound: Speakers (2- High Definition Audio Device),0x00200000,1,0,quartz.dll,6.06.7601.17713
 
 ---------------
 EVR Power Information
