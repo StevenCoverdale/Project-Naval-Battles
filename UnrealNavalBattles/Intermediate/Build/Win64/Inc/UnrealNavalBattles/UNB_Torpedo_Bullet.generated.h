@@ -15,6 +15,12 @@
 extern UNREALNAVALBATTLES_API FName UNREALNAVALBATTLES_PlayParticle;
 #define AUNB_Torpedo_Bullet_EVENTPARMS
 #define AUNB_Torpedo_Bullet_RPC_WRAPPERS \
+	DECLARE_FUNCTION(execTorpedo_FireTemplate) \
+	{ \
+		P_GET_OBJECT(UParticleSystem,NewTemplate); \
+		P_FINISH; \
+		this->Torpedo_FireTemplate(NewTemplate); \
+	} \
 	DECLARE_FUNCTION(execSetTemplate) \
 	{ \
 		P_GET_OBJECT(UParticleSystem,NewTemplate); \

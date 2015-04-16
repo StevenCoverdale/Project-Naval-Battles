@@ -30,6 +30,9 @@ class UNREALNAVALBATTLES_API AUNB_Torpedo_Bullet : public AActor
 	UFUNCTION(BlueprintImplementableEvent, Category = UNBEvent)
 	void PlayParticle();
 
+    bool OnStart;
+
+		UParticleSystem* Torpedo_Fire;
 	
 	virtual void AUNB_Torpedo_Bullet::Tick(float delta) override;
 
@@ -41,5 +44,8 @@ class UNREALNAVALBATTLES_API AUNB_Torpedo_Bullet : public AActor
 	
 	UFUNCTION(BlueprintCallable, Category=Particles, Meta=(DeprecatedFunction))
 	virtual void SetTemplate(class UParticleSystem * NewTemplate);
+
+	UFUNCTION(BlueprintCallable, Category=Particles, Meta=(DeprecatedFunction))
+	virtual void Torpedo_FireTemplate(class UParticleSystem * NewTemplate);
 	
 };

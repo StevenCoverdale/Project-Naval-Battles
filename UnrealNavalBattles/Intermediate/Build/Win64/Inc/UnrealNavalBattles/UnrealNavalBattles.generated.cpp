@@ -104,8 +104,9 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 		FNativeFunctionRegistrar::RegisterFunction(AUNB_Torpedo_Bullet::StaticClass(),"OnEndOverlap",(Native)&AUNB_Torpedo_Bullet::execOnEndOverlap);
 		FNativeFunctionRegistrar::RegisterFunction(AUNB_Torpedo_Bullet::StaticClass(),"OnOverlap",(Native)&AUNB_Torpedo_Bullet::execOnOverlap);
 		FNativeFunctionRegistrar::RegisterFunction(AUNB_Torpedo_Bullet::StaticClass(),"SetTemplate",(Native)&AUNB_Torpedo_Bullet::execSetTemplate);
+		FNativeFunctionRegistrar::RegisterFunction(AUNB_Torpedo_Bullet::StaticClass(),"Torpedo_FireTemplate",(Native)&AUNB_Torpedo_Bullet::execTorpedo_FireTemplate);
 	}
-	IMPLEMENT_CLASS(AUNB_Torpedo_Bullet, 687529015);
+	IMPLEMENT_CLASS(AUNB_Torpedo_Bullet, 2228468219);
 	void AUNB_Torpedo_Bullet::PlayParticle()
 	{
 		ProcessEvent(FindFunctionChecked(UNREALNAVALBATTLES_PlayParticle),NULL);
@@ -186,6 +187,7 @@ FName UNREALNAVALBATTLES_PlayParticle = FName(TEXT("PlayParticle"));
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnOverlap();
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_PlayParticle();
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_SetTemplate();
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_Torpedo_FireTemplate();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Torpedo_Bullet_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Torpedo_Bullet();
 	UNREALNAVALBATTLES_API class UPackage* Z_Construct_UPackage_UnrealNavalBattles();
@@ -1109,6 +1111,30 @@ FName UNREALNAVALBATTLES_PlayParticle = FName(TEXT("PlayParticle"));
 		}
 		return ReturnFunction;
 	}
+	UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_Torpedo_FireTemplate()
+	{
+		struct UNB_Torpedo_Bullet_eventTorpedo_FireTemplate_Parms
+		{
+			class UParticleSystem* NewTemplate;
+		};
+		UClass* OuterClass=Z_Construct_UClass_AUNB_Torpedo_Bullet();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(OuterClass, TEXT("Torpedo_FireTemplate"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x04020400, 65535, sizeof(UNB_Torpedo_Bullet_eventTorpedo_FireTemplate_Parms));
+			UProperty* NewProp_NewTemplate = new(ReturnFunction, TEXT("NewTemplate"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(NewTemplate, UNB_Torpedo_Bullet_eventTorpedo_FireTemplate_Parms), 0x0000000000000080, Z_Construct_UClass_UParticleSystem_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Particles"));
+			MetaData->SetValue(ReturnFunction, TEXT("DeprecatedFunction"), TEXT(""));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("UNB_Torpedo_Bullet.h"));
+			MetaData->SetValue(NewProp_NewTemplate, TEXT("ModuleRelativePath"), TEXT("UNB_Torpedo_Bullet.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_AUNB_Torpedo_Bullet_NoRegister()
 	{
 		return AUNB_Torpedo_Bullet::StaticClass();
@@ -1130,6 +1156,7 @@ FName UNREALNAVALBATTLES_PlayParticle = FName(TEXT("PlayParticle"));
 				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnOverlap());
 				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_Torpedo_Bullet_PlayParticle());
 				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_Torpedo_Bullet_SetTemplate());
+				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_Torpedo_Bullet_Torpedo_FireTemplate());
 
 				UProperty* NewProp_MeshComponent = new(OuterClass, TEXT("MeshComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(MeshComponent, AUNB_Torpedo_Bullet), 0x00000000004a001d, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 				UProperty* NewProp_MovementComponent = new(OuterClass, TEXT("MovementComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(MovementComponent, AUNB_Torpedo_Bullet), 0x00000000004a001d, Z_Construct_UClass_UProjectileMovementComponent_NoRegister());
@@ -1138,6 +1165,7 @@ FName UNREALNAVALBATTLES_PlayParticle = FName(TEXT("PlayParticle"));
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnOverlap()); // 4171055053
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_Torpedo_Bullet_PlayParticle()); // 258806697
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_Torpedo_Bullet_SetTemplate()); // 362593284
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_Torpedo_Bullet_Torpedo_FireTemplate()); // 4031179693
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
@@ -1167,8 +1195,8 @@ FName UNREALNAVALBATTLES_PlayParticle = FName(TEXT("PlayParticle"));
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/UnrealNavalBattles")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x404FCD7F;
-			Guid.B = 0x2266CD25;
+			Guid.A = 0x7BADBC45;
+			Guid.B = 0x018AA8D4;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

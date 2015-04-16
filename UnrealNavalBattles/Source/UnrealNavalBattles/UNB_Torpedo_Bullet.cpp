@@ -36,12 +36,26 @@ AUNB_Torpedo_Bullet::AUNB_Torpedo_Bullet(const class FPostConstructInitializePro
 	{
 	  Explosion = ExplosionAsset.Object;
 	}
+
+	ConstructorHelpers::FObjectFinder<UParticleSystem> Torpedo_FireAsset(TEXT("Particles'/Game/Particles/Torpedo_Fire.Torpedo_Fire'"));
+
+	if (Torpedo_FireAsset.Object != NULL)
+	{
+		Torpedo_Fire = Torpedo_FireAsset.Object;
+	}
+
+	OnStart = true;
 }
 
 void AUNB_Torpedo_Bullet::SetTemplate(class UParticleSystem * NewTemplate)
 {
 	Explosion = NewTemplate;
 	
+}
+
+void AUNB_Torpedo_Bullet::Torpedo_FireTemplate(class UParticleSystem * NewTemplate)
+{
+	Torpedo_Fire = NewTemplate;
 }
 
 void AUNB_Torpedo_Bullet::OnOverlap(AActor* OtherActor)
@@ -61,12 +75,13 @@ void AUNB_Torpedo_Bullet::OnOverlap(AActor* OtherActor)
 				AUNB_Ships * ship = Cast<AUNB_Ships>(OtherActor);
 
 				ship->Damage(30);
-
+				
 				TArray<UStaticMeshComponent*> Components;
 					OtherActor->GetComponents<UStaticMeshComponent>(Components);
 					//Iterate through all 
 					for( int32 i=0; i<Components.Num(); i++ )
 					{
+						//UGameplayStatics::SpawnEmitterAttached( Torpedo_Fire, Components[i],"wpSocket", FVector(0, 0, 0),  FRotator(0, 0, 0), EAttachLocation::KeepWorldPosition, true);
 						//Set Explosion particle to OtherActors meshes, wpSocket is attach point, this was the name found when function was found, offset, rotation, attachlocation, think true is for garbage cleanup just keep it
 						if(OtherActor == ship)
 						UGameplayStatics::SpawnEmitterAttached( Explosion, Components[i],"wpSocket", FVector(0, 0, 0),  FRotator(0, 0, 0), EAttachLocation::SnapToTarget, true);
@@ -100,6 +115,13 @@ void AUNB_Torpedo_Bullet::OnEndOverlap(AActor* OtherActor)
 
 void AUNB_Torpedo_Bullet::Tick(float delta)
 {
-		
+	if(OnStart == true)
+	{
+		PlayParticle();
+		OnStart = false; 
+	}
 }
+
+
+
 
