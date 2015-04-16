@@ -3,6 +3,9 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
+#include "UNB_SpectatorPawn.h"
+#include "UNB_Ships.h"
+#include "UNB_Team.h"
 #include "ShipWeaponFire.generated.h"
 
 
@@ -29,11 +32,21 @@ public:
 	virtual void AShipWeaponFire::Tick(float delta) override;
 
 	bool InRange;
+	FVector direction;
 
 	UCapsuleComponent* GetCapsuleComponent();
+	AUNB_SpectatorPawn* specPawn;
 
 	//Added for setting target
 	void SetTarget(AShipWeaponFire * target);
 
 	void DistanceCheck(AActor* OtherActor);
+
+	
+	virtual TEAM GetTeam() const;
+	virtual void SetTeam(TEAM team);
+	virtual bool IsOnteam(TEAM team) const;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Teams)
+	TEAM m_teams;
 };

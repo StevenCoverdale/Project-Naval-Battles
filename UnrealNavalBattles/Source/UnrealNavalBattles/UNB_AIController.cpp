@@ -24,6 +24,7 @@ void AUNB_AIController::Possess(class APawn* InPawn)
 	Super::Possess(InPawn);
 
 	AUNB_Ships* Ship = Cast<AUNB_Ships>(InPawn);
+	SetTeam(Ship->GetTeam());
 
 	if(Ship && Ship->ShipBehavior)
 	{
@@ -64,7 +65,7 @@ void AUNB_AIController::SearchForEnemy()
 	for (FConstPawnIterator It = GetWorld()->GetPawnIterator(); It; ++It)
 	{
 		AUNB_Ships* TestPawn = Cast<AUNB_Ships>(*It);
-		if(TestPawn && TestPawn != MyShip /*Check for ShipTeam here*/)
+		if(TestPawn && TestPawn != MyShip && TestPawn->GetTeam() != this->GetTeam()/*Check for ShipTeam here*/)
 		{
 			const float DistSq = FVector::Dist(TestPawn->GetActorLocation(), MyLoc);
 			if (DistSq < 2000)
@@ -111,4 +112,19 @@ void AUNB_AIController::ActivateClick(class AUNB_Ships *CurrentShip)
 void AUNB_AIController::SetEnemy(class APawn *InPawn)
 {
 	BlackboardComp->SetValueAsObject(EnemyKeyID, InPawn);
+}
+
+
+TEAM AUNB_AIController::GetTeam() const
+{
+	return m_team;
+}
+void AUNB_AIController::SetTeam(TEAM team)
+{
+	m_team = team;
+}
+
+bool AUNB_AIController::IsOnteam(TEAM team) const
+{
+	return m_team == team;
 }

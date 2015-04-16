@@ -11,14 +11,29 @@
 #ifndef UNREALNAVALBATTLES_ShipWeapon_generated_h
 	#include "ShipWeapon.h"
 #endif
+#ifndef UNREALNAVALBATTLES_TeamInterface_generated_h
+	#include "TeamInterface.h"
+#endif
+#ifndef UNREALNAVALBATTLES_UNB_SpectatorPawn_generated_h
+	#include "UNB_SpectatorPawn.h"
+#endif
+#ifndef UNREALNAVALBATTLES_UNB_AIController_generated_h
+	#include "UNB_AIController.h"
+#endif
+#ifndef UNREALNAVALBATTLES_UNB_GameMode_generated_h
+	#include "UNB_GameMode.h"
+#endif
+#ifndef UNREALNAVALBATTLES_UNB_BTTask_ClickLocation_generated_h
+	#include "UNB_BTTask_ClickLocation.h"
+#endif
+#ifndef UNREALNAVALBATTLES_UNB_Ships_generated_h
+	#include "UNB_Ships.h"
+#endif
 #ifndef UNREALNAVALBATTLES_ShipWeaponFire_generated_h
 	#include "ShipWeaponFire.h"
 #endif
 #ifndef UNREALNAVALBATTLES_ShipWeaponSystem_generated_h
 	#include "ShipWeaponSystem.h"
-#endif
-#ifndef UNREALNAVALBATTLES_TeamInterface_generated_h
-	#include "TeamInterface.h"
 #endif
 #ifndef UNREALNAVALBATTLES_Test_Ship_generated_h
 	#include "Test_Ship.h"
@@ -26,17 +41,8 @@
 #ifndef UNREALNAVALBATTLES_TorpedoWeaponFire_generated_h
 	#include "TorpedoWeaponFire.h"
 #endif
-#ifndef UNREALNAVALBATTLES_UNB_AIController_generated_h
-	#include "UNB_AIController.h"
-#endif
-#ifndef UNREALNAVALBATTLES_UNB_BTTask_ClickLocation_generated_h
-	#include "UNB_BTTask_ClickLocation.h"
-#endif
 #ifndef UNREALNAVALBATTLES_UNB_BTTask_MoveWithinDistance_generated_h
 	#include "UNB_BTTask_MoveWithinDistance.h"
-#endif
-#ifndef UNREALNAVALBATTLES_UNB_GameMode_generated_h
-	#include "UNB_GameMode.h"
 #endif
 #ifndef UNREALNAVALBATTLES_UNB_GameState_generated_h
 	#include "UNB_GameState.h"
@@ -46,12 +52,6 @@
 #endif
 #ifndef UNREALNAVALBATTLES_UNB_PlayerController_generated_h
 	#include "UNB_PlayerController.h"
-#endif
-#ifndef UNREALNAVALBATTLES_UNB_Ships_generated_h
-	#include "UNB_Ships.h"
-#endif
-#ifndef UNREALNAVALBATTLES_UNB_SpectatorPawn_generated_h
-	#include "UNB_SpectatorPawn.h"
 #endif
 #ifndef UNREALNAVALBATTLES_UNB_Torpedo_Bullet_generated_h
 	#include "UNB_Torpedo_Bullet.h"

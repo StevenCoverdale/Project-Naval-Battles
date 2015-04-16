@@ -13,6 +13,7 @@ AShipWeaponFire::AShipWeaponFire(FObjectInitializer const& ObjectInitializer)
 {
 	PrimaryActorTick.bCanEverTick = true;
 	InRange = false;
+
 }
 
 bool AShipWeaponFire::Fire_Validate()
@@ -32,6 +33,7 @@ void AShipWeaponFire::Tick(float delta)
 	DistanceCheck(this);
 	if (weaponFireTime > weaponReloadTime && InRange == true)
 	{
+
 		Event_Fire();
 		weaponFireTime = 0;
 	}
@@ -55,13 +57,14 @@ void AShipWeaponFire::SetTarget(AShipWeaponFire * target)
 
 void AShipWeaponFire::DistanceCheck(AActor* OtherActor)
 {
+	
 	//gets the game mode
 	AUNB_GameMode * gameMode = Cast<AUNB_GameMode>(GetWorld()->GetAuthGameMode());
 
 	//if game mode loads, get the spectator pawn
 	if (NULL != gameMode)
 	{
-		AUNB_SpectatorPawn * specPawn = gameMode->GetSpecPawn();
+		specPawn = gameMode->GetSpecPawn();
 
 		//checks for spectator pawn
 		if (specPawn == NULL)
@@ -76,10 +79,10 @@ void AShipWeaponFire::DistanceCheck(AActor* OtherActor)
 	for (FConstPawnIterator It = GetWorld()->GetPawnIterator(); It; ++It)
 	{
 		AUNB_Ships* TestPawn = Cast<AUNB_Ships>(*It);
-		if(TestPawn && TestPawn != OtherActor /*Check for ShipTeam here*/)
+		if(TestPawn && TestPawn != OtherActor && TestPawn->GetTeam() != this->GetTeam() /*Check for ShipTeam here*/)
 		{
 			const float DistSq = FVector::Dist(TestPawn->GetActorLocation(), MyLoc);
-			if (DistSq < 100)
+			if (DistSq < 2000 && DistSq > 300)
 			{
 				BestPawn = TestPawn;
 			}
@@ -87,12 +90,16 @@ void AShipWeaponFire::DistanceCheck(AActor* OtherActor)
 	}
 	if(BestPawn)
 	{
-		GEngine->AddOnScreenDebugMessage(-3, 2.0f, FColor::Green, TEXT("In Range"));
+		direction = BestPawn->GetActorLocation() - this->GetActorLocation();
+		
+		SetActorRotation(direction.Rotation());
+
+		GEngine->AddOnScreenDebugMessage(-4, 2.0f, FColor::Green, TEXT("In Range"));
 		InRange = true;
 	}
 	else
 	{
-		GEngine->AddOnScreenDebugMessage(-3, 2.0f, FColor::Green, TEXT("Not In Range"));
+		GEngine->AddOnScreenDebugMessage(-4, 2.0f, FColor::Green, TEXT("Not In Range"));
 		InRange = false;
 	}
 
@@ -101,3 +108,16 @@ void AShipWeaponFire::DistanceCheck(AActor* OtherActor)
 }
 
 
+
+TEAM AShipWeaponFire::GetTeam() const
+{
+	return m_teams;
+}
+void AShipWeaponFire::SetTeam(TEAM team)
+{
+	m_teams = team;
+}
+bool AShipWeaponFire::IsOnteam(TEAM team) const
+{
+	return m_teams == team;
+}

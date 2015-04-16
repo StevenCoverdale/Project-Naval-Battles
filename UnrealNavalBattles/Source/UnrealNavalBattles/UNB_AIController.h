@@ -3,6 +3,8 @@
 #pragma once
 
 #include "AIController.h"
+#include "TeamInterface.h"
+#include "UNB_Team.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "BehaviorTree/BehaviorTreeComponent.h"
 #include "BehaviorTree/BehaviorTree.h"
@@ -46,6 +48,14 @@ protected:
 	uint8 ClickEnabled;//bool
 
 	FVector ClickLocationID;//vector//
+
+	
+	virtual TEAM GetTeam() const;
+	virtual void SetTeam(TEAM team);
+	virtual bool IsOnteam(TEAM team) const;
+
+	
+	TEAM m_team;
 
 
 };

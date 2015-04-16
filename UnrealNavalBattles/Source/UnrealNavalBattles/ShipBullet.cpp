@@ -60,7 +60,7 @@ void AShipBullet::OnOverlap(AActor* OtherActor)
 				for (int i = 0; i < selected.Num(); ++i)
 				{
 					AUNB_Ships * ship = Cast<AUNB_Ships>(OtherActor);
-					ship->Damage(50);
+					ship->Damage(10);
 
 
 					//Array for storing all mesh components

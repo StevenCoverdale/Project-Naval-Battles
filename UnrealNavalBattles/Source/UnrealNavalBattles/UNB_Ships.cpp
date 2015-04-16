@@ -133,8 +133,7 @@ have ship travel to closest location
 int AUNB_Ships::GetHealth()
 {
 	if(_health)
-	return _health;
-	else 
+		return _health;
 	return NULL;
 }
 int AUNB_Ships::GetMaxHealth()

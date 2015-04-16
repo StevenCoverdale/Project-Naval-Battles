@@ -19,11 +19,40 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	{
 	}
 	IMPLEMENT_CLASS(AShipWeapon, 3401766596);
+	void UTeamInterface::StaticRegisterNativesUTeamInterface()
+	{
+	}
+	IMPLEMENT_CLASS(UTeamInterface, 207997930);
+	void AUNB_SpectatorPawn::StaticRegisterNativesAUNB_SpectatorPawn()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnRightClick",(Native)&AUNB_SpectatorPawn::execOnRightClick);
+		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnShiftRightClick",(Native)&AUNB_SpectatorPawn::execOnShiftRightClick);
+		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnStartLeftClick",(Native)&AUNB_SpectatorPawn::execOnStartLeftClick);
+		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnStopLeftClick",(Native)&AUNB_SpectatorPawn::execOnStopLeftClick);
+	}
+	IMPLEMENT_CLASS(AUNB_SpectatorPawn, 2936719836);
+	void AUNB_AIController::StaticRegisterNativesAUNB_AIController()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(AUNB_AIController::StaticClass(),"SearchForEnemy",(Native)&AUNB_AIController::execSearchForEnemy);
+	}
+	IMPLEMENT_CLASS(AUNB_AIController, 3166149541);
+	void AUNB_GameMode::StaticRegisterNativesAUNB_GameMode()
+	{
+	}
+	IMPLEMENT_CLASS(AUNB_GameMode, 2635372128);
+	void UUNB_BTTask_ClickLocation::StaticRegisterNativesUUNB_BTTask_ClickLocation()
+	{
+	}
+	IMPLEMENT_CLASS(UUNB_BTTask_ClickLocation, 1474886405);
+	void AUNB_Ships::StaticRegisterNativesAUNB_Ships()
+	{
+	}
+	IMPLEMENT_CLASS(AUNB_Ships, 2576666190);
 	void AShipWeaponFire::StaticRegisterNativesAShipWeaponFire()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AShipWeaponFire::StaticClass(),"Fire",(Native)&AShipWeaponFire::execFire);
 	}
-	IMPLEMENT_CLASS(AShipWeaponFire, 1982695575);
+	IMPLEMENT_CLASS(AShipWeaponFire, 863000771);
 	void AShipWeaponFire::Event_Fire()
 	{
 		ProcessEvent(FindFunctionChecked(UNREALNAVALBATTLES_Event_Fire),NULL);
@@ -36,10 +65,6 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	{
 	}
 	IMPLEMENT_CLASS(AShipWeaponSystem, 1505229949);
-	void UTeamInterface::StaticRegisterNativesUTeamInterface()
-	{
-	}
-	IMPLEMENT_CLASS(UTeamInterface, 207997930);
 	void ATest_Ship::StaticRegisterNativesATest_Ship()
 	{
 	}
@@ -48,7 +73,7 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	{
 		FNativeFunctionRegistrar::RegisterFunction(ATorpedoWeaponFire::StaticClass(),"Fire",(Native)&ATorpedoWeaponFire::execFire);
 	}
-	IMPLEMENT_CLASS(ATorpedoWeaponFire, 2379822417);
+	IMPLEMENT_CLASS(ATorpedoWeaponFire, 2888324367);
 	void ATorpedoWeaponFire::Event_FireTorpedo()
 	{
 		ProcessEvent(FindFunctionChecked(UNREALNAVALBATTLES_Event_FireTorpedo),NULL);
@@ -57,23 +82,10 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	{
 		ProcessEvent(FindFunctionChecked(UNREALNAVALBATTLES_Fire),NULL);
 	}
-	void AUNB_AIController::StaticRegisterNativesAUNB_AIController()
-	{
-		FNativeFunctionRegistrar::RegisterFunction(AUNB_AIController::StaticClass(),"SearchForEnemy",(Native)&AUNB_AIController::execSearchForEnemy);
-	}
-	IMPLEMENT_CLASS(AUNB_AIController, 3166149541);
-	void UUNB_BTTask_ClickLocation::StaticRegisterNativesUUNB_BTTask_ClickLocation()
-	{
-	}
-	IMPLEMENT_CLASS(UUNB_BTTask_ClickLocation, 1474886405);
 	void UUNB_BTTask_MoveWithinDistance::StaticRegisterNativesUUNB_BTTask_MoveWithinDistance()
 	{
 	}
 	IMPLEMENT_CLASS(UUNB_BTTask_MoveWithinDistance, 859376838);
-	void AUNB_GameMode::StaticRegisterNativesAUNB_GameMode()
-	{
-	}
-	IMPLEMENT_CLASS(AUNB_GameMode, 2635372128);
 	void AUNB_GameState::StaticRegisterNativesAUNB_GameState()
 	{
 	}
@@ -86,18 +98,6 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 	{
 	}
 	IMPLEMENT_CLASS(AUNB_PlayerController, 1740534661);
-	void AUNB_Ships::StaticRegisterNativesAUNB_Ships()
-	{
-	}
-	IMPLEMENT_CLASS(AUNB_Ships, 2576666190);
-	void AUNB_SpectatorPawn::StaticRegisterNativesAUNB_SpectatorPawn()
-	{
-		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnRightClick",(Native)&AUNB_SpectatorPawn::execOnRightClick);
-		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnShiftRightClick",(Native)&AUNB_SpectatorPawn::execOnShiftRightClick);
-		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnStartLeftClick",(Native)&AUNB_SpectatorPawn::execOnStartLeftClick);
-		FNativeFunctionRegistrar::RegisterFunction(AUNB_SpectatorPawn::StaticClass(),"OnStopLeftClick",(Native)&AUNB_SpectatorPawn::execOnStopLeftClick);
-	}
-	IMPLEMENT_CLASS(AUNB_SpectatorPawn, 2936719836);
 	void AUNB_Torpedo_Bullet::StaticRegisterNativesAUNB_Torpedo_Bullet()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AUNB_Torpedo_Bullet::StaticClass(),"OnEndOverlap",(Native)&AUNB_Torpedo_Bullet::execOnEndOverlap);
@@ -117,18 +117,18 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 	ENGINE_API class UClass* Z_Construct_UClass_UProjectileMovementComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_APawn();
-	ENGINE_API class UClass* Z_Construct_UClass_ACharacter();
-	AIMODULE_API class UClass* Z_Construct_UClass_UBehaviorTree_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_ASpectatorPawn();
 	AIMODULE_API class UClass* Z_Construct_UClass_AAIController();
 	AIMODULE_API class UClass* Z_Construct_UClass_UBehaviorTreeComponent_NoRegister();
 	AIMODULE_API class UClass* Z_Construct_UClass_UBlackboardComponent_NoRegister();
-	AIMODULE_API class UClass* Z_Construct_UClass_UBTTask_BlackboardBase();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
+	AIMODULE_API class UClass* Z_Construct_UClass_UBTTask_BlackboardBase();
+	ENGINE_API class UClass* Z_Construct_UClass_ACharacter();
+	AIMODULE_API class UClass* Z_Construct_UClass_UBehaviorTree_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameState();
 	ENGINE_API class UClass* Z_Construct_UClass_AHUD();
 	ENGINE_API class UClass* Z_Construct_UClass_UTexture2D_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_APlayerController();
-	ENGINE_API class UClass* Z_Construct_UClass_ASpectatorPawn();
 
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AShipBullet_OnEndOverlap();
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AShipBullet_OnOverlap();
@@ -137,44 +137,44 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipBullet();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeapon_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeapon();
-	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AShipWeaponFire_Event_Fire();
-	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AShipWeaponFire_Fire();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponFire_NoRegister();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponFire();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponSystem_NoRegister();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponSystem();
 	UNREALNAVALBATTLES_API class UEnum* Z_Construct_UEnum_UTeamInterface_TEAM();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UTeamInterface_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UTeamInterface();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_ATest_Ship_NoRegister();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_ATest_Ship();
-	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_ATorpedoWeaponFire_Event_FireTorpedo();
-	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_ATorpedoWeaponFire_Fire();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_ATorpedoWeaponFire_NoRegister();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_ATorpedoWeaponFire();
-	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_AIController_SearchForEnemy();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_AIController_NoRegister();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_AIController();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UUNB_BTTask_ClickLocation_NoRegister();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UUNB_BTTask_ClickLocation();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UUNB_BTTask_MoveWithinDistance_NoRegister();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UUNB_BTTask_MoveWithinDistance();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameMode_NoRegister();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameMode();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameState_NoRegister();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameState();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_HUD_NoRegister();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_HUD();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_PlayerController_NoRegister();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_PlayerController();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Ships_NoRegister();
-	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Ships();
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_SpectatorPawn_OnRightClick();
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_SpectatorPawn_OnShiftRightClick();
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_SpectatorPawn_OnStartLeftClick();
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_SpectatorPawn_OnStopLeftClick();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_SpectatorPawn_NoRegister();
 	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_SpectatorPawn();
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_AIController_SearchForEnemy();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_AIController_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_AIController();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameMode_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameMode();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UUNB_BTTask_ClickLocation_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UUNB_BTTask_ClickLocation();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Ships_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_Ships();
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AShipWeaponFire_Event_Fire();
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AShipWeaponFire_Fire();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponFire_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponFire();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponSystem_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AShipWeaponSystem();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_ATest_Ship_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_ATest_Ship();
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_ATorpedoWeaponFire_Event_FireTorpedo();
+	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_ATorpedoWeaponFire_Fire();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_ATorpedoWeaponFire_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_ATorpedoWeaponFire();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UUNB_BTTask_MoveWithinDistance_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_UUNB_BTTask_MoveWithinDistance();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameState_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_GameState();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_HUD_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_HUD();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_PlayerController_NoRegister();
+	UNREALNAVALBATTLES_API class UClass* Z_Construct_UClass_AUNB_PlayerController();
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnEndOverlap();
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnOverlap();
 	UNREALNAVALBATTLES_API class UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_SetTemplate();
@@ -331,104 +331,6 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 		return OuterClass;
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AShipWeapon(Z_Construct_UClass_AShipWeapon, TEXT("AShipWeapon"));
-	UFunction* Z_Construct_UFunction_AShipWeaponFire_Event_Fire()
-	{
-		UClass* OuterClass=Z_Construct_UClass_AShipWeaponFire();
-		static UFunction* ReturnFunction = NULL;
-		if (!ReturnFunction)
-		{
-			ReturnFunction = new(OuterClass, TEXT("Event_Fire"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x08020800, 65535);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
-#if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UNBEvent"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("ShipWeaponFire.h"));
-#endif
-		}
-		return ReturnFunction;
-	}
-	UFunction* Z_Construct_UFunction_AShipWeaponFire_Fire()
-	{
-		UClass* OuterClass=Z_Construct_UClass_AShipWeaponFire();
-		static UFunction* ReturnFunction = NULL;
-		if (!ReturnFunction)
-		{
-			ReturnFunction = new(OuterClass, TEXT("Fire"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x80220CC0, 65535);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
-#if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("ShipWeaponFire.h"));
-#endif
-		}
-		return ReturnFunction;
-	}
-	UClass* Z_Construct_UClass_AShipWeaponFire_NoRegister()
-	{
-		return AShipWeaponFire::StaticClass();
-	}
-	UClass* Z_Construct_UClass_AShipWeaponFire()
-	{
-		static UClass* OuterClass = NULL;
-		if (!OuterClass)
-		{
-			Z_Construct_UClass_AActor();
-			Z_Construct_UPackage_UnrealNavalBattles();
-			OuterClass = AShipWeaponFire::StaticClass();
-			if (!(OuterClass->ClassFlags & CLASS_Constructed))
-			{
-				UObjectForceRegistration(OuterClass);
-				OuterClass->ClassFlags |= 0x20900080;
-
-				OuterClass->LinkChild(Z_Construct_UFunction_AShipWeaponFire_Event_Fire());
-				OuterClass->LinkChild(Z_Construct_UFunction_AShipWeaponFire_Fire());
-
-				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AShipWeaponFire_Event_Fire()); // 1714265526
-				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AShipWeaponFire_Fire()); // 3991725523
-				OuterClass->StaticLink();
-#if WITH_METADATA
-				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("ShipWeaponFire.h"));
-				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("ShipWeaponFire.h"));
-#endif
-			}
-		}
-		check(OuterClass->GetClass());
-		return OuterClass;
-	}
-	static FCompiledInDefer Z_CompiledInDefer_UClass_AShipWeaponFire(Z_Construct_UClass_AShipWeaponFire, TEXT("AShipWeaponFire"));
-	UClass* Z_Construct_UClass_AShipWeaponSystem_NoRegister()
-	{
-		return AShipWeaponSystem::StaticClass();
-	}
-	UClass* Z_Construct_UClass_AShipWeaponSystem()
-	{
-		static UClass* OuterClass = NULL;
-		if (!OuterClass)
-		{
-			Z_Construct_UClass_APawn();
-			Z_Construct_UPackage_UnrealNavalBattles();
-			OuterClass = AShipWeaponSystem::StaticClass();
-			if (!(OuterClass->ClassFlags & CLASS_Constructed))
-			{
-				UObjectForceRegistration(OuterClass);
-				OuterClass->ClassFlags |= 0x20900080;
-
-
-				OuterClass->StaticLink();
-#if WITH_METADATA
-				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation AI|Navigation"));
-				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("ShipWeaponSystem.h"));
-				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("ShipWeaponSystem.h"));
-#endif
-			}
-		}
-		check(OuterClass->GetClass());
-		return OuterClass;
-	}
-	static FCompiledInDefer Z_CompiledInDefer_UClass_AShipWeaponSystem(Z_Construct_UClass_AShipWeaponSystem, TEXT("AShipWeaponSystem"));
 	UEnum* Z_Construct_UEnum_UTeamInterface_TEAM()
 	{
 		UClass* Outer=Z_Construct_UClass_UTeamInterface();
@@ -476,407 +378,6 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 		return OuterClass;
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UTeamInterface(Z_Construct_UClass_UTeamInterface, TEXT("UTeamInterface"));
-	UClass* Z_Construct_UClass_ATest_Ship_NoRegister()
-	{
-		return ATest_Ship::StaticClass();
-	}
-	UClass* Z_Construct_UClass_ATest_Ship()
-	{
-		static UClass* OuterClass = NULL;
-		if (!OuterClass)
-		{
-			Z_Construct_UClass_ACharacter();
-			Z_Construct_UPackage_UnrealNavalBattles();
-			OuterClass = ATest_Ship::StaticClass();
-			if (!(OuterClass->ClassFlags & CLASS_Constructed))
-			{
-				UObjectForceRegistration(OuterClass);
-				OuterClass->ClassFlags |= 0x20900080;
-
-
-				UProperty* NewProp_ShipBehavior = new(OuterClass, TEXT("ShipBehavior"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ShipBehavior, ATest_Ship), 0x0000000000000001, Z_Construct_UClass_UBehaviorTree_NoRegister());
-				OuterClass->StaticLink();
-#if WITH_METADATA
-				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation AI|Navigation Pawn|Character|InternalEvents"));
-				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Test_Ship.h"));
-				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Test_Ship.h"));
-				MetaData->SetValue(NewProp_ShipBehavior, TEXT("Category"), TEXT("Behavior"));
-				MetaData->SetValue(NewProp_ShipBehavior, TEXT("ModuleRelativePath"), TEXT("Test_Ship.h"));
-#endif
-			}
-		}
-		check(OuterClass->GetClass());
-		return OuterClass;
-	}
-	static FCompiledInDefer Z_CompiledInDefer_UClass_ATest_Ship(Z_Construct_UClass_ATest_Ship, TEXT("ATest_Ship"));
-	UFunction* Z_Construct_UFunction_ATorpedoWeaponFire_Event_FireTorpedo()
-	{
-		UClass* OuterClass=Z_Construct_UClass_ATorpedoWeaponFire();
-		static UFunction* ReturnFunction = NULL;
-		if (!ReturnFunction)
-		{
-			ReturnFunction = new(OuterClass, TEXT("Event_FireTorpedo"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x08020800, 65535);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
-#if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UNBEvent"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("TorpedoWeaponFire.h"));
-#endif
-		}
-		return ReturnFunction;
-	}
-	UFunction* Z_Construct_UFunction_ATorpedoWeaponFire_Fire()
-	{
-		UClass* OuterClass=Z_Construct_UClass_ATorpedoWeaponFire();
-		static UFunction* ReturnFunction = NULL;
-		if (!ReturnFunction)
-		{
-			ReturnFunction = new(OuterClass, TEXT("Fire"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x80220CC0, 65535);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
-#if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("TorpedoWeaponFire.h"));
-#endif
-		}
-		return ReturnFunction;
-	}
-	UClass* Z_Construct_UClass_ATorpedoWeaponFire_NoRegister()
-	{
-		return ATorpedoWeaponFire::StaticClass();
-	}
-	UClass* Z_Construct_UClass_ATorpedoWeaponFire()
-	{
-		static UClass* OuterClass = NULL;
-		if (!OuterClass)
-		{
-			Z_Construct_UClass_APawn();
-			Z_Construct_UPackage_UnrealNavalBattles();
-			OuterClass = ATorpedoWeaponFire::StaticClass();
-			if (!(OuterClass->ClassFlags & CLASS_Constructed))
-			{
-				UObjectForceRegistration(OuterClass);
-				OuterClass->ClassFlags |= 0x20900080;
-
-				OuterClass->LinkChild(Z_Construct_UFunction_ATorpedoWeaponFire_Event_FireTorpedo());
-				OuterClass->LinkChild(Z_Construct_UFunction_ATorpedoWeaponFire_Fire());
-
-				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ATorpedoWeaponFire_Event_FireTorpedo()); // 3757617366
-				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ATorpedoWeaponFire_Fire()); // 4061853485
-				OuterClass->StaticLink();
-#if WITH_METADATA
-				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation AI|Navigation"));
-				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("TorpedoWeaponFire.h"));
-				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("TorpedoWeaponFire.h"));
-#endif
-			}
-		}
-		check(OuterClass->GetClass());
-		return OuterClass;
-	}
-	static FCompiledInDefer Z_CompiledInDefer_UClass_ATorpedoWeaponFire(Z_Construct_UClass_ATorpedoWeaponFire, TEXT("ATorpedoWeaponFire"));
-	UFunction* Z_Construct_UFunction_AUNB_AIController_SearchForEnemy()
-	{
-		UClass* OuterClass=Z_Construct_UClass_AUNB_AIController();
-		static UFunction* ReturnFunction = NULL;
-		if (!ReturnFunction)
-		{
-			ReturnFunction = new(OuterClass, TEXT("SearchForEnemy"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x04020401, 65535);
-			ReturnFunction->Bind();
-			ReturnFunction->StaticLink();
-#if WITH_METADATA
-			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Behavior"));
-			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("UNB_AIController.h"));
-#endif
-		}
-		return ReturnFunction;
-	}
-	UClass* Z_Construct_UClass_AUNB_AIController_NoRegister()
-	{
-		return AUNB_AIController::StaticClass();
-	}
-	UClass* Z_Construct_UClass_AUNB_AIController()
-	{
-		static UClass* OuterClass = NULL;
-		if (!OuterClass)
-		{
-			Z_Construct_UClass_AAIController();
-			Z_Construct_UPackage_UnrealNavalBattles();
-			OuterClass = AUNB_AIController::StaticClass();
-			if (!(OuterClass->ClassFlags & CLASS_Constructed))
-			{
-				UObjectForceRegistration(OuterClass);
-				OuterClass->ClassFlags |= 0x20900280;
-
-				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_AIController_SearchForEnemy());
-
-				UProperty* NewProp_BehaviorComp = new(OuterClass, TEXT("BehaviorComp"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(BehaviorComp, AUNB_AIController), 0x0000000000082008, Z_Construct_UClass_UBehaviorTreeComponent_NoRegister());
-				UProperty* NewProp_BlackboardComp = new(OuterClass, TEXT("BlackboardComp"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(BlackboardComp, AUNB_AIController), 0x0000000000082008, Z_Construct_UClass_UBlackboardComponent_NoRegister());
-				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_AIController_SearchForEnemy()); // 3521718735
-				OuterClass->StaticLink();
-#if WITH_METADATA
-				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Collision Rendering Utilities|Transformation"));
-				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_AIController.h"));
-				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_AIController.h"));
-				MetaData->SetValue(NewProp_BehaviorComp, TEXT("EditInline"), TEXT("true"));
-				MetaData->SetValue(NewProp_BehaviorComp, TEXT("ModuleRelativePath"), TEXT("UNB_AIController.h"));
-				MetaData->SetValue(NewProp_BlackboardComp, TEXT("EditInline"), TEXT("true"));
-				MetaData->SetValue(NewProp_BlackboardComp, TEXT("ModuleRelativePath"), TEXT("UNB_AIController.h"));
-#endif
-			}
-		}
-		check(OuterClass->GetClass());
-		return OuterClass;
-	}
-	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_AIController(Z_Construct_UClass_AUNB_AIController, TEXT("AUNB_AIController"));
-	UClass* Z_Construct_UClass_UUNB_BTTask_ClickLocation_NoRegister()
-	{
-		return UUNB_BTTask_ClickLocation::StaticClass();
-	}
-	UClass* Z_Construct_UClass_UUNB_BTTask_ClickLocation()
-	{
-		static UClass* OuterClass = NULL;
-		if (!OuterClass)
-		{
-			Z_Construct_UClass_UBTTask_BlackboardBase();
-			Z_Construct_UPackage_UnrealNavalBattles();
-			OuterClass = UUNB_BTTask_ClickLocation::StaticClass();
-			if (!(OuterClass->ClassFlags & CLASS_Constructed))
-			{
-				UObjectForceRegistration(OuterClass);
-				OuterClass->ClassFlags |= 0x20100080;
-
-
-				OuterClass->StaticLink();
-#if WITH_METADATA
-				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_BTTask_ClickLocation.h"));
-				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_BTTask_ClickLocation.h"));
-#endif
-			}
-		}
-		check(OuterClass->GetClass());
-		return OuterClass;
-	}
-	static FCompiledInDefer Z_CompiledInDefer_UClass_UUNB_BTTask_ClickLocation(Z_Construct_UClass_UUNB_BTTask_ClickLocation, TEXT("UUNB_BTTask_ClickLocation"));
-	UClass* Z_Construct_UClass_UUNB_BTTask_MoveWithinDistance_NoRegister()
-	{
-		return UUNB_BTTask_MoveWithinDistance::StaticClass();
-	}
-	UClass* Z_Construct_UClass_UUNB_BTTask_MoveWithinDistance()
-	{
-		static UClass* OuterClass = NULL;
-		if (!OuterClass)
-		{
-			Z_Construct_UClass_UBTTask_BlackboardBase();
-			Z_Construct_UPackage_UnrealNavalBattles();
-			OuterClass = UUNB_BTTask_MoveWithinDistance::StaticClass();
-			if (!(OuterClass->ClassFlags & CLASS_Constructed))
-			{
-				UObjectForceRegistration(OuterClass);
-				OuterClass->ClassFlags |= 0x20100080;
-
-
-				OuterClass->StaticLink();
-#if WITH_METADATA
-				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_BTTask_MoveWithinDistance.h"));
-				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_BTTask_MoveWithinDistance.h"));
-#endif
-			}
-		}
-		check(OuterClass->GetClass());
-		return OuterClass;
-	}
-	static FCompiledInDefer Z_CompiledInDefer_UClass_UUNB_BTTask_MoveWithinDistance(Z_Construct_UClass_UUNB_BTTask_MoveWithinDistance, TEXT("UUNB_BTTask_MoveWithinDistance"));
-	UClass* Z_Construct_UClass_AUNB_GameMode_NoRegister()
-	{
-		return AUNB_GameMode::StaticClass();
-	}
-	UClass* Z_Construct_UClass_AUNB_GameMode()
-	{
-		static UClass* OuterClass = NULL;
-		if (!OuterClass)
-		{
-			Z_Construct_UClass_AGameMode();
-			Z_Construct_UPackage_UnrealNavalBattles();
-			OuterClass = AUNB_GameMode::StaticClass();
-			if (!(OuterClass->ClassFlags & CLASS_Constructed))
-			{
-				UObjectForceRegistration(OuterClass);
-				OuterClass->ClassFlags |= 0x209002AC;
-
-
-				OuterClass->ClassConfigName = FName(TEXT("Game"));
-				OuterClass->StaticLink();
-#if WITH_METADATA
-				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Input Movement Collision Rendering Utilities|Transformation Info MovementReplication Replication Actor"));
-				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_GameMode.h"));
-				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_GameMode.h"));
-				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
-#endif
-			}
-		}
-		check(OuterClass->GetClass());
-		return OuterClass;
-	}
-	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_GameMode(Z_Construct_UClass_AUNB_GameMode, TEXT("AUNB_GameMode"));
-	UClass* Z_Construct_UClass_AUNB_GameState_NoRegister()
-	{
-		return AUNB_GameState::StaticClass();
-	}
-	UClass* Z_Construct_UClass_AUNB_GameState()
-	{
-		static UClass* OuterClass = NULL;
-		if (!OuterClass)
-		{
-			Z_Construct_UClass_AGameState();
-			Z_Construct_UPackage_UnrealNavalBattles();
-			OuterClass = AUNB_GameState::StaticClass();
-			if (!(OuterClass->ClassFlags & CLASS_Constructed))
-			{
-				UObjectForceRegistration(OuterClass);
-				OuterClass->ClassFlags |= 0x20900280;
-
-
-				OuterClass->StaticLink();
-#if WITH_METADATA
-				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Input Movement Collision Rendering Utilities|Transformation"));
-				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_GameState.h"));
-				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_GameState.h"));
-				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
-#endif
-			}
-		}
-		check(OuterClass->GetClass());
-		return OuterClass;
-	}
-	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_GameState(Z_Construct_UClass_AUNB_GameState, TEXT("AUNB_GameState"));
-	UClass* Z_Construct_UClass_AUNB_HUD_NoRegister()
-	{
-		return AUNB_HUD::StaticClass();
-	}
-	UClass* Z_Construct_UClass_AUNB_HUD()
-	{
-		static UClass* OuterClass = NULL;
-		if (!OuterClass)
-		{
-			Z_Construct_UClass_AHUD();
-			Z_Construct_UPackage_UnrealNavalBattles();
-			OuterClass = AUNB_HUD::StaticClass();
-			if (!(OuterClass->ClassFlags & CLASS_Constructed))
-			{
-				UObjectForceRegistration(OuterClass);
-				OuterClass->ClassFlags |= 0x2090028C;
-
-
-				UProperty* NewProp_EnemyTeamHPTexture = new(OuterClass, TEXT("EnemyTeamHPTexture"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(EnemyTeamHPTexture, AUNB_HUD), 0x0000000000000000, Z_Construct_UClass_UTexture2D_NoRegister());
-				UProperty* NewProp_PlayerTeamHPTexture = new(OuterClass, TEXT("PlayerTeamHPTexture"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(PlayerTeamHPTexture, AUNB_HUD), 0x0000000000000000, Z_Construct_UClass_UTexture2D_NoRegister());
-				UProperty* NewProp_BarFillTexture = new(OuterClass, TEXT("BarFillTexture"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(BarFillTexture, AUNB_HUD), 0x0000000000000000, Z_Construct_UClass_UTexture2D_NoRegister());
-				OuterClass->ClassConfigName = FName(TEXT("Game"));
-				OuterClass->StaticLink();
-#if WITH_METADATA
-				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Rendering Actor Input Replication"));
-				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_HUD.h"));
-				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_HUD.h"));
-				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
-				MetaData->SetValue(NewProp_EnemyTeamHPTexture, TEXT("ModuleRelativePath"), TEXT("UNB_HUD.h"));
-				MetaData->SetValue(NewProp_EnemyTeamHPTexture, TEXT("ToolTip"), TEXT("enemy team health bar texture"));
-				MetaData->SetValue(NewProp_PlayerTeamHPTexture, TEXT("ModuleRelativePath"), TEXT("UNB_HUD.h"));
-				MetaData->SetValue(NewProp_PlayerTeamHPTexture, TEXT("ToolTip"), TEXT("player team health bar texture"));
-				MetaData->SetValue(NewProp_BarFillTexture, TEXT("ModuleRelativePath"), TEXT("UNB_HUD.h"));
-				MetaData->SetValue(NewProp_BarFillTexture, TEXT("ToolTip"), TEXT("gray health bar texture"));
-#endif
-			}
-		}
-		check(OuterClass->GetClass());
-		return OuterClass;
-	}
-	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_HUD(Z_Construct_UClass_AUNB_HUD, TEXT("AUNB_HUD"));
-	UClass* Z_Construct_UClass_AUNB_PlayerController_NoRegister()
-	{
-		return AUNB_PlayerController::StaticClass();
-	}
-	UClass* Z_Construct_UClass_AUNB_PlayerController()
-	{
-		static UClass* OuterClass = NULL;
-		if (!OuterClass)
-		{
-			Z_Construct_UClass_APlayerController();
-			Z_Construct_UPackage_UnrealNavalBattles();
-			OuterClass = AUNB_PlayerController::StaticClass();
-			if (!(OuterClass->ClassFlags & CLASS_Constructed))
-			{
-				UObjectForceRegistration(OuterClass);
-				OuterClass->ClassFlags |= 0x20900284;
-
-
-				OuterClass->ClassConfigName = FName(TEXT("Game"));
-				OuterClass->StaticLink();
-#if WITH_METADATA
-				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Collision Rendering Utilities|Transformation"));
-				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_PlayerController.h"));
-				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_PlayerController.h"));
-#endif
-			}
-		}
-		check(OuterClass->GetClass());
-		return OuterClass;
-	}
-	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_PlayerController(Z_Construct_UClass_AUNB_PlayerController, TEXT("AUNB_PlayerController"));
-	UClass* Z_Construct_UClass_AUNB_Ships_NoRegister()
-	{
-		return AUNB_Ships::StaticClass();
-	}
-	UClass* Z_Construct_UClass_AUNB_Ships()
-	{
-		static UClass* OuterClass = NULL;
-		if (!OuterClass)
-		{
-			Z_Construct_UClass_ACharacter();
-			Z_Construct_UPackage_UnrealNavalBattles();
-			OuterClass = AUNB_Ships::StaticClass();
-			if (!(OuterClass->ClassFlags & CLASS_Constructed))
-			{
-				UObjectForceRegistration(OuterClass);
-				OuterClass->ClassFlags |= 0x20900080;
-
-
-				UProperty* NewProp_m_team = new(OuterClass, TEXT("m_team"), RF_Public|RF_Transient|RF_Native) UByteProperty(CPP_PROPERTY_BASE(m_team, AUNB_Ships), 0x0000000000000005, Z_Construct_UEnum_UTeamInterface_TEAM());
-				UProperty* NewProp__maxHealth = new(OuterClass, TEXT("_maxHealth"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(_maxHealth, AUNB_Ships), 0x0000000000000005);
-				UProperty* NewProp__health = new(OuterClass, TEXT("_health"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(_health, AUNB_Ships), 0x0000000000000005);
-				UProperty* NewProp_ShipBehavior = new(OuterClass, TEXT("ShipBehavior"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ShipBehavior, AUNB_Ships), 0x0000000000000001, Z_Construct_UClass_UBehaviorTree_NoRegister());
-				OuterClass->Interfaces.Add(FImplementedInterface(Z_Construct_UClass_UTeamInterface_NoRegister(), VTABLE_OFFSET(AUNB_Ships, ITeamInterface), false ));
-				OuterClass->StaticLink();
-#if WITH_METADATA
-				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation AI|Navigation Pawn|Character|InternalEvents"));
-				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_Ships.h"));
-				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_Ships.h"));
-				MetaData->SetValue(NewProp_m_team, TEXT("Category"), TEXT("Teams"));
-				MetaData->SetValue(NewProp_m_team, TEXT("ModuleRelativePath"), TEXT("UNB_Ships.h"));
-				MetaData->SetValue(NewProp__maxHealth, TEXT("Category"), TEXT("Health"));
-				MetaData->SetValue(NewProp__maxHealth, TEXT("ModuleRelativePath"), TEXT("UNB_Ships.h"));
-				MetaData->SetValue(NewProp__health, TEXT("Category"), TEXT("Health"));
-				MetaData->SetValue(NewProp__health, TEXT("ModuleRelativePath"), TEXT("UNB_Ships.h"));
-				MetaData->SetValue(NewProp_ShipBehavior, TEXT("Category"), TEXT("Behavior"));
-				MetaData->SetValue(NewProp_ShipBehavior, TEXT("ModuleRelativePath"), TEXT("UNB_Ships.h"));
-#endif
-			}
-		}
-		check(OuterClass->GetClass());
-		return OuterClass;
-	}
-	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_Ships(Z_Construct_UClass_AUNB_Ships, TEXT("AUNB_Ships"));
 	UFunction* Z_Construct_UFunction_AUNB_SpectatorPawn_OnRightClick()
 	{
 		UClass* OuterClass=Z_Construct_UClass_AUNB_SpectatorPawn();
@@ -984,6 +485,511 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 		return OuterClass;
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_SpectatorPawn(Z_Construct_UClass_AUNB_SpectatorPawn, TEXT("AUNB_SpectatorPawn"));
+	UFunction* Z_Construct_UFunction_AUNB_AIController_SearchForEnemy()
+	{
+		UClass* OuterClass=Z_Construct_UClass_AUNB_AIController();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(OuterClass, TEXT("SearchForEnemy"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x04020401, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Behavior"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("UNB_AIController.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_AUNB_AIController_NoRegister()
+	{
+		return AUNB_AIController::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AUNB_AIController()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AAIController();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = AUNB_AIController::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900280;
+
+				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_AIController_SearchForEnemy());
+
+				UProperty* NewProp_BehaviorComp = new(OuterClass, TEXT("BehaviorComp"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(BehaviorComp, AUNB_AIController), 0x0000000000082008, Z_Construct_UClass_UBehaviorTreeComponent_NoRegister());
+				UProperty* NewProp_BlackboardComp = new(OuterClass, TEXT("BlackboardComp"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(BlackboardComp, AUNB_AIController), 0x0000000000082008, Z_Construct_UClass_UBlackboardComponent_NoRegister());
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AUNB_AIController_SearchForEnemy()); // 3521718735
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Collision Rendering Utilities|Transformation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_AIController.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_AIController.h"));
+				MetaData->SetValue(NewProp_BehaviorComp, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_BehaviorComp, TEXT("ModuleRelativePath"), TEXT("UNB_AIController.h"));
+				MetaData->SetValue(NewProp_BlackboardComp, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_BlackboardComp, TEXT("ModuleRelativePath"), TEXT("UNB_AIController.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_AIController(Z_Construct_UClass_AUNB_AIController, TEXT("AUNB_AIController"));
+	UClass* Z_Construct_UClass_AUNB_GameMode_NoRegister()
+	{
+		return AUNB_GameMode::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AUNB_GameMode()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AGameMode();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = AUNB_GameMode::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x209002AC;
+
+
+				OuterClass->ClassConfigName = FName(TEXT("Game"));
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Input Movement Collision Rendering Utilities|Transformation Info MovementReplication Replication Actor"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_GameMode.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_GameMode.h"));
+				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_GameMode(Z_Construct_UClass_AUNB_GameMode, TEXT("AUNB_GameMode"));
+	UClass* Z_Construct_UClass_UUNB_BTTask_ClickLocation_NoRegister()
+	{
+		return UUNB_BTTask_ClickLocation::StaticClass();
+	}
+	UClass* Z_Construct_UClass_UUNB_BTTask_ClickLocation()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_UBTTask_BlackboardBase();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = UUNB_BTTask_ClickLocation::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20100080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_BTTask_ClickLocation.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_BTTask_ClickLocation.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_UUNB_BTTask_ClickLocation(Z_Construct_UClass_UUNB_BTTask_ClickLocation, TEXT("UUNB_BTTask_ClickLocation"));
+	UClass* Z_Construct_UClass_AUNB_Ships_NoRegister()
+	{
+		return AUNB_Ships::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AUNB_Ships()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_ACharacter();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = AUNB_Ships::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				UProperty* NewProp_m_team = new(OuterClass, TEXT("m_team"), RF_Public|RF_Transient|RF_Native) UByteProperty(CPP_PROPERTY_BASE(m_team, AUNB_Ships), 0x0000000000000005, Z_Construct_UEnum_UTeamInterface_TEAM());
+				UProperty* NewProp__maxHealth = new(OuterClass, TEXT("_maxHealth"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(_maxHealth, AUNB_Ships), 0x0000000000000005);
+				UProperty* NewProp__health = new(OuterClass, TEXT("_health"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(_health, AUNB_Ships), 0x0000000000000005);
+				UProperty* NewProp_ShipBehavior = new(OuterClass, TEXT("ShipBehavior"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ShipBehavior, AUNB_Ships), 0x0000000000000001, Z_Construct_UClass_UBehaviorTree_NoRegister());
+				OuterClass->Interfaces.Add(FImplementedInterface(Z_Construct_UClass_UTeamInterface_NoRegister(), VTABLE_OFFSET(AUNB_Ships, ITeamInterface), false ));
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation AI|Navigation Pawn|Character|InternalEvents"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_Ships.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_Ships.h"));
+				MetaData->SetValue(NewProp_m_team, TEXT("Category"), TEXT("Teams"));
+				MetaData->SetValue(NewProp_m_team, TEXT("ModuleRelativePath"), TEXT("UNB_Ships.h"));
+				MetaData->SetValue(NewProp__maxHealth, TEXT("Category"), TEXT("Health"));
+				MetaData->SetValue(NewProp__maxHealth, TEXT("ModuleRelativePath"), TEXT("UNB_Ships.h"));
+				MetaData->SetValue(NewProp__health, TEXT("Category"), TEXT("Health"));
+				MetaData->SetValue(NewProp__health, TEXT("ModuleRelativePath"), TEXT("UNB_Ships.h"));
+				MetaData->SetValue(NewProp_ShipBehavior, TEXT("Category"), TEXT("Behavior"));
+				MetaData->SetValue(NewProp_ShipBehavior, TEXT("ModuleRelativePath"), TEXT("UNB_Ships.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_Ships(Z_Construct_UClass_AUNB_Ships, TEXT("AUNB_Ships"));
+	UFunction* Z_Construct_UFunction_AShipWeaponFire_Event_Fire()
+	{
+		UClass* OuterClass=Z_Construct_UClass_AShipWeaponFire();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(OuterClass, TEXT("Event_Fire"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x08020800, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UNBEvent"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("ShipWeaponFire.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AShipWeaponFire_Fire()
+	{
+		UClass* OuterClass=Z_Construct_UClass_AShipWeaponFire();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(OuterClass, TEXT("Fire"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x80220CC0, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("ShipWeaponFire.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_AShipWeaponFire_NoRegister()
+	{
+		return AShipWeaponFire::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AShipWeaponFire()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = AShipWeaponFire::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+				OuterClass->LinkChild(Z_Construct_UFunction_AShipWeaponFire_Event_Fire());
+				OuterClass->LinkChild(Z_Construct_UFunction_AShipWeaponFire_Fire());
+
+				UProperty* NewProp_m_teams = new(OuterClass, TEXT("m_teams"), RF_Public|RF_Transient|RF_Native) UByteProperty(CPP_PROPERTY_BASE(m_teams, AShipWeaponFire), 0x0000000000000005, Z_Construct_UEnum_UTeamInterface_TEAM());
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AShipWeaponFire_Event_Fire()); // 1714265526
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AShipWeaponFire_Fire()); // 3991725523
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("ShipWeaponFire.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("ShipWeaponFire.h"));
+				MetaData->SetValue(NewProp_m_teams, TEXT("Category"), TEXT("Teams"));
+				MetaData->SetValue(NewProp_m_teams, TEXT("ModuleRelativePath"), TEXT("ShipWeaponFire.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AShipWeaponFire(Z_Construct_UClass_AShipWeaponFire, TEXT("AShipWeaponFire"));
+	UClass* Z_Construct_UClass_AShipWeaponSystem_NoRegister()
+	{
+		return AShipWeaponSystem::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AShipWeaponSystem()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_APawn();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = AShipWeaponSystem::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation AI|Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("ShipWeaponSystem.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("ShipWeaponSystem.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AShipWeaponSystem(Z_Construct_UClass_AShipWeaponSystem, TEXT("AShipWeaponSystem"));
+	UClass* Z_Construct_UClass_ATest_Ship_NoRegister()
+	{
+		return ATest_Ship::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ATest_Ship()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_ACharacter();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = ATest_Ship::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				UProperty* NewProp_ShipBehavior = new(OuterClass, TEXT("ShipBehavior"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ShipBehavior, ATest_Ship), 0x0000000000000001, Z_Construct_UClass_UBehaviorTree_NoRegister());
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation AI|Navigation Pawn|Character|InternalEvents"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Test_Ship.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Test_Ship.h"));
+				MetaData->SetValue(NewProp_ShipBehavior, TEXT("Category"), TEXT("Behavior"));
+				MetaData->SetValue(NewProp_ShipBehavior, TEXT("ModuleRelativePath"), TEXT("Test_Ship.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ATest_Ship(Z_Construct_UClass_ATest_Ship, TEXT("ATest_Ship"));
+	UFunction* Z_Construct_UFunction_ATorpedoWeaponFire_Event_FireTorpedo()
+	{
+		UClass* OuterClass=Z_Construct_UClass_ATorpedoWeaponFire();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(OuterClass, TEXT("Event_FireTorpedo"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x08020800, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("UNBEvent"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("TorpedoWeaponFire.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_ATorpedoWeaponFire_Fire()
+	{
+		UClass* OuterClass=Z_Construct_UClass_ATorpedoWeaponFire();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(OuterClass, TEXT("Fire"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x80220CC0, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("TorpedoWeaponFire.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UClass* Z_Construct_UClass_ATorpedoWeaponFire_NoRegister()
+	{
+		return ATorpedoWeaponFire::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ATorpedoWeaponFire()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_APawn();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = ATorpedoWeaponFire::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+				OuterClass->LinkChild(Z_Construct_UFunction_ATorpedoWeaponFire_Event_FireTorpedo());
+				OuterClass->LinkChild(Z_Construct_UFunction_ATorpedoWeaponFire_Fire());
+
+				UProperty* NewProp_m_teams = new(OuterClass, TEXT("m_teams"), RF_Public|RF_Transient|RF_Native) UByteProperty(CPP_PROPERTY_BASE(m_teams, ATorpedoWeaponFire), 0x0000000000000005, Z_Construct_UEnum_UTeamInterface_TEAM());
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ATorpedoWeaponFire_Event_FireTorpedo()); // 3757617366
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_ATorpedoWeaponFire_Fire()); // 4061853485
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation AI|Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("TorpedoWeaponFire.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("TorpedoWeaponFire.h"));
+				MetaData->SetValue(NewProp_m_teams, TEXT("Category"), TEXT("Teams"));
+				MetaData->SetValue(NewProp_m_teams, TEXT("ModuleRelativePath"), TEXT("TorpedoWeaponFire.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ATorpedoWeaponFire(Z_Construct_UClass_ATorpedoWeaponFire, TEXT("ATorpedoWeaponFire"));
+	UClass* Z_Construct_UClass_UUNB_BTTask_MoveWithinDistance_NoRegister()
+	{
+		return UUNB_BTTask_MoveWithinDistance::StaticClass();
+	}
+	UClass* Z_Construct_UClass_UUNB_BTTask_MoveWithinDistance()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_UBTTask_BlackboardBase();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = UUNB_BTTask_MoveWithinDistance::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20100080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_BTTask_MoveWithinDistance.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_BTTask_MoveWithinDistance.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_UUNB_BTTask_MoveWithinDistance(Z_Construct_UClass_UUNB_BTTask_MoveWithinDistance, TEXT("UUNB_BTTask_MoveWithinDistance"));
+	UClass* Z_Construct_UClass_AUNB_GameState_NoRegister()
+	{
+		return AUNB_GameState::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AUNB_GameState()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AGameState();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = AUNB_GameState::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900280;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Input Movement Collision Rendering Utilities|Transformation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_GameState.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_GameState.h"));
+				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_GameState(Z_Construct_UClass_AUNB_GameState, TEXT("AUNB_GameState"));
+	UClass* Z_Construct_UClass_AUNB_HUD_NoRegister()
+	{
+		return AUNB_HUD::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AUNB_HUD()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AHUD();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = AUNB_HUD::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x2090028C;
+
+
+				UProperty* NewProp_EnemyTeamHPTexture = new(OuterClass, TEXT("EnemyTeamHPTexture"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(EnemyTeamHPTexture, AUNB_HUD), 0x0000000000000000, Z_Construct_UClass_UTexture2D_NoRegister());
+				UProperty* NewProp_PlayerTeamHPTexture = new(OuterClass, TEXT("PlayerTeamHPTexture"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(PlayerTeamHPTexture, AUNB_HUD), 0x0000000000000000, Z_Construct_UClass_UTexture2D_NoRegister());
+				UProperty* NewProp_BarFillTexture = new(OuterClass, TEXT("BarFillTexture"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(BarFillTexture, AUNB_HUD), 0x0000000000000000, Z_Construct_UClass_UTexture2D_NoRegister());
+				OuterClass->ClassConfigName = FName(TEXT("Game"));
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Rendering Actor Input Replication"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_HUD.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_HUD.h"));
+				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
+				MetaData->SetValue(NewProp_EnemyTeamHPTexture, TEXT("ModuleRelativePath"), TEXT("UNB_HUD.h"));
+				MetaData->SetValue(NewProp_EnemyTeamHPTexture, TEXT("ToolTip"), TEXT("enemy team health bar texture"));
+				MetaData->SetValue(NewProp_PlayerTeamHPTexture, TEXT("ModuleRelativePath"), TEXT("UNB_HUD.h"));
+				MetaData->SetValue(NewProp_PlayerTeamHPTexture, TEXT("ToolTip"), TEXT("player team health bar texture"));
+				MetaData->SetValue(NewProp_BarFillTexture, TEXT("ModuleRelativePath"), TEXT("UNB_HUD.h"));
+				MetaData->SetValue(NewProp_BarFillTexture, TEXT("ToolTip"), TEXT("gray health bar texture"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_HUD(Z_Construct_UClass_AUNB_HUD, TEXT("AUNB_HUD"));
+	UClass* Z_Construct_UClass_AUNB_PlayerController_NoRegister()
+	{
+		return AUNB_PlayerController::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AUNB_PlayerController()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_APlayerController();
+			Z_Construct_UPackage_UnrealNavalBattles();
+			OuterClass = AUNB_PlayerController::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900284;
+
+
+				OuterClass->ClassConfigName = FName(TEXT("Game"));
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Collision Rendering Utilities|Transformation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_PlayerController.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_PlayerController.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AUNB_PlayerController(Z_Construct_UClass_AUNB_PlayerController, TEXT("AUNB_PlayerController"));
 	UFunction* Z_Construct_UFunction_AUNB_Torpedo_Bullet_OnEndOverlap()
 	{
 		struct UNB_Torpedo_Bullet_eventOnEndOverlap_Parms
@@ -1108,8 +1114,8 @@ FName UNREALNAVALBATTLES_Fire = FName(TEXT("Fire"));
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/UnrealNavalBattles")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x48ED4AA7;
-			Guid.B = 0x19B2C967;
+			Guid.A = 0x31413D2E;
+			Guid.B = 0x19ABB655;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

@@ -24,7 +24,7 @@ EBTNodeResult::Type UUNB_BTTask_MoveWithinDistance::ExecuteTask(UBehaviorTreeCom
 	if (Enemy && MyBot)
 	{
 		const float SearchRadius = 1000.0f;
-		const FVector SearchOrigin = Enemy->GetActorLocation() + 600.0f * (MyBot->GetActorLocation() - Enemy->GetActorLocation()).SafeNormal();
+		const FVector SearchOrigin = Enemy->GetActorLocation() + 1500.0f * (MyBot->GetActorLocation() - Enemy->GetActorLocation()).SafeNormal();
 		const FVector Loc = UNavigationSystem::GetRandomPointInRadius(MyController, SearchOrigin, SearchRadius);
 		if (Loc != FVector::ZeroVector)
 		{
