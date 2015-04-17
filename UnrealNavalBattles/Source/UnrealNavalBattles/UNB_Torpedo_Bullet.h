@@ -24,6 +24,9 @@ class UNREALNAVALBATTLES_API AUNB_Torpedo_Bullet : public AActor
 	TSubobjectPtr<UStaticMeshComponent>MeshComponent;
 	
 	bool isSpawning;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = WeaponDamage)
+	int32 m_damage;
 
 	UParticleSystem* Explosion;
 

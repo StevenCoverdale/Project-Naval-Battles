@@ -29,7 +29,7 @@ AShipBullet::AShipBullet(const class FPostConstructInitializeProperties& PCIP)
 	OnActorEndOverlap.AddDynamic(this, &AShipBullet::OnEndOverlap);
 
 	ConstructorHelpers::FObjectFinder<UParticleSystem> ExplosionAsset(TEXT("Particles'/Game/Particles/Explosion.Explosion'"));
-
+	m_damage = 10;
 	if (ExplosionAsset.Object != NULL)
 	{
 	  Explosion = ExplosionAsset.Object;
@@ -58,7 +58,7 @@ void AShipBullet::OnOverlap(AActor* OtherActor)
 
 				AUNB_Ships * ship = Cast<AUNB_Ships>(OtherActor);
 
-				ship->Damage(30);
+				ship->Damage(m_damage);
 
 				TArray<UStaticMeshComponent*> Components;
 					OtherActor->GetComponents<UStaticMeshComponent>(Components);

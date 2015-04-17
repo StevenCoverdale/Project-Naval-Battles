@@ -28,6 +28,8 @@ AUNB_Torpedo_Bullet::AUNB_Torpedo_Bullet(const class FPostConstructInitializePro
 	OnActorBeginOverlap.AddDynamic(this, &AUNB_Torpedo_Bullet::OnOverlap);
 	OnActorEndOverlap.AddDynamic(this, &AUNB_Torpedo_Bullet::OnEndOverlap);
 
+	m_damage = 20;
+
 	ConstructorHelpers::FObjectFinder<UParticleSystem> ExplosionAsset(TEXT("Particles'/Game/Particles/Explosion.Explosion'"));
 
 	PrimaryActorTick.bCanEverTick = true;
@@ -74,7 +76,7 @@ void AUNB_Torpedo_Bullet::OnOverlap(AActor* OtherActor)
 			{
 				AUNB_Ships * ship = Cast<AUNB_Ships>(OtherActor);
 
-				ship->Damage(30);
+				ship->Damage(m_damage);
 				
 				TArray<UStaticMeshComponent*> Components;
 					OtherActor->GetComponents<UStaticMeshComponent>(Components);

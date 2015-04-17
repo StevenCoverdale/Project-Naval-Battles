@@ -100,7 +100,7 @@ void AShipWeaponFire::DistanceCheck(AActor* OtherActor)
 	for (FConstPawnIterator It = GetWorld()->GetPawnIterator(); It; ++It)
 	{
 		AUNB_Ships* TestPawn = Cast<AUNB_Ships>(*It);
-		if(TestPawn && TestPawn != OtherActor && TestPawn->GetTeam() != this->GetTeam() /*Check for ShipTeam here*/)
+		if(TestPawn && TestPawn != OtherActor && TestPawn->GetTeam() != this->GetTeam() && TestPawn->GetOnDeath() == false /*Check for ShipTeam here*/)
 		{
 			const float DistSq = FVector::Dist(TestPawn->GetActorLocation(), MyLoc);
 			if (DistSq < 2000 && DistSq > 300)

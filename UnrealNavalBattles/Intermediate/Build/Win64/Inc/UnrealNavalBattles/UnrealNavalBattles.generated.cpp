@@ -14,7 +14,7 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 		FNativeFunctionRegistrar::RegisterFunction(AShipBullet::StaticClass(),"OnOverlap",(Native)&AShipBullet::execOnOverlap);
 		FNativeFunctionRegistrar::RegisterFunction(AShipBullet::StaticClass(),"SetTemplate",(Native)&AShipBullet::execSetTemplate);
 	}
-	IMPLEMENT_CLASS(AShipBullet, 3277571991);
+	IMPLEMENT_CLASS(AShipBullet, 969304243);
 	void AShipWeapon::StaticRegisterNativesAShipWeapon()
 	{
 	}
@@ -106,7 +106,7 @@ void EmptyLinkFunctionForGeneratedCodeUnrealNavalBattles() {}
 		FNativeFunctionRegistrar::RegisterFunction(AUNB_Torpedo_Bullet::StaticClass(),"SetTemplate",(Native)&AUNB_Torpedo_Bullet::execSetTemplate);
 		FNativeFunctionRegistrar::RegisterFunction(AUNB_Torpedo_Bullet::StaticClass(),"Torpedo_FireTemplate",(Native)&AUNB_Torpedo_Bullet::execTorpedo_FireTemplate);
 	}
-	IMPLEMENT_CLASS(AUNB_Torpedo_Bullet, 2228468219);
+	IMPLEMENT_CLASS(AUNB_Torpedo_Bullet, 3841661913);
 	void AUNB_Torpedo_Bullet::PlayParticle()
 	{
 		ProcessEvent(FindFunctionChecked(UNREALNAVALBATTLES_PlayParticle),NULL);
@@ -280,6 +280,7 @@ FName UNREALNAVALBATTLES_PlayParticle = FName(TEXT("PlayParticle"));
 				OuterClass->LinkChild(Z_Construct_UFunction_AShipBullet_OnOverlap());
 				OuterClass->LinkChild(Z_Construct_UFunction_AShipBullet_SetTemplate());
 
+				UProperty* NewProp_m_damage = new(OuterClass, TEXT("m_damage"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(m_damage, AShipBullet), 0x0000000000000005);
 				UProperty* NewProp_MeshComponent = new(OuterClass, TEXT("MeshComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(MeshComponent, AShipBullet), 0x00000000004a001d, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 				UProperty* NewProp_MovementComponent = new(OuterClass, TEXT("MovementComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(MovementComponent, AShipBullet), 0x00000000004a001d, Z_Construct_UClass_UProjectileMovementComponent_NoRegister());
 				UProperty* NewProp_ColliderComponent = new(OuterClass, TEXT("ColliderComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ColliderComponent, AShipBullet), 0x00000000004a001d, Z_Construct_UClass_USphereComponent_NoRegister());
@@ -291,6 +292,8 @@ FName UNREALNAVALBATTLES_PlayParticle = FName(TEXT("PlayParticle"));
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("ShipBullet.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("ShipBullet.h"));
+				MetaData->SetValue(NewProp_m_damage, TEXT("Category"), TEXT("WeaponDamage"));
+				MetaData->SetValue(NewProp_m_damage, TEXT("ModuleRelativePath"), TEXT("ShipBullet.h"));
 				MetaData->SetValue(NewProp_MeshComponent, TEXT("Category"), TEXT("Rendering"));
 				MetaData->SetValue(NewProp_MeshComponent, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_MeshComponent, TEXT("ModuleRelativePath"), TEXT("ShipBullet.h"));
@@ -1158,6 +1161,7 @@ FName UNREALNAVALBATTLES_PlayParticle = FName(TEXT("PlayParticle"));
 				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_Torpedo_Bullet_SetTemplate());
 				OuterClass->LinkChild(Z_Construct_UFunction_AUNB_Torpedo_Bullet_Torpedo_FireTemplate());
 
+				UProperty* NewProp_m_damage = new(OuterClass, TEXT("m_damage"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(m_damage, AUNB_Torpedo_Bullet), 0x0000000000000005);
 				UProperty* NewProp_MeshComponent = new(OuterClass, TEXT("MeshComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(MeshComponent, AUNB_Torpedo_Bullet), 0x00000000004a001d, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 				UProperty* NewProp_MovementComponent = new(OuterClass, TEXT("MovementComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(MovementComponent, AUNB_Torpedo_Bullet), 0x00000000004a001d, Z_Construct_UClass_UProjectileMovementComponent_NoRegister());
 				UProperty* NewProp_ColliderComponent = new(OuterClass, TEXT("ColliderComponent"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ColliderComponent, AUNB_Torpedo_Bullet), 0x00000000004a001d, Z_Construct_UClass_USphereComponent_NoRegister());
@@ -1171,6 +1175,8 @@ FName UNREALNAVALBATTLES_PlayParticle = FName(TEXT("PlayParticle"));
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UNB_Torpedo_Bullet.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UNB_Torpedo_Bullet.h"));
+				MetaData->SetValue(NewProp_m_damage, TEXT("Category"), TEXT("WeaponDamage"));
+				MetaData->SetValue(NewProp_m_damage, TEXT("ModuleRelativePath"), TEXT("UNB_Torpedo_Bullet.h"));
 				MetaData->SetValue(NewProp_MeshComponent, TEXT("Category"), TEXT("Rendering"));
 				MetaData->SetValue(NewProp_MeshComponent, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_MeshComponent, TEXT("ModuleRelativePath"), TEXT("UNB_Torpedo_Bullet.h"));
@@ -1195,7 +1201,7 @@ FName UNREALNAVALBATTLES_PlayParticle = FName(TEXT("PlayParticle"));
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/UnrealNavalBattles")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x7BADBC45;
+			Guid.A = 0xD142C9B3;
 			Guid.B = 0x018AA8D4;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;

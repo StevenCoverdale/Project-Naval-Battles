@@ -26,6 +26,9 @@ class UNREALNAVALBATTLES_API AShipBullet : public AActor
 	bool isSpawning;
 
 	UParticleSystem* Explosion;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = WeaponDamage)
+	int32 m_damage;
 
 	UFUNCTION()
 	void OnOverlap(AActor* OtherActor);

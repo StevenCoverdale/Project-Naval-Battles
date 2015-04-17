@@ -110,9 +110,9 @@ void AUNB_Ships::Destination(float delta)
 			//move ship to the direction at 100(m/p)
 			SetActorLocation(position + (direction * 100 * delta), true);
 
-			if (click.X - position.X <= 1800 &&  click.X - position.X  >= -1800 &&  click.Z - position.Z  >= -1800)
+			if (click.Z - position.Z  >= -2000)
 			{
-				if (click.Y - position.Y <= 1800 && click.Y - position.Y  >= -1800 && click.Z - position.Z  >= -1800)
+				if (click.Z - position.Z  >= -2000)
 				{
 					Destroy();
 				}

@@ -1,17 +1,17 @@
 ------------------
 System Information
 ------------------
-Time of this report: 4/17/2015, 08:43:36
-       Machine name: C401IT23
+Time of this report: 4/17/2015, 10:34:02
+       Machine name: C422IT37
    Operating System: Windows 7 Enterprise 64-bit (6.1, Build 7601) Service Pack 1 (7601.win7sp1_gdr.140303-2144)
            Language: English (Regional Setting: English)
-System Manufacturer: Alienware
-       System Model: Aurora
+System Manufacturer: Apple Inc.
+       System Model: iMac12,1
                BIOS: Default System BIOS
-          Processor: Intel(R) Core(TM) i7 CPU         930  @ 2.80GHz (8 CPUs), ~2.8GHz
-             Memory: 6144MB RAM
-Available OS Memory: 6134MB RAM
-          Page File: 5526MB used, 6741MB available
+          Processor: Intel(R) Core(TM) i5-2500S CPU @ 2.70GHz (4 CPUs), ~2.7GHz
+             Memory: 16384MB RAM
+Available OS Memory: 16360MB RAM
+          Page File: 4733MB used, 27983MB available
         Windows Dir: C:\Windows
     DirectX Version: DirectX 11
 DX Setup Parameters: Not found
@@ -42,79 +42,57 @@ DirectShow:  0/6 (retail)
 ---------------
 Display Devices
 ---------------
-          Card name: NVIDIA GeForce GTX 260  
-       Manufacturer: NVIDIA
-          Chip type: GeForce GTX 260
-           DAC type: Integrated RAMDAC
-         Device Key: Enum\PCI\VEN_10DE&DEV_05EA&SUBSYS_073810DE&REV_A1
-     Display Memory: 4070 MB
-   Dedicated Memory: 1767 MB
-      Shared Memory: 2303 MB
+          Card name: AMD Radeon HD 6770M
+       Manufacturer: ATI Technologies Inc.
+          Chip type: ATI display adapter (0x6740)
+           DAC type: Internal DAC(400MHz)
+         Device Key: Enum\PCI\VEN_1002&DEV_6740&SUBSYS_6740106B&REV_00
+     Display Memory: 4095 MB
+   Dedicated Memory: 489 MB
+      Shared Memory: 3606 MB
        Current Mode: 1920 x 1080 (32 bit) (60Hz)
-       Monitor Name: Alienware AW2210 (Digital)
-      Monitor Model: Alienware2210
-         Monitor Id: DEL404F
-        Native Mode: 1920 x 1080(p) (60.000Hz)
-        Output Type: DVI
-        Driver Name: nvd3dumx.dll,nvwgf2umx.dll,nvwgf2umx.dll,nvd3dum,nvwgf2um,nvwgf2um
-Driver File Version: 9.18.0013.4052 (English)
-     Driver Version: 9.18.13.4052
-        DDI Version: 10
+       Monitor Name: Generic PnP Monitor
+      Monitor Model: iMac
+         Monitor Id: APPA00C
+        Native Mode: 1920 x 1080(p) (59.934Hz)
+        Output Type: Internal
+        Driver Name: aticfx64.dll,aticfx64.dll,aticfx64.dll,aticfx32,aticfx32,aticfx32,atiumd64.dll,atidxx64.dll,atidxx64.dll,atiumdag,atidxx32,atidxx32,atiumdva,atiumd6a.cap,atitmm64.dll
+Driver File Version: 8.17.0010.1063 (English)
+     Driver Version: 8.812.0.0
+        DDI Version: 11
        Driver Model: WDDM 1.1
   Driver Attributes: Final Retail
-   Driver Date/Size: 8/19/2014 23:44:20, 17555104 bytes
-        WHQL Logo'd: n/a
-    WHQL Date Stamp: n/a
-  Device Identifier: {D7B71E3E-46AA-11CF-BA7C-35271CC2C435}
-          Vendor ID: 0x10DE
-          Device ID: 0x05EA
-          SubSys ID: 0x073810DE
-        Revision ID: 0x00A1
- Driver Strong Name: oem21.inf:NVIDIA_SetA_Devices.NTamd64.6.1:Section002:9.18.13.4052:pci\ven_10de&dev_05ea&subsys_073810de
-     Rank Of Driver: 00E00001
-        Video Accel: ModeMPEG2_A ModeMPEG2_C ModeVC1_C ModeWMV9_C 
-   Deinterlace Caps: {6CB69578-7617-4637-91E5-1C02DB810285}: Format(In/Out)=(YUY2,YUY2) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY DeinterlaceTech_PixelAdaptive 
-                     {F9F19DA5-3B09-4B2F-9D89-C64753E3EAAB}: Format(In/Out)=(YUY2,YUY2) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY 
-                     {5A54A0C9-C7EC-4BD9-8EDE-F3C75DC4393B}: Format(In/Out)=(YUY2,YUY2) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY 
+   Driver Date/Size: 6/13/2011 19:34:18, 708608 bytes
+        WHQL Logo'd: Yes
+    WHQL Date Stamp: 
+  Device Identifier: {D7B71EE2-2400-11CF-FC77-4A47BEC2C535}
+          Vendor ID: 0x1002
+          Device ID: 0x6740
+          SubSys ID: 0x6740106B
+        Revision ID: 0x0000
+ Driver Strong Name: oem57.inf:ATI.Mfg.NTamd64.6.1:ati2mtag_Vancouver:8.812.0.0:pci\ven_1002&dev_6740
+     Rank Of Driver: 00E62001
+        Video Accel: ModeMPEG2_A ModeMPEG2_C 
+   Deinterlace Caps: {6E8329FF-B642-418B-BCF0-BCB6591E255F}: Format(In/Out)=(YUY2,YUY2) Frames(Prev/Fwd/Back)=(0,0,1) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY DeinterlaceTech_PixelAdaptive 
                      {335AA36E-7884-43A4-9C91-7F87FAF3E37E}: Format(In/Out)=(YUY2,YUY2) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY DeinterlaceTech_BOBVerticalStretch 
-                     {6CB69578-7617-4637-91E5-1C02DB810285}: Format(In/Out)=(UYVY,UYVY) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY DeinterlaceTech_PixelAdaptive 
-                     {F9F19DA5-3B09-4B2F-9D89-C64753E3EAAB}: Format(In/Out)=(UYVY,UYVY) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY 
-                     {5A54A0C9-C7EC-4BD9-8EDE-F3C75DC4393B}: Format(In/Out)=(UYVY,UYVY) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY 
+                     {5A54A0C9-C7EC-4BD9-8EDE-F3C75DC4393B}: Format(In/Out)=(YUY2,YUY2) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY 
+                     {6E8329FF-B642-418B-BCF0-BCB6591E255F}: Format(In/Out)=(UYVY,UYVY) Frames(Prev/Fwd/Back)=(0,0,1) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY DeinterlaceTech_PixelAdaptive 
                      {335AA36E-7884-43A4-9C91-7F87FAF3E37E}: Format(In/Out)=(UYVY,UYVY) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY DeinterlaceTech_BOBVerticalStretch 
-                     {6CB69578-7617-4637-91E5-1C02DB810285}: Format(In/Out)=(YV12,0x32315659) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY DeinterlaceTech_PixelAdaptive 
-                     {F9F19DA5-3B09-4B2F-9D89-C64753E3EAAB}: Format(In/Out)=(YV12,0x32315659) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY 
-                     {5A54A0C9-C7EC-4BD9-8EDE-F3C75DC4393B}: Format(In/Out)=(YV12,0x32315659) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY 
-                     {335AA36E-7884-43A4-9C91-7F87FAF3E37E}: Format(In/Out)=(YV12,0x32315659) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY DeinterlaceTech_BOBVerticalStretch 
-                     {6CB69578-7617-4637-91E5-1C02DB810285}: Format(In/Out)=(NV12,0x3231564e) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY DeinterlaceTech_PixelAdaptive 
-                     {F9F19DA5-3B09-4B2F-9D89-C64753E3EAAB}: Format(In/Out)=(NV12,0x3231564e) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY 
-                     {5A54A0C9-C7EC-4BD9-8EDE-F3C75DC4393B}: Format(In/Out)=(NV12,0x3231564e) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY 
+                     {5A54A0C9-C7EC-4BD9-8EDE-F3C75DC4393B}: Format(In/Out)=(UYVY,UYVY) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY 
+                     {5A54A0C9-C7EC-4BD9-8EDE-F3C75DC4393B}: Format(In/Out)=(YV12,0x32315659) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
+                     {3C5323C1-6FB7-44F5-9081-056BF2EE449D}: Format(In/Out)=(NV12,0x3231564e) Frames(Prev/Fwd/Back)=(0,0,2) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY DeinterlaceTech_PixelAdaptive 
+                     {552C0DAD-CCBC-420B-83C8-74943CF9F1A6}: Format(In/Out)=(NV12,0x3231564e) Frames(Prev/Fwd/Back)=(0,0,2) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY DeinterlaceTech_PixelAdaptive 
+                     {6E8329FF-B642-418B-BCF0-BCB6591E255F}: Format(In/Out)=(NV12,0x3231564e) Frames(Prev/Fwd/Back)=(0,0,1) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY DeinterlaceTech_PixelAdaptive 
                      {335AA36E-7884-43A4-9C91-7F87FAF3E37E}: Format(In/Out)=(NV12,0x3231564e) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY DeinterlaceTech_BOBVerticalStretch 
-                     {6CB69578-7617-4637-91E5-1C02DB810285}: Format(In/Out)=(IMC1,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
-                     {F9F19DA5-3B09-4B2F-9D89-C64753E3EAAB}: Format(In/Out)=(IMC1,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
+                     {5A54A0C9-C7EC-4BD9-8EDE-F3C75DC4393B}: Format(In/Out)=(NV12,0x3231564e) Frames(Prev/Fwd/Back)=(0,0,0) Caps=VideoProcess_YUV2RGB VideoProcess_StretchX VideoProcess_StretchY 
                      {5A54A0C9-C7EC-4BD9-8EDE-F3C75DC4393B}: Format(In/Out)=(IMC1,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
-                     {335AA36E-7884-43A4-9C91-7F87FAF3E37E}: Format(In/Out)=(IMC1,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
-                     {6CB69578-7617-4637-91E5-1C02DB810285}: Format(In/Out)=(IMC2,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
-                     {F9F19DA5-3B09-4B2F-9D89-C64753E3EAAB}: Format(In/Out)=(IMC2,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
                      {5A54A0C9-C7EC-4BD9-8EDE-F3C75DC4393B}: Format(In/Out)=(IMC2,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
-                     {335AA36E-7884-43A4-9C91-7F87FAF3E37E}: Format(In/Out)=(IMC2,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
-                     {6CB69578-7617-4637-91E5-1C02DB810285}: Format(In/Out)=(IMC3,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
-                     {F9F19DA5-3B09-4B2F-9D89-C64753E3EAAB}: Format(In/Out)=(IMC3,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
                      {5A54A0C9-C7EC-4BD9-8EDE-F3C75DC4393B}: Format(In/Out)=(IMC3,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
-                     {335AA36E-7884-43A4-9C91-7F87FAF3E37E}: Format(In/Out)=(IMC3,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
-                     {6CB69578-7617-4637-91E5-1C02DB810285}: Format(In/Out)=(IMC4,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
-                     {F9F19DA5-3B09-4B2F-9D89-C64753E3EAAB}: Format(In/Out)=(IMC4,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
                      {5A54A0C9-C7EC-4BD9-8EDE-F3C75DC4393B}: Format(In/Out)=(IMC4,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
-                     {335AA36E-7884-43A4-9C91-7F87FAF3E37E}: Format(In/Out)=(IMC4,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
-                     {6CB69578-7617-4637-91E5-1C02DB810285}: Format(In/Out)=(S340,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
-                     {F9F19DA5-3B09-4B2F-9D89-C64753E3EAAB}: Format(In/Out)=(S340,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
                      {5A54A0C9-C7EC-4BD9-8EDE-F3C75DC4393B}: Format(In/Out)=(S340,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
-                     {335AA36E-7884-43A4-9C91-7F87FAF3E37E}: Format(In/Out)=(S340,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
-                     {6CB69578-7617-4637-91E5-1C02DB810285}: Format(In/Out)=(S342,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
-                     {F9F19DA5-3B09-4B2F-9D89-C64753E3EAAB}: Format(In/Out)=(S342,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
                      {5A54A0C9-C7EC-4BD9-8EDE-F3C75DC4393B}: Format(In/Out)=(S342,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
-                     {335AA36E-7884-43A4-9C91-7F87FAF3E37E}: Format(In/Out)=(S342,UNKNOWN) Frames(Prev/Fwd/Back)=(0,0,0) Caps=
-       D3D9 Overlay: Supported
-            DXVA-HD: Supported
+       D3D9 Overlay: Not Supported
+            DXVA-HD: Not Supported
        DDraw Status: Enabled
          D3D Status: Enabled
          AGP Status: Enabled
@@ -122,24 +100,24 @@ Driver File Version: 9.18.0013.4052 (English)
 -------------
 Sound Devices
 -------------
-            Description: Digital Audio (HDMI) (2- High Definition Audio Device)
+            Description: Speakers (Cirrus Logic CS4206A (AB 09))
  Default Sound Playback: Yes
  Default Voice Playback: Yes
-            Hardware ID: HDAUDIO\FUNC_01&VEN_10EC&DEV_0888&SUBSYS_102802F7&REV_1001
+            Hardware ID: HDAUDIO\FUNC_01&VEN_1013&DEV_4206&SUBSYS_106B0900&REV_1003
         Manufacturer ID: 1
              Product ID: 65535
                    Type: WDM
             Driver Name: HdAudio.sys
          Driver Version: 6.01.7601.17514 (English)
       Driver Attributes: Final Retail
-            WHQL Logo'd: n/a
+            WHQL Logo'd: Yes
           Date and Size: 11/20/2010 23:23:47, 350208 bytes
             Other Files: 
-        Driver Provider: Microsoft
+        Driver Provider: Cirrus Logic, Inc.
          HW Accel Level: Basic
-              Cap Flags: 0x0
-    Min/Max Sample Rate: 0, 0
-Static/Strm HW Mix Bufs: 0, 0
+              Cap Flags: 0xF1F
+    Min/Max Sample Rate: 100, 200000
+Static/Strm HW Mix Bufs: 1, 0
  Static/Strm HW 3D Bufs: 0, 0
               HW Memory: 0
        Voice Management: No
@@ -147,24 +125,24 @@ Static/Strm HW Mix Bufs: 0, 0
    I3DL2(tm) Listen/Src: No, No
 Sensaura(tm) ZoomFX(tm): No
 
-            Description: Digital Audio (S/PDIF) (2- High Definition Audio Device)
+            Description: Digital Audio (S/PDIF) (Cirrus Logic CS4206A (AB 09))
  Default Sound Playback: No
  Default Voice Playback: No
-            Hardware ID: HDAUDIO\FUNC_01&VEN_10EC&DEV_0888&SUBSYS_102802F7&REV_1001
+            Hardware ID: HDAUDIO\FUNC_01&VEN_1013&DEV_4206&SUBSYS_106B0900&REV_1003
         Manufacturer ID: 1
              Product ID: 65535
                    Type: WDM
             Driver Name: HdAudio.sys
          Driver Version: 6.01.7601.17514 (English)
       Driver Attributes: Final Retail
-            WHQL Logo'd: n/a
+            WHQL Logo'd: Yes
           Date and Size: 11/20/2010 23:23:47, 350208 bytes
             Other Files: 
-        Driver Provider: Microsoft
+        Driver Provider: Cirrus Logic, Inc.
          HW Accel Level: Basic
-              Cap Flags: 0x0
-    Min/Max Sample Rate: 0, 0
-Static/Strm HW Mix Bufs: 0, 0
+              Cap Flags: 0xF1F
+    Min/Max Sample Rate: 100, 200000
+Static/Strm HW Mix Bufs: 1, 0
  Static/Strm HW 3D Bufs: 0, 0
               HW Memory: 0
        Voice Management: No
@@ -175,6 +153,26 @@ Sensaura(tm) ZoomFX(tm): No
 ---------------------
 Sound Capture Devices
 ---------------------
+            Description: Microphone (Cirrus Logic CS4206A (AB 09))
+  Default Sound Capture: Yes
+  Default Voice Capture: Yes
+            Driver Name: HdAudio.sys
+         Driver Version: 6.01.7601.17514 (English)
+      Driver Attributes: Final Retail
+          Date and Size: 11/20/2010 23:23:47, 350208 bytes
+              Cap Flags: 0x1
+           Format Flags: 0xFFFFF
+
+            Description: Digital Audio (S/PDIF) (Cirrus Logic CS4206A (AB 09))
+  Default Sound Capture: No
+  Default Voice Capture: No
+            Driver Name: HdAudio.sys
+         Driver Version: 6.01.7601.17514 (English)
+      Driver Attributes: Final Retail
+          Date and Size: 11/20/2010 23:23:47, 350208 bytes
+              Cap Flags: 0x1
+           Format Flags: 0xFFFFF
+
 -------------------
 DirectInput Devices
 -------------------
@@ -190,64 +188,16 @@ Vendor/Product ID: n/a
 Vendor/Product ID: n/a
         FF Driver: n/a
 
-      Device Name: Alienware TactX Mouse
+      Device Name: Apple Keyboard
          Attached: 1
     Controller ID: 0x0
-Vendor/Product ID: 0x187C, 0x0515
+Vendor/Product ID: 0x05AC, 0x024F
         FF Driver: n/a
 
-      Device Name: Alienware TactX Mouse
+      Device Name: Apple IR Receiver
          Attached: 1
     Controller ID: 0x0
-Vendor/Product ID: 0x187C, 0x0515
-        FF Driver: n/a
-
-      Device Name: Alienware TactX Mouse
-         Attached: 1
-    Controller ID: 0x0
-Vendor/Product ID: 0x187C, 0x0515
-        FF Driver: n/a
-
-      Device Name: Alienware TactX Mouse
-         Attached: 1
-    Controller ID: 0x0
-Vendor/Product ID: 0x187C, 0x0515
-        FF Driver: n/a
-
-      Device Name: Alienware TactX Mouse
-         Attached: 1
-    Controller ID: 0x0
-Vendor/Product ID: 0x187C, 0x0515
-        FF Driver: n/a
-
-      Device Name: AlienFx Backlight
-         Attached: 1
-    Controller ID: 0x0
-Vendor/Product ID: 0x187C, 0x0516
-        FF Driver: n/a
-
-      Device Name: AlienFx Backlight
-         Attached: 1
-    Controller ID: 0x0
-Vendor/Product ID: 0x187C, 0x0516
-        FF Driver: n/a
-
-      Device Name: AlienFx Backlight
-         Attached: 1
-    Controller ID: 0x0
-Vendor/Product ID: 0x187C, 0x0516
-        FF Driver: n/a
-
-      Device Name: Alienware TactX ™ Keyboard
-         Attached: 1
-    Controller ID: 0x0
-Vendor/Product ID: 0x187C, 0x0517
-        FF Driver: n/a
-
-      Device Name: Alienware TactX ™ Keyboard
-         Attached: 1
-    Controller ID: 0x0
-Vendor/Product ID: 0x187C, 0x0517
+Vendor/Product ID: 0x05AC, 0x8242
         FF Driver: n/a
 
 Poll w/ Interrupt: No
@@ -256,7 +206,7 @@ Poll w/ Interrupt: No
 USB Devices
 -----------
 + USB Root Hub
-| Vendor/Product ID: 0x8086, 0x3A37
+| Vendor/Product ID: 0x8086, 0x1C2C
 | Matching Device ID: usb\root_hub
 | Service: usbhub
 
@@ -268,17 +218,7 @@ Gameport Devices
 PS/2 Devices
 ------------
 + HID Keyboard Device
-| Vendor/Product ID: 0x187C, 0x0515
-| Matching Device ID: hid_device_system_keyboard
-| Service: kbdhid
-| 
-+ HID Keyboard Device
-| Vendor/Product ID: 0x187C, 0x0516
-| Matching Device ID: hid_device_system_keyboard
-| Service: kbdhid
-| 
-+ HID Keyboard Device
-| Vendor/Product ID: 0x187C, 0x0517
+| Vendor/Product ID: 0x05AC, 0x024F
 | Matching Device ID: hid_device_system_keyboard
 | Service: kbdhid
 | 
@@ -287,11 +227,9 @@ PS/2 Devices
 | Upper Filters: kbdclass
 | Service: TermDD
 | 
-+ Alienware TactX Mouse
-| Vendor/Product ID: 0x187C, 0x0515
-| Matching Device ID: hid\vid_187c&pid_0515&mi_00
-| Upper Filters: LMouFilt
-| Lower Filters: LHidFilt
++ Apple Mighty Mouse
+| Vendor/Product ID: 0x05AC, 0x0304
+| Matching Device ID: hid\vid_05ac&pid_0304
 | Service: mouhid
 | 
 + Terminal Server Mouse Driver
@@ -303,144 +241,102 @@ PS/2 Devices
 Disk & DVD/CD-ROM Drives
 ------------------------
       Drive: C:
- Free Space: 69.7 GB
-Total Space: 242.7 GB
+ Free Space: 389.3 GB
+Total Space: 546.8 GB
 File System: NTFS
-      Model: OCZ-VECTOR
+      Model: Disk drive
 
       Drive: D:
-      Model: PLDS DVD+-RW DH-24AAS
-     Driver: c:\windows\system32\drivers\cdrom.sys, 6.01.7601.17514 (English), , 0 bytes
+ Free Space: 307.3 GB
+Total Space: 380.7 GB
+File System: HFS
+      Model: Disk drive
 
       Drive: E:
-      Model: ELBY CLONEDRIVE SCSI CdRom Device
+      Model: CD-ROM Drive
      Driver: c:\windows\system32\drivers\cdrom.sys, 6.01.7601.17514 (English), , 0 bytes
 
 --------------
 System Devices
 --------------
-     Name: Intel(R) 5520/5500/X58 I/O Hub to ESI Port - 3405
-Device ID: PCI\VEN_8086&DEV_3405&SUBSYS_02F71028&REV_13\3&11583659&0&00
+     Name: LSI 1394 OHCI Compliant Host Controller
+Device ID: PCI\VEN_11C1&DEV_5901&SUBSYS_590011C1&REV_08\4&35B6AB08&0&00E2
    Driver: n/a
 
-     Name: Intel(R) ICH10 Family PCI Express Root Port 4 - 3A46
-Device ID: PCI\VEN_8086&DEV_3A46&SUBSYS_02F71028&REV_00\3&11583659&0&E3
+     Name: Standard Universal PCI to USB Host Controller
+Device ID: PCI\VEN_8086&DEV_1C2C&SUBSYS_72708086&REV_05\3&11583659&2&D0
    Driver: n/a
 
-     Name: Intel(R) ICH10 Family USB Universal Host Controller - 3A37
-Device ID: PCI\VEN_8086&DEV_3A37&SUBSYS_02F71028&REV_00\3&11583659&0&D0
-   Driver: n/a
-
-     Name: Intel(R) 5520/5500/X58 I/O Hub System Management Registers - 342E
-Device ID: PCI\VEN_8086&DEV_342E&SUBSYS_00000000&REV_13\3&11583659&0&A0
-   Driver: n/a
-
-     Name: Intel(R) 82801 PCI Bridge - 244E
-Device ID: PCI\VEN_8086&DEV_244E&SUBSYS_02F71028&REV_90\3&11583659&0&F0
-   Driver: n/a
-
-     Name: Intel(R) ICH10 Family PCI Express Root Port 2 - 3A42
-Device ID: PCI\VEN_8086&DEV_3A42&SUBSYS_02F71028&REV_00\3&11583659&0&E1
-   Driver: n/a
-
-     Name: Intel(R) ICH10 Family USB Universal Host Controller - 3A36
-Device ID: PCI\VEN_8086&DEV_3A36&SUBSYS_02F71028&REV_00\3&11583659&0&EA
-   Driver: n/a
-
-     Name: Intel(R) 5520/5500/X58 I/O Hub Control Status and RAS Registers - 3423
-Device ID: PCI\VEN_8086&DEV_3423&SUBSYS_00000000&REV_13\3&11583659&0&A2
-   Driver: n/a
-
-     Name: Broadcom NetLink (TM) Gigabit Ethernet
-Device ID: PCI\VEN_14E4&DEV_1698&SUBSYS_02F71028&REV_10\4&62990A5&0&00E1
-   Driver: n/a
-
-     Name: Intel(R) ICH10 Family PCI Express Root Port 1 - 3A40
-Device ID: PCI\VEN_8086&DEV_3A40&SUBSYS_02F71028&REV_00\3&11583659&0&E0
-   Driver: n/a
-
-     Name: Intel(R) ICH10 Family USB Universal Host Controller - 3A35
-Device ID: PCI\VEN_8086&DEV_3A35&SUBSYS_02F71028&REV_00\3&11583659&0&E9
-   Driver: n/a
-
-     Name: Intel(R) 5520/5500/X58 I/O Hub GPIO and Scratch Pad Registers - 3422
-Device ID: PCI\VEN_8086&DEV_3422&SUBSYS_00000000&REV_13\3&11583659&0&A1
-   Driver: n/a
-
-     Name: VIA 1394 OHCI Compliant Host Controller
-Device ID: PCI\VEN_1106&DEV_3403&SUBSYS_02F71028&REV_00\4&342A71D0&0&00E3
+     Name: PCI Express standard Root Port
+Device ID: PCI\VEN_8086&DEV_1C10&SUBSYS_72708086&REV_B5\3&11583659&2&E0
    Driver: n/a
 
      Name: High Definition Audio Controller
-Device ID: PCI\VEN_8086&DEV_3A3E&SUBSYS_02F71028&REV_00\3&11583659&0&D8
+Device ID: PCI\VEN_1002&DEV_AA90&SUBSYS_AA90106B&REV_00\4&199C4783&0&0108
    Driver: n/a
 
-     Name: Intel(R) ICH10 Family USB Universal Host Controller - 3A34
-Device ID: PCI\VEN_8086&DEV_3A34&SUBSYS_02F71028&REV_00\3&11583659&0&E8
+     Name: Standard Universal PCI to USB Host Controller
+Device ID: PCI\VEN_8086&DEV_1C27&SUBSYS_72708086&REV_05\3&11583659&2&E8
    Driver: n/a
 
-     Name: Intel(R) 5520/5500/X58 I/O Hub PCI Express Root Port 9 - 3410
-Device ID: PCI\VEN_8086&DEV_3410&SUBSYS_02F71028&REV_13\3&11583659&0&48
+     Name: Intel(R) 6 Series/C200 Series Chipset Family 4 port Serial ATA Storage Controller - 1C00
+Device ID: PCI\VEN_8086&DEV_1C00&SUBSYS_72708086&REV_05\3&11583659&2&FA
    Driver: n/a
 
-     Name: NVIDIA GeForce GTX 260  
-Device ID: PCI\VEN_10DE&DEV_05EA&SUBSYS_073810DE&REV_A1\4&246044E2&0&0038
+     Name: AMD Radeon HD 6770M
+Device ID: PCI\VEN_1002&DEV_6740&SUBSYS_6740106B&REV_00\4&199C4783&0&0008
    Driver: n/a
 
-     Name: Intel(R) ICH10 Family USB Enhanced Host Controller - 3A3C
-Device ID: PCI\VEN_8086&DEV_3A3C&SUBSYS_02F71028&REV_00\3&11583659&0&D7
+     Name: Standard Enhanced PCI to USB Host Controller
+Device ID: PCI\VEN_8086&DEV_1C26&SUBSYS_72708086&REV_05\3&11583659&2&EF
    Driver: n/a
 
-     Name: Intel(R) ICH10 Family SMBus Controller - 3A30
-Device ID: PCI\VEN_8086&DEV_3A30&SUBSYS_02F71028&REV_00\3&11583659&0&FB
+     Name: PCI Express standard Root Port
+Device ID: PCI\VEN_8086&DEV_0101&SUBSYS_20108086&REV_09\3&11583659&2&08
    Driver: n/a
 
-     Name: Intel(R) 5520/5500/X58 I/O Hub PCI Express Root Port 7 - 340E
-Device ID: PCI\VEN_8086&DEV_340E&SUBSYS_02F71028&REV_13\3&11583659&0&38
+     Name: Intel(R) 6 Series/C200 Series Chipset Family SMBus Controller - 1C22
+Device ID: PCI\VEN_8086&DEV_1C22&SUBSYS_72708086&REV_05\3&11583659&2&FB
    Driver: n/a
 
-     Name: NVIDIA GeForce GTX 260  
-Device ID: PCI\VEN_10DE&DEV_05EA&SUBSYS_073810DE&REV_A1\4&101B7E8&0&0018
+     Name: PCI standard host CPU bridge
+Device ID: PCI\VEN_8086&DEV_0100&SUBSYS_20108086&REV_09\3&11583659&2&00
    Driver: n/a
 
-     Name: Intel(R) ICH10 Family USB Enhanced Host Controller - 3A3A
-Device ID: PCI\VEN_8086&DEV_3A3A&SUBSYS_02F71028&REV_00\3&11583659&0&EF
+     Name: High Definition Audio Controller
+Device ID: PCI\VEN_8086&DEV_1C20&SUBSYS_72708086&REV_05\3&11583659&2&D8
    Driver: n/a
 
-     Name: Intel(R) ICH10R SATA AHCI Controller
-Device ID: PCI\VEN_8086&DEV_3A22&SUBSYS_02F71028&REV_00\3&11583659&0&FA
+     Name: Atheros AR938x Wireless Network Adapter
+Device ID: PCI\VEN_168C&DEV_0030&SUBSYS_009A106B&REV_01\4&7E19683&0&00E1
    Driver: n/a
 
-     Name: Intel(R) 5520/5500/X58 I/O Hub PCI Express Root Port 3 - 340A
-Device ID: PCI\VEN_8086&DEV_340A&SUBSYS_02F71028&REV_13\3&11583659&0&18
+     Name: PCI standard ISA bridge
+Device ID: PCI\VEN_8086&DEV_1C44&SUBSYS_72708086&REV_05\3&11583659&2&F8
    Driver: n/a
 
-     Name: Silicon Image SiI 3132 SATALink Controller
-Device ID: PCI\VEN_1095&DEV_3132&SUBSYS_02F71028&REV_01\4&24931170&0&00E4
+     Name: PCI Express standard Root Port
+Device ID: PCI\VEN_8086&DEV_1C18&SUBSYS_72708086&REV_B5\3&11583659&2&E4
    Driver: n/a
 
-     Name: Intel(R) ICH10 Family USB Universal Host Controller - 3A39
-Device ID: PCI\VEN_8086&DEV_3A39&SUBSYS_02F71028&REV_00\3&11583659&0&D2
+     Name: Broadcom NetXtreme Gigabit Ethernet #2
+Device ID: PCI\VEN_14E4&DEV_16B4&SUBSYS_16B414E4&REV_10\00003C07547328DC00
    Driver: n/a
 
-     Name: Intel(R) ICH10R LPC Interface Controller - 3A16
-Device ID: PCI\VEN_8086&DEV_3A16&SUBSYS_02F71028&REV_00\3&11583659&0&F8
+     Name: Intel(R) Management Engine Interface
+Device ID: PCI\VEN_8086&DEV_1C3A&SUBSYS_72708086&REV_04\3&11583659&2&B0
    Driver: n/a
 
-     Name: Intel(R) 5520/5500/X58 I/O Hub PCI Express Root Port 1 - 3408
-Device ID: PCI\VEN_8086&DEV_3408&SUBSYS_02F71028&REV_13\3&11583659&0&08
+     Name: PCI Express standard Root Port
+Device ID: PCI\VEN_8086&DEV_1C14&SUBSYS_72708086&REV_B5\3&11583659&2&E2
    Driver: n/a
 
-     Name: Intel(R) ICH10 Family PCI Express Root Port 5 - 3A48
-Device ID: PCI\VEN_8086&DEV_3A48&SUBSYS_02F71028&REV_00\3&11583659&0&E4
+     Name: Standard Enhanced PCI to USB Host Controller
+Device ID: PCI\VEN_8086&DEV_1C2D&SUBSYS_72708086&REV_05\3&11583659&2&D7
    Driver: n/a
 
-     Name: Intel(R) ICH10 Family USB Universal Host Controller - 3A38
-Device ID: PCI\VEN_8086&DEV_3A38&SUBSYS_02F71028&REV_00\3&11583659&0&D1
-   Driver: n/a
-
-     Name: Intel(R) 5520/5500/X58 I/O Hub Throttle Registers - 3438
-Device ID: PCI\VEN_8086&DEV_3438&SUBSYS_00000000&REV_13\3&11583659&0&A3
+     Name: PCI Express standard Root Port
+Device ID: PCI\VEN_8086&DEV_1C12&SUBSYS_72708086&REV_B5\3&11583659&2&E1
    Driver: n/a
 
 ------------------
@@ -483,16 +379,17 @@ Microsoft MPEG-2 Encoder,0x00200000,2,1,msmpeg2enc.dll,6.01.7601.17514
 ACM Wrapper,0x00600000,1,1,quartz.dll,6.06.7601.17713
 Video Renderer,0x00800001,1,0,quartz.dll,6.06.7601.17713
 MPEG-2 Video Stream Analyzer,0x00200000,0,0,sbe.dll,6.06.7601.17528
-Line 21 Decoder,0x00600000,1,1,qdvd.dll,6.06.7601.17835
+Line 21 Decoder,0x00600000,1,1,qdvd.dll,6.06.7601.17713
 Video Port Manager,0x00600000,2,1,quartz.dll,6.06.7601.17713
 Video Renderer,0x00400000,1,0,quartz.dll,6.06.7601.17713
 VPS Decoder,0x00200000,0,0,WSTPager.ax,6.06.7601.17514
 WM ASF Writer,0x00400000,0,0,qasf.dll,12.00.7601.17514
 VBI Surface Allocator,0x00600000,1,1,vbisurf.ax,6.01.7601.17514
 File writer,0x00200000,1,0,qcap.dll,6.06.7601.17514
-WAV Dest,0x00000000,0,0,,
-DVD Navigator,0x00200000,0,3,qdvd.dll,6.06.7601.17835
-Overlay Mixer2,0x00200000,1,1,qdvd.dll,6.06.7601.17835
+iTV Data Sink,0x00600000,1,0,itvdata.dll,6.06.7601.17514
+iTV Data Capture filter,0x00600000,1,1,itvdata.dll,6.06.7601.17514
+DVD Navigator,0x00200000,0,3,qdvd.dll,6.06.7601.17713
+Overlay Mixer2,0x00200000,1,1,qdvd.dll,6.06.7601.17713
 AVI Draw,0x00600064,9,1,quartz.dll,6.06.7601.17713
 RDP DShow Redirection Filter,0xffffffff,1,0,DShowRdpFilter.dll,
 Microsoft MPEG-2 Audio Encoder,0x00200000,1,1,msmpeg2enc.dll,6.01.7601.17514
@@ -505,7 +402,7 @@ MPEG-2 Sections and Tables,0x005fffff,1,0,Mpeg2Data.ax,6.06.7601.17514
 Microsoft AC3 Encoder,0x00200000,1,1,msac3enc.dll,6.01.7601.17514
 StreamBufferSource,0x00200000,0,0,sbe.dll,6.06.7601.17528
 Smart Tee,0x00200000,1,2,qcap.dll,6.06.7601.17514
-Overlay Mixer,0x00200000,0,0,qdvd.dll,6.06.7601.17835
+Overlay Mixer,0x00200000,0,0,qdvd.dll,6.06.7601.17713
 AVI Decompressor,0x00600000,1,1,quartz.dll,6.06.7601.17713
 AVI/WAV File Source,0x00400000,0,2,quartz.dll,6.06.7601.17713
 Wave Parser,0x00400000,1,1,quartz.dll,6.06.7601.17713
@@ -549,6 +446,10 @@ CCITT A-Law,0x00200000,1,1,quartz.dll,6.06.7601.17713
 CCITT u-Law,0x00200000,1,1,quartz.dll,6.06.7601.17713
 MPEG Layer-3,0x00200000,1,1,quartz.dll,6.06.7601.17713
 
+Audio Capture Sources:
+Microphone (Cirrus Logic CS4206,0x00200000,0,0,qcap.dll,6.06.7601.17514
+Digital Audio (S/PDIF) (Cirrus ,0x00200000,0,0,qcap.dll,6.06.7601.17514
+
 PBDA CP Filters:
 PBDA DTFilter,0x00600000,1,1,CPFilters.dll,6.06.7601.17528
 PBDA ETFilter,0x00200000,0,0,CPFilters.dll,6.06.7601.17528
@@ -556,10 +457,16 @@ PBDA PTFilter,0x00200000,0,0,CPFilters.dll,6.06.7601.17528
 
 Midi Renderers:
 Default MidiOut Device,0x00800000,1,0,quartz.dll,6.06.7601.17713
+Microsoft GS Wavetable Synth,0x00200000,1,0,quartz.dll,6.06.7601.17713
+
+WDM Streaming Capture Devices:
+,0x00000000,0,0,,
+,0x00000000,0,0,,
+FaceTime HD Camera (Built-in),0x00200000,1,2,ksproxy.ax,6.01.7601.17514
 
 WDM Streaming Rendering Devices:
-HD Audio HDMI out,0x00200000,1,1,ksproxy.ax,6.01.7601.17514
-HD Audio SPDIF out,0x00200000,1,1,ksproxy.ax,6.01.7601.17514
+,0x00000000,0,0,,
+,0x00000000,0,0,,
 
 BDA Network Providers:
 Microsoft ATSC Network Provider,0x00200000,0,1,MSDvbNP.ax,6.06.7601.17514
@@ -567,6 +474,9 @@ Microsoft DVBC Network Provider,0x00200000,0,1,MSDvbNP.ax,6.06.7601.17514
 Microsoft DVBS Network Provider,0x00200000,0,1,MSDvbNP.ax,6.06.7601.17514
 Microsoft DVBT Network Provider,0x00200000,0,1,MSDvbNP.ax,6.06.7601.17514
 Microsoft Network Provider,0x00200000,0,1,MSNP.ax,6.06.7601.17514
+
+Video Capture Sources:
+FaceTime HD Camera (Built-in),0x00200000,1,2,ksproxy.ax,6.01.7601.17514
 
 Multi-Instance Capable VBI Codecs:
 VBI Codec,0x00600000,1,4,VBICodec.ax,6.06.7601.17514
@@ -585,12 +495,12 @@ WDM Streaming Communication Transforms:
 Tee/Sink-to-Sink Converter,0x00200000,1,1,ksproxy.ax,6.01.7601.17514
 
 Audio Renderers:
-Digital Audio (HDMI) (2- High D,0x00200000,1,0,quartz.dll,6.06.7601.17713
+Speakers (Cirrus Logic CS4206A ,0x00200000,1,0,quartz.dll,6.06.7601.17713
 Default DirectSound Device,0x00800000,1,0,quartz.dll,6.06.7601.17713
 Default WaveOut Device,0x00200000,1,0,quartz.dll,6.06.7601.17713
-Digital Audio (S/PDIF) (2- High,0x00200000,1,0,quartz.dll,6.06.7601.17713
-DirectSound: Digital Audio (HDMI) (2- High Definition Audio Device),0x00200000,1,0,quartz.dll,6.06.7601.17713
-DirectSound: Digital Audio (S/PDIF) (2- High Definition Audio Device),0x00200000,1,0,quartz.dll,6.06.7601.17713
+Digital Audio (S/PDIF) (Cirrus ,0x00200000,1,0,quartz.dll,6.06.7601.17713
+DirectSound: Digital Audio (S/PDIF) (Cirrus Logic CS4206A (AB 09)),0x00200000,1,0,quartz.dll,6.06.7601.17713
+DirectSound: Speakers (Cirrus Logic CS4206A (AB 09)),0x00200000,1,0,quartz.dll,6.06.7601.17713
 
 ---------------
 EVR Power Information
