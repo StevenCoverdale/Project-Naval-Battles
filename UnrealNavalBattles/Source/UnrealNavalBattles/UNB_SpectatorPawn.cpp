@@ -191,7 +191,7 @@ bool AUNB_SpectatorPawn::RayTraceMouse(FHitResult * result) const
 	TraceParams.bReturnPhysicalMaterial = true;
 
 #if DEBUG_LEVEL > 0
-	DrawDebugLine(GetWorld(), CameraLoc, EndTrace, FColor::Cyan, false, 5.0f);
+	//DrawDebugLine(GetWorld(), CameraLoc, EndTrace, FColor::Cyan, false, 5.0f);
 #endif
 
 	return GetWorld()->LineTraceSingle(*result, StartTrace, EndTrace, ECC_EngineTraceChannel1, TraceParams);
