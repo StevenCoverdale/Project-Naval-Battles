@@ -21,7 +21,6 @@ AUNB_Ships::AUNB_Ships(FObjectInitializer const& ObjectInitializer)
 	{
 		GEngine->AddOnScreenDebugMessage(-2, 2.0f, FColor::Green, TEXT("Ship to Commander!"));
 	}
-	//SetActorEnableCollision(false);
 	AIControllerClass = AUNB_AIController::StaticClass();
 
 
@@ -94,18 +93,31 @@ void AUNB_Ships::Destination(float delta)
 
 
 //Death Animation here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	////	//target direction (mouse click)
-	//	FVector click(0, 0, -2000);
-	//	FVector direction = click - position;
-	////	Normalize the mouse click
-	//	direction.Normalize();
+	if(OnDeath)
+		{
+			SetActorEnableCollision(false);
 
-	////	Rotate ship towards target
-	//	SetActorRotation(direction.Rotation());
+			position = this->GetActorLocation();
+			//target direction (mouse click)
+			FVector click(0, 0, -2000);
+			FVector direction = click - position;
+			//Normalize the mouse click
+			direction.Normalize();
 
-	////	move ship to the direction at 100(m/p)
-	//	SetActorLocation(position + (direction * 100 * delta), true);
+			//Rotate ship towards target
+			SetActorRotation(direction.Rotation());
 
+			//move ship to the direction at 100(m/p)
+			SetActorLocation(position + (direction * 100 * delta), true);
+
+			if (click.X - position.X <= 1800 &&  click.X - position.X  >= -1800 &&  click.Z - position.Z  >= -1800)
+			{
+				if (click.Y - position.Y <= 1800 && click.Y - position.Y  >= -1800 && click.Z - position.Z  >= -1800)
+				{
+					Destroy();
+				}
+			}
+		}
 		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	//	
 	//	
@@ -155,9 +167,15 @@ void AUNB_Ships::Damage(int damage)
 		_health -= damage;
 		if(_health <= 0)
 		{
-			Destroy();
+			OnDeath = true;
+			//Destroy();
 		}
 	}
+}
+
+bool AUNB_Ships::GetOnDeath()
+{
+	return OnDeath;
 }
 UCapsuleComponent* AUNB_Ships::GetCapsuleComponent()
 {

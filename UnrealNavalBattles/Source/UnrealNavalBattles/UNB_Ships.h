@@ -44,7 +44,8 @@ public:
 	int GetHealth();
 	int GetMaxHealth();
 	void Damage(int damage);
-	
+	bool OnDeath;
+	bool GetOnDeath();
 
 	void GetMouseClickLocation(FVector loc, AUNB_Ships* ship);
 	void GetMouseClickLocationWithShift(FVector loc);

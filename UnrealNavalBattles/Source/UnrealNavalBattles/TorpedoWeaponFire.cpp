@@ -76,7 +76,7 @@ void ATorpedoWeaponFire::DistanceCheck(AActor* OtherActor, float delta)
 	for (FConstPawnIterator It = GetWorld()->GetPawnIterator(); It; ++It)
 	{
 		AUNB_Ships* TestPawn = Cast<AUNB_Ships>(*It);
-		if(TestPawn && TestPawn != OtherActor && TestPawn->GetTeam() != this->GetTeam()/*Check for ShipTeam here*/)
+		if(TestPawn && TestPawn != OtherActor && TestPawn->GetTeam() != this->GetTeam() && TestPawn->GetOnDeath() == false/*Check for ShipTeam here*/)
 		{
 			if(TestPawn)
 			{
